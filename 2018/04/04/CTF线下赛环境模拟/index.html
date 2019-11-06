@@ -1,0 +1,444 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=11,IE=10,IE=9,IE=8" >
+    <meta name="baidu-site-verification" content="dIcXMeY8Ya" />
+    
+    <title>CTF线下赛环境模拟 | 九指哥哥哟</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" >
+    <meta name="keywords" content="Jelon, 前端, Web, 张德龙, 前端开发" >
+    <meta name="description" content="Jelon个人前端小站" >
+
+    
+    <link rel="alternative" href="/atom.xml" title="九指哥哥哟" type="application/atom+xml" >
+    
+    
+    <link rel="shortcut icon" href="/favicon.ico" >
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <!--[if lt IE 9]>
+    <script src="/js/html5.js"></script>
+    <![endif]-->
+    
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?fd459238242776d173cdc64918fb32f2";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+</head>
+
+<body class="home">
+    <!--[if lt IE 9]>
+    <div class="browsehappy">
+        当前网页 <strong>不支持</strong>
+        你正在使用的浏览器. 为了正常的访问, 请 <a href="http://browsehappy.com/" target="_blank" rel="noopener">升级你的浏览器</a>.
+    </div>
+    <![endif]-->
+
+    <!-- 博客头部 -->
+    <header class="header">
+    <section class="container header-main">
+        <div class="logo">
+            <a href="/">
+                <div class="cover">
+                    <span class="name">九指哥哥哟</span>
+                    <span class="description"></span>
+                </div>
+            </a>
+        </div>
+        <div class="dropnav icon-paragraph-justify" id="JELON__btnDropNav"></div>
+        <ul class="menu hidden" id="JELON__menu">
+            
+            <li rel="/2018/04/04/CTF%E7%BA%BF%E4%B8%8B%E8%B5%9B%E7%8E%AF%E5%A2%83%E6%A8%A1%E6%8B%9F/index.html" class="item ">
+                <a href="/" title="首页" class="icon-home">&nbsp;首页</a>
+            </li>
+            
+            <li rel="/2018/04/04/CTF%E7%BA%BF%E4%B8%8B%E8%B5%9B%E7%8E%AF%E5%A2%83%E6%A8%A1%E6%8B%9F/index.html" class="item ">
+                <a href="/about/" title="关于" class="icon-about">&nbsp;关于</a>
+            </li>
+            
+        </ul>
+        <div class="profile clearfix">
+            <div class="feeds fl">
+                
+                
+                <p class="links">
+                    
+                        <a href="https://github.com/9finger" target="_blank">Github</a>
+                        |
+                    
+                        <a href="https://pages.coding.me" target="_blank">Hosted by Coding Pages</a>
+                        
+                    
+                </p>
+                <p class="sns">
+                    
+                        <a href="http://weibo.com/jangdelong" class="sinaweibo" target="_blank"><b>■</b> 新浪微博</a>
+                    
+                        <a href="https://www.facebook.com/profile.php?id=100011855760219&amp;ref=bookmarks" class="qqweibo" target="_blank"><b>■</b> Facebook</a>
+                    
+                    <a href="javascript: void(0);" target="_blank" rel="noopener" class="wechat">
+                        <b>■</b>
+                        公众号
+                        <span class="popover">
+                            <img src="/img/wechat_mp.jpg" width="120" height="120" alt="我的微信订阅号">
+                            <i class="arrow"></i>
+                        </span>
+                    </a>
+                </p>
+                
+            </div>
+            <div class="avatar fr">
+                <img src="/img/jelon.jpg" alt="avatar" title="Jelon" >
+            </div>
+        </div>
+    </section>
+</header>
+
+
+    <!-- 博客正文 -->
+    <div class="container body clearfix">
+        <section class="content">
+            <div class="content-main widget">
+                <!-- 文章页 -->
+<!-- 文章 -->
+<article class="post article">
+    <header class="text-center">
+        <h3 class="post-title"><span>CTF线下赛环境模拟</span></h3>
+    </header>
+    <p class="post-meta text-center">
+        Jelon 发表于
+        <time datetime="2018-04-03T16:00:00.000Z">2018-04-04</time>
+    </p>
+    <div class="post-content">
+        <p>为了准备之后的线下赛，搭建环境练手前期维护。</p>
+<a id="more"></a>
+
+
+<p>这段时间准备要参加新的比赛了，对于萌新的我，当然想着不要被虐的太惨，于是乎找了师兄们找了他们要了他们之前参加线下赛的源码。好比考前复习一样，所以写了这篇线下赛环境模拟的文章给以后的师弟们看。</p>
+<h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><p>我准备的环境是Linux的Ubuntu16.04版本，是因为想要搭建成一个系统和web端都存在漏洞的环境，搭建一个wordpress的web，和一个phpcms v9的web，一个ssh低权限账户，ubuntu16.04可用脏牛提权（因为只会脏牛提权（捂脸ing））。<br>Ubuntu的搭建<br>点击“Install Ubuntu”<br><img src="/images/CTF%E7%BA%BF%E4%B8%8B%E8%B5%9B%E7%8E%AF%E5%A2%83%E6%A8%A1%E6%8B%9F/1.png" alt=""></p>
+<p>勾选“Download updates while installing Ubuntu”，点击“Continue”;<br><img src="/images/CTF%E7%BA%BF%E4%B8%8B%E8%B5%9B%E7%8E%AF%E5%A2%83%E6%A8%A1%E6%8B%9F/2.png" alt=""></p>
+<p>选择“Erase disk and install Ubuntu”，点击“Install Now”; 在弹出的窗口中选择“Continue”；<br>PS: 因为我们是新安装的系统，且在虚拟机中，所以可以选择“Erase disk and install Ubuntu”<br><img src="/images/CTF%E7%BA%BF%E4%B8%8B%E8%B5%9B%E7%8E%AF%E5%A2%83%E6%A8%A1%E6%8B%9F/3.png" alt=""></p>
+<p>点击地图上的中国的位置，会默认弹出上海的时区，因为中国所有地区都是使用同一个时区，所以上海的就OK了。点击“Continue”；<br><img src="/images/CTF%E7%BA%BF%E4%B8%8B%E8%B5%9B%E7%8E%AF%E5%A2%83%E6%A8%A1%E6%8B%9F/4.png" alt=""></p>
+<p>选择键盘布局，点击“Continue”；<br><img src="/images/CTF%E7%BA%BF%E4%B8%8B%E8%B5%9B%E7%8E%AF%E5%A2%83%E6%A8%A1%E6%8B%9F/5.png" alt=""></p>
+<p>设置电脑名称和账号密码，点击即可开始安装系统。<br><img src="/images/CTF%E7%BA%BF%E4%B8%8B%E8%B5%9B%E7%8E%AF%E5%A2%83%E6%A8%A1%E6%8B%9F/6.png" alt=""><br><img src="/images/CTF%E7%BA%BF%E4%B8%8B%E8%B5%9B%E7%8E%AF%E5%A2%83%E6%A8%A1%E6%8B%9F/7.png" alt=""></p>
+<p>安装完成后会有如下提示，根据提示重启电脑即可。<br><img src="/images/CTF%E7%BA%BF%E4%B8%8B%E8%B5%9B%E7%8E%AF%E5%A2%83%E6%A8%A1%E6%8B%9F/8.png" alt=""></p>
+<p>重启后：<br><img src="/images/CTF%E7%BA%BF%E4%B8%8B%E8%B5%9B%E7%8E%AF%E5%A2%83%E6%A8%A1%E6%8B%9F/9.png" alt=""></p>
+<p>至此，安装完成，开启你的Ubuntu之旅吧！</p>
+<h2 id="php环境配置apache2-php-mysql"><a href="#php环境配置apache2-php-mysql" class="headerlink" title="php环境配置apache2+php+mysql"></a>php环境配置apache2+php+mysql</h2><p>PS：这个过程中有重要的一点，下面的安装最后是在root权限下执行，不然就会出现一些问题，很难受。<br>Ubuntu切换到root权限命令如下<br>sudo su</p>
+<p>php环境搭建，在终端中输入以下代码,install后面为安装的软件：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-<span class="keyword">get</span> install apache2</span><br><span class="line">sudo add-apt-repository -y ppa:ondrej/php</span><br><span class="line">sudo apt update</span><br><span class="line">sudo apt install  php7.0</span><br><span class="line">sudo apt install -y mysql-server mysql-client</span><br><span class="line">sudo apt-<span class="keyword">get</span> install libapache2-mod-php7.0</span><br><span class="line">sudo apt-<span class="keyword">get</span> install php7.0-mysql</span><br><span class="line">sudo apt-<span class="keyword">get</span> install php7.0-gd</span><br><span class="line">sudo apt-<span class="keyword">get</span> install phpmyadmin</span><br></pre></td></tr></table></figure>
+<p>在安装过程中会要求选择Web server：apache2或lighttpd，使用空格键选定apache2，然后确定,下面界面输入你刚才安装Mysql时设置的密码，确定。再确认一次Mysql密码，确定。   然后将phpmyadmin与apache2建立连接，<br>sudo ln -s /usr/share/phpmyadmin  /var/www/html<br><img src="/images/CTF%E7%BA%BF%E4%B8%8B%E8%B5%9B%E7%8E%AF%E5%A2%83%E6%A8%A1%E6%8B%9F/10.png" alt=""></p>
+<h2 id="wordpress的搭建"><a href="#wordpress的搭建" class="headerlink" title="wordpress的搭建"></a>wordpress的搭建</h2><p>我这时候是有师兄给的源码的，本来打算是把wordpress放到/var/www目录下直接就可以访问的，但是这时候www目录有一个锁头，这个文件被锁了。<br>这也是我过程遇到的问题之一。顺便把我解决的方法说一下。<br>首先当然是在终端切换到root权限。<br><img src="/images/CTF%E7%BA%BF%E4%B8%8B%E8%B5%9B%E7%8E%AF%E5%A2%83%E6%A8%A1%E6%8B%9F/11.png" alt=""></p>
+<p>然后修改/var/www的目录权限<br>命令如下</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod <span class="number">777</span> /<span class="keyword">var</span>/www</span><br></pre></td></tr></table></figure>
+<p><img src="/images/CTF%E7%BA%BF%E4%B8%8B%E8%B5%9B%E7%8E%AF%E5%A2%83%E6%A8%A1%E6%8B%9F/12.png" alt=""></p>
+<p>权限修改好以后就可以对文件夹内的东西进行任意操作了。我把源码放入/var/www中，然后访问<a href="http://localhost/wp/index.php" target="_blank" rel="noopener">http://localhost/wp/index.php</a><br>出现如下：<br><img src="/images/CTF%E7%BA%BF%E4%B8%8B%E8%B5%9B%E7%8E%AF%E5%A2%83%E6%A8%A1%E6%8B%9F/13.png" alt=""></p>
+<p>数据库没连接，当时我百度了一下。百度给出了这个方法。<br><img src="/images/CTF%E7%BA%BF%E4%B8%8B%E8%B5%9B%E7%8E%AF%E5%A2%83%E6%A8%A1%E6%8B%9F/14.png" alt=""></p>
+<p>意思就是创建一个wordpress的数据库，在创建一个数据库账号。在wordpress的配置文件修改，就可以了。<br>我就说说我后来的操作吧。<br>打开终端：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sudo su                                 #切换到root权限</span><br><span class="line">mysql -u root -p                        #登录数据库 </span><br><span class="line">CREATE DATABASE wordpress;              #创建WordPress的数据库</span><br><span class="line">CREATE USER wordpressadmin@localhost IDENTIFIED BY 'wordpresspassword';     #创建数据库管理员 </span><br><span class="line">GRANT ALL PRIVILEGES ON wordpress.* TO wordpressadmin@localhost;            #将管理权限赋给管理员</span><br><span class="line">FLUSH PRIVILEGES;</span><br><span class="line">exit                                    #刷新权限信息来激活用户权限 </span><br><span class="line">sudo service mysql restart              #重启MySQL</span><br></pre></td></tr></table></figure>
+
+<p>数据库就建立好了。再修改wordpress的配置信息。<br><img src="/images/CTF%E7%BA%BF%E4%B8%8B%E8%B5%9B%E7%8E%AF%E5%A2%83%E6%A8%A1%E6%8B%9F/15.png" alt=""></p>
+<p>访问<a href="http://localhost/wp/wp-admin/install.php，写入内容就可以访问了。" target="_blank" rel="noopener">http://localhost/wp/wp-admin/install.php，写入内容就可以访问了。</a><br><img src="/images/CTF%E7%BA%BF%E4%B8%8B%E8%B5%9B%E7%8E%AF%E5%A2%83%E6%A8%A1%E6%8B%9F/16.png" alt=""></p>
+<h2 id="phpcms-v9的搭建"><a href="#phpcms-v9的搭建" class="headerlink" title="phpcms v9的搭建"></a>phpcms v9的搭建</h2><p>同理将源码放入/var/www的目录下。<br>1·打开网http://你的域名/install/index.php<br><img src="/images/CTF%E7%BA%BF%E4%B8%8B%E8%B5%9B%E7%8E%AF%E5%A2%83%E6%A8%A1%E6%8B%9F/1.jpg" alt=""></p>
+<p>2·点击“开始安装”进入下一步环境检测，功能影响，只要是都是绿色的打勾就可以进行下一步安装了。<br><img src="/images/CTF%E7%BA%BF%E4%B8%8B%E8%B5%9B%E7%8E%AF%E5%A2%83%E6%A8%A1%E6%8B%9F/2.jpg" alt=""></p>
+<p>3·全新安装包括phpsso(PHPSSO是用PHP开发的单点登录系统。在接入PHPSSO的多个应用系统中，用户只需要登录一次就可以访问所有相互信任的应用系统)。其他模块根据需要安装。<br><img src="/images/CTF%E7%BA%BF%E4%B8%8B%E8%B5%9B%E7%8E%AF%E5%A2%83%E6%A8%A1%E6%8B%9F/3.jpg" alt=""></p>
+<p>4·列表中所有的目录都必须可写，检测成功点“下一步”继续。<br><img src="/images/CTF%E7%BA%BF%E4%B8%8B%E8%B5%9B%E7%8E%AF%E5%A2%83%E6%A8%A1%E6%8B%9F/4.jpg" alt=""></p>
+<p>5·设置默认数据库连接和管理员帐户。<br><img src="/images/CTF%E7%BA%BF%E4%B8%8B%E8%B5%9B%E7%8E%AF%E5%A2%83%E6%A8%A1%E6%8B%9F/5.jpg" alt=""></p>
+<p>6·安装成功。<br><img src="/images/CTF%E7%BA%BF%E4%B8%8B%E8%B5%9B%E7%8E%AF%E5%A2%83%E6%A8%A1%E6%8B%9F/6.jpg" alt=""></p>
+<p>PS：在第四步可能出现文件权限设置不可写的问题。<br>解决方法：<br>将/var/www/html/phpcms目录所属用户和组修改为apache</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost html]# </span><br><span class="line">[root@localhost html]# pwd</span><br><span class="line">/<span class="keyword">var</span>/www/html</span><br><span class="line">[root@localhost html]# ls </span><br><span class="line">index.php  itop  phpcms</span><br><span class="line">[root@localhost html]# </span><br><span class="line">[root@localhost html]# chown -R apache:apache phpcms/</span><br><span class="line">[root@localhost html]# </span><br><span class="line">[root@localhost html]#</span><br></pre></td></tr></table></figure>
+
+<p>chown: 无效的用户: “apache:apache”<br>ubuntu 默认的apache用户是www-data<br>而centos默认Apache用户是apache</p>
+<p>安装成功以后，web就搭建成功了。<br><img src="/images/CTF%E7%BA%BF%E4%B8%8B%E8%B5%9B%E7%8E%AF%E5%A2%83%E6%A8%A1%E6%8B%9F/20.png" alt=""></p>
+<p>在Ubuntu搭建好以后，出现其他局域网内访问不完全的问题。百度一下以后。<br>引用别人的话：<br>局域网得以解决！<br>结论：v9不适合在本机上调试！适合网络调试！<br>原因：本机可以建立环境，但不能完全将V9路径修改为本机IP，具体原因还得官方来解释（测试了N编方法也用了好几种）！</p>
+<p>局域网调试方法：本机建立环境，然后在另一台电脑上进行安装，这样生成的路径就是正常的，不会产生localhost或者127.0.0.1这种东西了，调试一切正常！当然你也可以在目标主机上建立环境，在你的电脑上输入目标主机的ip访问安装，这样也行，算是废话！</p>
+<p>建议：建议官方能修改下，好多站长没有有力局域网调试环境！本机上不用安装ftp服务了，节省内存！也方便数据转移！<br><img src="/images/CTF%E7%BA%BF%E4%B8%8B%E8%B5%9B%E7%8E%AF%E5%A2%83%E6%A8%A1%E6%8B%9F/21.png" alt=""></p>
+<h2 id="搭建ssh"><a href="#搭建ssh" class="headerlink" title="搭建ssh"></a>搭建ssh</h2><p>1·切换到ROOT，开始更新</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-<span class="keyword">get</span> update</span><br></pre></td></tr></table></figure>
+
+<p>2·安装SSH</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-<span class="keyword">get</span> install openssh-server</span><br></pre></td></tr></table></figure>
+<p>3.安装好后查看SSH是否启动<br>打开”终端窗口”，输入”sudo ps -e |grep ssh“–&gt;回车–&gt;有sshd,说明ssh服务已经启动，如果没有启动，输入”sudo service ssh start“–&gt;回车–&gt;ssh服务就会启动</p>
+<p>4.使用gedit修改配置文件”/etc/ssh/sshd_config” 获取远程ROOT权限<br>打开”终端窗口”，输入”sudo gedit /etc/ssh/sshd_config“–&gt;回车–&gt;把配置文件中的”PermitRootLogin without-password“加一个”#”号,把它注释掉–&gt;再增加一句”PermitRootLogin yes“–&gt;保存，修改成功</p>
+<p>5.查看Ubuntu 16.04的IP地址<br>打开”终端窗口”，输入”sudo ifconfig“–&gt;回车–&gt;就可以查看到IP地址。</p>
+<p>6.Xshell访问成功<br><img src="/images/CTF%E7%BA%BF%E4%B8%8B%E8%B5%9B%E7%8E%AF%E5%A2%83%E6%A8%A1%E6%8B%9F/17.png" alt=""></p>
+
+    </div>
+    <p class="post-meta">
+        <span class="post-cat">分类：
+            <a class="cat-link" href="/categories/%E6%AF%94%E8%B5%9B%E6%97%A5%E8%AE%B0/">比赛日记</a>
+        </span>
+        <span class="post-tags">
+            标签：
+            
+    
+        <a href="/tags/%E6%AF%94%E8%B5%9B/" title="比赛">比赛</a>
+    
+
+        </span>
+    </p>
+</article>
+<!-- 分享按钮 -->
+
+  <div class="article-share clearfix text-center">
+    <div class="share-area">
+      <span class="share-txt">分享到：</span>
+      <a href="javascript: window.open(' target="_blank" rel="noopener"http://service.weibo.com/share/share.php?url=' + encodeURIComponent(location.href) + '&title=' + document.title + '&language=zh_cn');" class="share-icon weibo"></a>
+      <a href="javascript: alert(' target="_blank" rel="noopener"请复制链接到微信并发送');" class="share-icon wechat"></a>
+      <a href="javascript: window.open(' target="_blank" rel="noopener"http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=' + encodeURIComponent(location.href) + '&title=' + document.title);" class="share-icon qqzone"></a>
+      <a href="javascript: window.open(' target="_blank" rel="noopener"http://connect.qq.com/widget/shareqq/index.html?url=' + encodeURIComponent(location.href) + '&desc=Jelon个人博客&title=' + document.title + '&callback=' + encodeURIComponent(location.href));" class="share-icon qq"></a>
+      <a href="javascript: window.open(' target="_blank" rel="noopener"http://shuo.douban.com/!service/share?href=' + encodeURIComponent(location.href) + '&name=' + document.title + '&text=' + document.title);" class="share-icon douban"></a>
+    </div>
+  </div>
+
+
+<!-- 上一篇/下一篇 -->
+
+<div class="article-nav clearfix">
+    
+    <span class="prev fl">
+        上一篇<br >
+        <a href="/2018/04/20/XSS%E6%94%BB%E5%87%BB%E7%9A%84%E4%B8%89%E7%A7%8D%E5%9F%BA%E6%9C%AC%E5%BD%A2%E5%BC%8F%E8%A7%A3%E6%9E%90/">
+            
+                XSS攻击的三种基本形式解析
+            
+        </a>
+    </span>
+    
+
+    
+    <span class="next fr">
+        下一篇<br >
+        <a href="/2018/03/26/%E5%BC%BA%E7%BD%91%E6%9D%AF/">
+            
+                强网杯
+            
+        </a>
+    </span>
+    
+</div>
+
+<!-- 文章评论 -->
+
+  <script src="/js/comment.js"></script>
+  <div id="comments" class="comment">
+    <!--
+    <div class="sign-bar">
+      GitHub 已登录!
+      <span class="sign-link">登出</span>
+    </div>
+    <section class="box">
+      <div class="com-avatar"><img src="/img/jelon.jpg" alt="avatar"></div>
+      <div class="com-text">
+        <div class="main">
+          <textarea class="text-area-edited show" placeholder="欢迎评论！"></textarea>
+          <div class="text-area-preview"></div>
+        </div>
+        <div class="switch">
+          <div class="switch-item on">编辑</div>
+          <div class="switch-item">预览</div>
+        </div>
+        <div class="button">提交</div>
+      </div>
+    </section>
+    <section class="tips">注：评论支持 markdown 语法！</section>
+    <section class="list-wrap">
+      <ul class="list">
+        <li>
+          <div class="user-avatar">
+            <a href="/">
+              <img src="/img/jelon.jpg" alt="user-avatar">
+            </a>
+          </div>
+          <div class="user-comment">
+            <div class="user-comment-header">
+              <span class="post-name">张德龙</span>
+              <span class="post-time">2017年12月12日</span>
+              <span class="like liked">已赞</span>
+              <span class="like-num">2</span>
+            </div>
+            <div class="user-comment-body">333333</div>
+          </div>
+        </li>
+        <li>
+          <div class="user-avatar">
+            <a href="/">
+              <img src="/img/jelon.jpg" alt="user-avatar">
+            </a>
+          </div>
+          <div class="user-comment">
+            <div class="user-comment-header">
+              <span class="post-name">刘德华</span>
+              <span class="post-time">2017年12月12日</span>
+              <span class="like">点赞</span>
+              <span class="like-num">2</span>
+            </div>
+            <div class="user-comment-body">vvvvv</div>
+          </div>
+        </li>
+      </ul>
+      <div class="page-nav">
+        <a href="javascript: void(0);" target="_blank" rel="noopener" class="item">1</a>
+        <a href="javascript: void(0);" target="_blank" rel="noopener" class="item">2</a>
+        <a href="javascript: void(0);" target="_blank" rel="noopener" class="item current">3</a>
+      </div>
+    </section>
+    -->
+  </div>
+  <script>
+  JELON.Comment({
+    container: 'comments',
+    label: 'CTF线下赛环境模拟' || '2018/04/04/CTF线下赛环境模拟/',
+    owner: 'your_github_id',
+    repo: 'your_blog_comments',
+    clientId: 'your_client_id',
+    clientSecret: 'your_client_secret'
+  });
+  </script>
+
+
+            </div>
+
+        </section>
+        <!-- 侧栏部分 -->
+<aside class="sidebar">
+    <section class="widget">
+        <h3 class="widget-hd"><strong>文章分类</strong></h3>
+        <!-- 文章分类 -->
+<ul class="widget-bd">
+    
+    <li>
+        <a href="/categories/%E6%B8%97%E9%80%8F%E6%97%A5%E5%BF%97/">渗透日志</a>
+        <span class="badge">(3)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/%E6%AF%94%E8%B5%9B%E6%97%A5%E8%AE%B0/">比赛日记</a>
+        <span class="badge">(2)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/Python/">Python</a>
+        <span class="badge">(3)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7/">奇技淫巧</a>
+        <span class="badge">(10)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/python/">python</a>
+        <span class="badge">(5)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/PHP/">PHP</a>
+        <span class="badge">(1)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/%E6%B8%97%E9%80%8F/">渗透</a>
+        <span class="badge">(9)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
+        <span class="badge">(1)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/%E6%8A%80%E6%9C%AF%E7%A7%AF%E7%B4%AF/">技术积累</a>
+        <span class="badge">(2)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/">漏洞复现</a>
+        <span class="badge">(8)</span>
+    </li>
+    
+</ul>
+    </section>
+
+    
+    <section class="widget">
+        <h3 class="widget-hd"><strong>热门标签</strong></h3>
+        <!-- 文章标签 -->
+<div class="widget-bd tag-wrap">
+  
+    <a class="tag-item" href="/tags/%E6%B8%97%E9%80%8F/" title="渗透">渗透 (16)</a>
+  
+    <a class="tag-item" href="/tags/%E6%AF%94%E8%B5%9B/" title="比赛">比赛 (2)</a>
+  
+    <a class="tag-item" href="/tags/python/" title="python">python (7)</a>
+  
+    <a class="tag-item" href="/tags/EXP%E7%BB%83%E6%89%8B/" title="EXP练手">EXP练手 (1)</a>
+  
+    <a class="tag-item" href="/tags/%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7/" title="奇技淫巧">奇技淫巧 (7)</a>
+  
+    <a class="tag-item" href="/tags/%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F/" title="内网渗透">内网渗透 (5)</a>
+  
+    <a class="tag-item" href="/tags/PHP/" title="PHP">PHP (1)</a>
+  
+    <a class="tag-item" href="/tags/Python/" title="Python">Python (1)</a>
+  
+    <a class="tag-item" href="/tags/%E7%88%AC%E8%99%AB/" title="爬虫">爬虫 (1)</a>
+  
+    <a class="tag-item" href="/tags/SQL/" title="SQL">SQL (1)</a>
+  
+    <a class="tag-item" href="/tags/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/" title="漏洞复现">漏洞复现 (9)</a>
+  
+    <a class="tag-item" href="/tags/%E6%80%9D%E8%B7%AF%E6%80%BB%E7%BB%93/" title="思路总结">思路总结 (2)</a>
+  
+</div>
+    </section>
+    
+
+    
+
+    
+    <!-- 友情链接 -->
+    <section class="widget">
+        <h3 class="widget-hd"><strong>友情链接</strong></h3>
+        <!-- 文章分类 -->
+<ul class="widget-bd">
+    
+        <li>
+            <a href="https://jelon.top" target="_blank" title="Jelon个人前端小站">前端博客小站</a>
+        </li>
+    
+        <li>
+            <a href="https://www.baidu.com" target="_blank" title="百度搜索">百度</a>
+        </li>
+    
+</ul>
+    </section>
+    
+</aside>
+<!-- / 侧栏部分 -->
+    </div>
+
+    <!-- 博客底部 -->
+    <footer class="footer">
+    &copy;
+    
+        2016-2019
+    
+
+    <a href="/">Jelon Loves You</a>
+</footer>
+<div class="back-to-top" id="JELON__backToTop" title="返回顶部">返回顶部</div>
+
+    <!--博客js脚本 -->
+    <!-- 这里放网站js脚本 -->
+<script src="/js/main.js"></script>
+</body>
+</html>

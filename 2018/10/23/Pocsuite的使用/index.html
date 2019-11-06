@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=11,IE=10,IE=9,IE=8" >
+    <meta name="baidu-site-verification" content="dIcXMeY8Ya" />
+    
+    <title>Pocsuite的使用 | 九指哥哥哟</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" >
+    <meta name="keywords" content="Jelon, 前端, Web, 张德龙, 前端开发" >
+    <meta name="description" content="Jelon个人前端小站" >
+
+    
+    <link rel="alternative" href="/atom.xml" title="九指哥哥哟" type="application/atom+xml" >
+    
+    
+    <link rel="shortcut icon" href="/favicon.ico" >
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <!--[if lt IE 9]>
+    <script src="/js/html5.js"></script>
+    <![endif]-->
+    
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?fd459238242776d173cdc64918fb32f2";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+</head>
+
+<body class="home">
+    <!--[if lt IE 9]>
+    <div class="browsehappy">
+        当前网页 <strong>不支持</strong>
+        你正在使用的浏览器. 为了正常的访问, 请 <a href="http://browsehappy.com/" target="_blank" rel="noopener">升级你的浏览器</a>.
+    </div>
+    <![endif]-->
+
+    <!-- 博客头部 -->
+    <header class="header">
+    <section class="container header-main">
+        <div class="logo">
+            <a href="/">
+                <div class="cover">
+                    <span class="name">九指哥哥哟</span>
+                    <span class="description"></span>
+                </div>
+            </a>
+        </div>
+        <div class="dropnav icon-paragraph-justify" id="JELON__btnDropNav"></div>
+        <ul class="menu hidden" id="JELON__menu">
+            
+            <li rel="/2018/10/23/Pocsuite%E7%9A%84%E4%BD%BF%E7%94%A8/index.html" class="item ">
+                <a href="/" title="首页" class="icon-home">&nbsp;首页</a>
+            </li>
+            
+            <li rel="/2018/10/23/Pocsuite%E7%9A%84%E4%BD%BF%E7%94%A8/index.html" class="item ">
+                <a href="/about/" title="关于" class="icon-about">&nbsp;关于</a>
+            </li>
+            
+        </ul>
+        <div class="profile clearfix">
+            <div class="feeds fl">
+                
+                
+                <p class="links">
+                    
+                        <a href="https://github.com/9finger" target="_blank">Github</a>
+                        |
+                    
+                        <a href="https://pages.coding.me" target="_blank">Hosted by Coding Pages</a>
+                        
+                    
+                </p>
+                <p class="sns">
+                    
+                        <a href="http://weibo.com/jangdelong" class="sinaweibo" target="_blank"><b>■</b> 新浪微博</a>
+                    
+                        <a href="https://www.facebook.com/profile.php?id=100011855760219&amp;ref=bookmarks" class="qqweibo" target="_blank"><b>■</b> Facebook</a>
+                    
+                    <a href="javascript: void(0);" target="_blank" rel="noopener" class="wechat">
+                        <b>■</b>
+                        公众号
+                        <span class="popover">
+                            <img src="/img/wechat_mp.jpg" width="120" height="120" alt="我的微信订阅号">
+                            <i class="arrow"></i>
+                        </span>
+                    </a>
+                </p>
+                
+            </div>
+            <div class="avatar fr">
+                <img src="/img/jelon.jpg" alt="avatar" title="Jelon" >
+            </div>
+        </div>
+    </section>
+</header>
+
+
+    <!-- 博客正文 -->
+    <div class="container body clearfix">
+        <section class="content">
+            <div class="content-main widget">
+                <!-- 文章页 -->
+<!-- 文章 -->
+<article class="post article">
+    <header class="text-center">
+        <h3 class="post-title"><span>Pocsuite的使用</span></h3>
+    </header>
+    <p class="post-meta text-center">
+        Jelon 发表于
+        <time datetime="2018-10-23T04:00:00.000Z">2018-10-23</time>
+    </p>
+    <div class="post-content">
+        <p>Pocsuite 是知道创宇安全研究团队打造的一款基于漏洞与 PoC 的远程漏洞验证框架。Pocsuite 是知道创宇安全研究团队发展的基石，是团队发展至今持续维护的一个重要项目，保障了我们的 Web 安全研究能力的领先。</p>
+<a id="more"></a>
+
+<h2 id="Pocsuite的安装"><a href="#Pocsuite的安装" class="headerlink" title="Pocsuite的安装"></a>Pocsuite的安装</h2><p>下载Pocsuite<br>下载地址：<br>链接：<a href="https://github.com/knownsec/pocsuite" target="_blank" rel="noopener">https://github.com/knownsec/pocsuite</a></p>
+<p><strong>操作系统 Ubuntu</strong></p>
+<p>下载后拖进去，直接进到目录就可以使用了，需要安装python2环境，当你写的poc使用到第三方包的时候需要自己安装</p>
+<h2 id="Pocsuite的使用"><a href="#Pocsuite的使用" class="headerlink" title="Pocsuite的使用"></a>Pocsuite的使用</h2><p>这里有使用文档。<br><a href="https://www.seebug.org/help/dev" target="_blank" rel="noopener">https://www.seebug.org/help/dev</a></p>
+<h2 id="Pocsuite-poc编写"><a href="#Pocsuite-poc编写" class="headerlink" title="Pocsuite poc编写"></a>Pocsuite poc编写</h2><p>文档里面写的很清楚，不过是因为我昨晚自己一下子没能理解，后来今天写出来了一个poc，就讲一下。</p>
+<h3 id="verify函数"><a href="#verify函数" class="headerlink" title="verify函数"></a>verify函数</h3><p>这个是验证poc的函数，其实写法很自由的，就是你理解漏洞原理以后用代码去验证，只是我昨晚一直不明白，我写了poc以后如何使得他返还success。<br>先给你看我写的验证函数吧，其实就是前面jboss漏洞验证的原理。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">_verify</span><span class="params">(self)</span>:</span></span><br><span class="line">       result = &#123;&#125;  <span class="comment"># result是返回结果</span></span><br><span class="line">       <span class="comment"># 验证代码</span></span><br><span class="line">       httpurl = self.url + <span class="string">'/invoker/readonly'</span></span><br><span class="line">       NETWORK_STATUS = <span class="literal">True</span></span><br><span class="line">       r = requests.get(httpurl, timeout=<span class="number">1</span>)  <span class="comment"># 加一个1s的时间限制，不然超时异常太久了</span></span><br><span class="line">       zt = r.status_code</span><br><span class="line">       <span class="keyword">if</span> zt == <span class="number">500</span>:</span><br><span class="line">           vulurl = (httpurl)  <span class="comment"># if判断，当存在漏洞的时候将当前url+/invoker/readonly赋值给vulurl作为后面的result判断</span></span><br><span class="line">       <span class="keyword">if</span> zt == <span class="number">500</span>:</span><br><span class="line">           result[<span class="string">'VerifyInfo'</span>] = &#123;&#125;</span><br><span class="line">           result[<span class="string">'VerifyInfo'</span>][<span class="string">'URL'</span>] = vulurl</span><br><span class="line"></span><br><span class="line">       <span class="keyword">return</span> self.parse_attack(result)</span><br></pre></td></tr></table></figure>
+<h4 id="代码解释"><a href="#代码解释" class="headerlink" title="代码解释"></a>代码解释</h4><p>验证部分不解释，博客解释过了，主要是我在这里做了一个改动。<br>当漏洞存在的时候（ps：也就是网页状态码是500的时候），我将(httpurl + ‘/invoker/readonly’)赋值给vulurl。<br>为什么这样做呢。<br>因为按照语法规则，result 的key值是有严格规定的，他最后只会返回以上内容。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">result 每个 key 值相对应的意义：</span><br><span class="line"></span><br><span class="line">    correspond：[</span><br><span class="line"></span><br><span class="line">    &#123;  <span class="attr">name</span>: <span class="string">'DBInfo'</span>,        value：<span class="string">'数据库内容'</span> &#125;,</span><br><span class="line">        &#123;  <span class="attr">name</span>: <span class="string">'Username'</span>,      <span class="attr">value</span>: <span class="string">'管理员用户名'</span>&#125;,</span><br><span class="line">        &#123;  <span class="attr">name</span>: <span class="string">'Password'</span>,      value：<span class="string">'管理员密码'</span> &#125;,</span><br><span class="line">        &#123;  <span class="attr">name</span>: <span class="string">'Salt'</span>,          <span class="attr">value</span>: <span class="string">'加密盐值'</span>&#125;,</span><br><span class="line">        &#123;  <span class="attr">name</span>: <span class="string">'Uid'</span>,           <span class="attr">value</span>: <span class="string">'用户ID'</span>&#125;,</span><br><span class="line">        &#123;  <span class="attr">name</span>: <span class="string">'Groupid'</span>,       <span class="attr">value</span>: <span class="string">'用户组ID'</span>&#125;,</span><br><span class="line"></span><br><span class="line">    &#123;  <span class="attr">name</span>: <span class="string">'ShellInfo'</span>,     <span class="attr">value</span>: <span class="string">'Webshell信息'</span>&#125;,</span><br><span class="line">        &#123;  <span class="attr">name</span>: <span class="string">'URL'</span>,           <span class="attr">value</span>: <span class="string">'Webshell地址'</span>&#125;,</span><br><span class="line">        &#123;  <span class="attr">name</span>: <span class="string">'Content'</span>,       <span class="attr">value</span>: <span class="string">'Webshell内容'</span>&#125;,</span><br><span class="line"></span><br><span class="line">    &#123;  <span class="attr">name</span>: <span class="string">'FileInfo'</span>,      <span class="attr">value</span>: <span class="string">'文件信息'</span>&#125;,</span><br><span class="line">        &#123;  <span class="attr">name</span>: <span class="string">'Filename'</span>,      <span class="attr">value</span>: <span class="string">'文件名称'</span>&#125;,</span><br><span class="line">        &#123;  <span class="attr">name</span>: <span class="string">'Content'</span>,       <span class="attr">value</span>: <span class="string">'文件内容'</span>&#125;,</span><br><span class="line"></span><br><span class="line">    &#123;  <span class="attr">name</span>: <span class="string">'XSSInfo'</span>,       <span class="attr">value</span>: <span class="string">'跨站脚本信息'</span>&#125;,</span><br><span class="line">        &#123;  <span class="attr">name</span>: <span class="string">'URL'</span>,           <span class="attr">value</span>: <span class="string">'验证URL'</span>&#125;,</span><br><span class="line">        &#123;  <span class="attr">name</span>: <span class="string">'Payload'</span>,       <span class="attr">value</span>: <span class="string">'验证Payload'</span>&#125;,</span><br><span class="line"></span><br><span class="line">    &#123;  <span class="attr">name</span>: <span class="string">'AdminInfo'</span>,     <span class="attr">value</span>: <span class="string">'管理员信息'</span>&#125;,</span><br><span class="line">        &#123;  <span class="attr">name</span>: <span class="string">'Uid'</span>,           <span class="attr">value</span>: <span class="string">'管理员ID'</span>&#125;,</span><br><span class="line">        &#123;  <span class="attr">name</span>: <span class="string">'Username'</span>,      <span class="attr">value</span>: <span class="string">'管理员用户名'</span>&#125;,</span><br><span class="line">        &#123;  <span class="attr">name</span>: <span class="string">'Password'</span>,      <span class="attr">value</span>: <span class="string">'管理员密码'</span>&#125;,</span><br><span class="line"></span><br><span class="line">    &#123;  <span class="attr">name</span>: <span class="string">'Database'</span>,      value：<span class="string">'数据库信息'</span> &#125;,</span><br><span class="line">        &#123;  <span class="attr">name</span>: <span class="string">'Hostname'</span>,      <span class="attr">value</span>: <span class="string">'数据库主机名'</span>&#125;,</span><br><span class="line">        &#123;  <span class="attr">name</span>: <span class="string">'Username'</span>,      value：<span class="string">'数据库用户名'</span> &#125;,</span><br><span class="line">        &#123;  <span class="attr">name</span>: <span class="string">'Password'</span>,      <span class="attr">value</span>: <span class="string">'数据库密码'</span>&#125;,</span><br><span class="line">        &#123;  <span class="attr">name</span>: <span class="string">'DBname'</span>,        <span class="attr">value</span>: <span class="string">'数据库名'</span>&#125;,</span><br><span class="line"></span><br><span class="line">    &#123;  <span class="attr">name</span>: <span class="string">'VerifyInfo'</span>,    <span class="attr">value</span>: <span class="string">'验证信息'</span>&#125;,</span><br><span class="line">        &#123;  <span class="attr">name</span>: <span class="string">'URL'</span>,           <span class="attr">value</span>: <span class="string">'验证URL'</span>&#125;,</span><br><span class="line">        &#123;  <span class="attr">name</span>: <span class="string">'Postdata'</span>,      <span class="attr">value</span>: <span class="string">'验证POST数据'</span>&#125;,</span><br><span class="line">        &#123;  <span class="attr">name</span>: <span class="string">'Path'</span>,          <span class="attr">value</span>: <span class="string">'网站绝对路径'</span>&#125;,</span><br><span class="line"></span><br><span class="line">    &#123;  <span class="attr">name</span>: <span class="string">'SiteAttr'</span>,      <span class="attr">value</span>: <span class="string">'网站服务器信息'</span>&#125;,</span><br><span class="line">    &#123;  <span class="attr">name</span>: <span class="string">'Process'</span>,       <span class="attr">value</span>: <span class="string">'服务器进程'</span>&#125;</span><br><span class="line"></span><br><span class="line">    ]</span><br></pre></td></tr></table></figure>
+
+<p> result就是返回你进行poc验证以后返回的信息，但是我返还的状态码500不在key值内，于是乎我在验证存在漏洞以后将vulurl赋值成验证后的url，只要返还的信息和VerifyInfo的url相等就会返还success。</p>
+<h3 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pocsuite -r jboss-_CVE<span class="number">-2017</span><span class="number">-12149.</span>py -u www.baidu.com --verify</span><br></pre></td></tr></table></figure>
+<p>使用pocsuite对站点进行poc验证。你调用另一个函数_attack的时候就是攻击了。<br><img src="/images/Pocsuite%E7%9A%84%E4%BD%BF%E7%94%A8/1.png" alt=""><br><img src="/images/Pocsuite%E7%9A%84%E4%BD%BF%E7%94%A8/3.png" alt=""></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python pocsuite.py -r modules/qykcms_4_3_2_front_boolean_sqli.py -f qykcms.txt --threads <span class="number">5</span></span><br></pre></td></tr></table></figure>
+<p>批量验证，指定某个txt文本内的url进行验证，调用5个线程。<br><img src="/images/Pocsuite%E7%9A%84%E4%BD%BF%E7%94%A8/2.png" alt=""></p>
+<h2 id="附上源码"><a href="#附上源码" class="headerlink" title="附上源码"></a>附上源码</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment"># coding: utf-8</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> pocsuite.net <span class="keyword">import</span> req</span><br><span class="line"><span class="keyword">from</span> pocsuite.poc <span class="keyword">import</span> POCBase, Output</span><br><span class="line"><span class="keyword">from</span> pocsuite.utils <span class="keyword">import</span> register</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TestPOC</span><span class="params">(POCBase)</span>:</span></span><br><span class="line">    vulID = <span class="string">'1'</span>  <span class="comment"># VUL ID</span></span><br><span class="line">    version = <span class="string">'1'</span>  <span class="comment"># 默认为1</span></span><br><span class="line">    author = <span class="string">'9finger'</span>  <span class="comment"># PoC 作者的大名</span></span><br><span class="line">    vulDate = <span class="string">'2018-10-20'</span>  <span class="comment"># 漏洞公开的时间,不知道就写今天</span></span><br><span class="line">    createDate = <span class="string">'2018-10-20'</span>  <span class="comment"># 编写 PoC 的日期</span></span><br><span class="line">    updateDate = <span class="string">'2018-10-20'</span>  <span class="comment"># POC更新的时间,默认和编写时间一样</span></span><br><span class="line">    references = [</span><br><span class="line">        <span class="string">'#'</span>]  <span class="comment"># 漏洞地址来源,0day 不用写</span></span><br><span class="line">    name = <span class="string">'CVE-2017-12149'</span>  <span class="comment"># PoC 名称</span></span><br><span class="line">    appPowerLink = <span class="string">'#'</span>  <span class="comment"># 漏洞厂商主页地址</span></span><br><span class="line">    appName = <span class="string">'JBoss5.x6.x 反序列化漏洞'</span>  <span class="comment"># 漏洞应用名称</span></span><br><span class="line">    appVersion = <span class="string">'5.x6.x'</span>  <span class="comment"># 漏洞影响版本</span></span><br><span class="line">    vulType = <span class="string">'Java反序列化'</span>  <span class="comment"># 漏洞类型,类型参考见 漏洞类型规范表</span></span><br><span class="line">    desc = <span class="string">'''</span></span><br><span class="line"><span class="string">            ###</span></span><br><span class="line"><span class="string">        '''</span>  <span class="comment"># 漏洞简要描述</span></span><br><span class="line">    samples = []  <span class="comment"># 测试样例,就是用 PoC 测试成功的网站，选填</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">_attack</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="string">'''attack mode'''</span></span><br><span class="line">        <span class="keyword">return</span> self._verify()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">_verify</span><span class="params">(self)</span>:</span></span><br><span class="line">        result = &#123;&#125;  <span class="comment"># result是返回结果</span></span><br><span class="line">        <span class="comment"># 验证代码</span></span><br><span class="line">        httpurl = self.url + <span class="string">'/invoker/readonly'</span></span><br><span class="line">        NETWORK_STATUS = <span class="literal">True</span></span><br><span class="line">        r = requests.get(httpurl, timeout=<span class="number">1</span>)  <span class="comment"># 加一个1s的时间限制，不然超时异常太久了</span></span><br><span class="line">        zt = r.status_code</span><br><span class="line">        <span class="keyword">if</span> zt == <span class="number">500</span>:</span><br><span class="line">            vulurl = (httpurl)  <span class="comment"># if判断，当存在漏洞的时候将当前url+/invoker/readonly赋值给vulurl作为后面的result判断</span></span><br><span class="line">        <span class="keyword">if</span> zt == <span class="number">500</span>:</span><br><span class="line">            result[<span class="string">'VerifyInfo'</span>] = &#123;&#125;</span><br><span class="line">            result[<span class="string">'VerifyInfo'</span>][<span class="string">'URL'</span>] = vulurl</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> self.parse_attack(result)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">parse_attack</span><span class="params">(self, result)</span>:</span></span><br><span class="line">        output = Output(self)</span><br><span class="line">        <span class="keyword">if</span> result:</span><br><span class="line">            output.success(result)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            output.fail(<span class="string">'Internet nothing returned'</span>)</span><br><span class="line">        <span class="keyword">return</span> output</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">register(TestPOC)</span><br></pre></td></tr></table></figure>
+    </div>
+    <p class="post-meta">
+        <span class="post-cat">分类：
+            <a class="cat-link" href="/categories/%E6%B8%97%E9%80%8F/">渗透</a>
+        </span>
+        <span class="post-tags">
+            标签：
+            
+    
+        <a href="/tags/%E6%B8%97%E9%80%8F/" title="渗透">渗透</a> / 
+    
+        <a href="/tags/Python/" title="Python">Python</a>
+    
+
+        </span>
+    </p>
+</article>
+<!-- 分享按钮 -->
+
+  <div class="article-share clearfix text-center">
+    <div class="share-area">
+      <span class="share-txt">分享到：</span>
+      <a href="javascript: window.open(' target="_blank" rel="noopener"http://service.weibo.com/share/share.php?url=' + encodeURIComponent(location.href) + '&title=' + document.title + '&language=zh_cn');" class="share-icon weibo"></a>
+      <a href="javascript: alert(' target="_blank" rel="noopener"请复制链接到微信并发送');" class="share-icon wechat"></a>
+      <a href="javascript: window.open(' target="_blank" rel="noopener"http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=' + encodeURIComponent(location.href) + '&title=' + document.title);" class="share-icon qqzone"></a>
+      <a href="javascript: window.open(' target="_blank" rel="noopener"http://connect.qq.com/widget/shareqq/index.html?url=' + encodeURIComponent(location.href) + '&desc=Jelon个人博客&title=' + document.title + '&callback=' + encodeURIComponent(location.href));" class="share-icon qq"></a>
+      <a href="javascript: window.open(' target="_blank" rel="noopener"http://shuo.douban.com/!service/share?href=' + encodeURIComponent(location.href) + '&name=' + document.title + '&text=' + document.title);" class="share-icon douban"></a>
+    </div>
+  </div>
+
+
+<!-- 上一篇/下一篇 -->
+
+<div class="article-nav clearfix">
+    
+    <span class="prev fl">
+        上一篇<br >
+        <a href="/2019/03/08/%E9%9D%B6%E5%9C%BA%E7%BB%83%E4%B9%A0-1/">
+            
+                靶场练习-1
+            
+        </a>
+    </span>
+    
+
+    
+    <span class="next fr">
+        下一篇<br >
+        <a href="/2018/10/12/DedeCMS%20V5.7%20SP2%20getshell%20exp%20%E7%BB%83%E6%89%8B/">
+            
+                DedeCMS V5.7 SP2 getshell exp 练手
+            
+        </a>
+    </span>
+    
+</div>
+
+<!-- 文章评论 -->
+
+  <script src="/js/comment.js"></script>
+  <div id="comments" class="comment">
+    <!--
+    <div class="sign-bar">
+      GitHub 已登录!
+      <span class="sign-link">登出</span>
+    </div>
+    <section class="box">
+      <div class="com-avatar"><img src="/img/jelon.jpg" alt="avatar"></div>
+      <div class="com-text">
+        <div class="main">
+          <textarea class="text-area-edited show" placeholder="欢迎评论！"></textarea>
+          <div class="text-area-preview"></div>
+        </div>
+        <div class="switch">
+          <div class="switch-item on">编辑</div>
+          <div class="switch-item">预览</div>
+        </div>
+        <div class="button">提交</div>
+      </div>
+    </section>
+    <section class="tips">注：评论支持 markdown 语法！</section>
+    <section class="list-wrap">
+      <ul class="list">
+        <li>
+          <div class="user-avatar">
+            <a href="/">
+              <img src="/img/jelon.jpg" alt="user-avatar">
+            </a>
+          </div>
+          <div class="user-comment">
+            <div class="user-comment-header">
+              <span class="post-name">张德龙</span>
+              <span class="post-time">2017年12月12日</span>
+              <span class="like liked">已赞</span>
+              <span class="like-num">2</span>
+            </div>
+            <div class="user-comment-body">333333</div>
+          </div>
+        </li>
+        <li>
+          <div class="user-avatar">
+            <a href="/">
+              <img src="/img/jelon.jpg" alt="user-avatar">
+            </a>
+          </div>
+          <div class="user-comment">
+            <div class="user-comment-header">
+              <span class="post-name">刘德华</span>
+              <span class="post-time">2017年12月12日</span>
+              <span class="like">点赞</span>
+              <span class="like-num">2</span>
+            </div>
+            <div class="user-comment-body">vvvvv</div>
+          </div>
+        </li>
+      </ul>
+      <div class="page-nav">
+        <a href="javascript: void(0);" target="_blank" rel="noopener" class="item">1</a>
+        <a href="javascript: void(0);" target="_blank" rel="noopener" class="item">2</a>
+        <a href="javascript: void(0);" target="_blank" rel="noopener" class="item current">3</a>
+      </div>
+    </section>
+    -->
+  </div>
+  <script>
+  JELON.Comment({
+    container: 'comments',
+    label: 'Pocsuite的使用' || '2018/10/23/Pocsuite的使用/',
+    owner: 'your_github_id',
+    repo: 'your_blog_comments',
+    clientId: 'your_client_id',
+    clientSecret: 'your_client_secret'
+  });
+  </script>
+
+
+            </div>
+
+        </section>
+        <!-- 侧栏部分 -->
+<aside class="sidebar">
+    <section class="widget">
+        <h3 class="widget-hd"><strong>文章分类</strong></h3>
+        <!-- 文章分类 -->
+<ul class="widget-bd">
+    
+    <li>
+        <a href="/categories/%E6%B8%97%E9%80%8F%E6%97%A5%E5%BF%97/">渗透日志</a>
+        <span class="badge">(3)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/%E6%AF%94%E8%B5%9B%E6%97%A5%E8%AE%B0/">比赛日记</a>
+        <span class="badge">(2)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/Python/">Python</a>
+        <span class="badge">(3)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7/">奇技淫巧</a>
+        <span class="badge">(10)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/python/">python</a>
+        <span class="badge">(5)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/PHP/">PHP</a>
+        <span class="badge">(1)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/%E6%B8%97%E9%80%8F/">渗透</a>
+        <span class="badge">(9)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
+        <span class="badge">(1)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/%E6%8A%80%E6%9C%AF%E7%A7%AF%E7%B4%AF/">技术积累</a>
+        <span class="badge">(2)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/">漏洞复现</a>
+        <span class="badge">(8)</span>
+    </li>
+    
+</ul>
+    </section>
+
+    
+    <section class="widget">
+        <h3 class="widget-hd"><strong>热门标签</strong></h3>
+        <!-- 文章标签 -->
+<div class="widget-bd tag-wrap">
+  
+    <a class="tag-item" href="/tags/%E6%B8%97%E9%80%8F/" title="渗透">渗透 (16)</a>
+  
+    <a class="tag-item" href="/tags/%E6%AF%94%E8%B5%9B/" title="比赛">比赛 (2)</a>
+  
+    <a class="tag-item" href="/tags/python/" title="python">python (7)</a>
+  
+    <a class="tag-item" href="/tags/EXP%E7%BB%83%E6%89%8B/" title="EXP练手">EXP练手 (1)</a>
+  
+    <a class="tag-item" href="/tags/%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7/" title="奇技淫巧">奇技淫巧 (7)</a>
+  
+    <a class="tag-item" href="/tags/%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F/" title="内网渗透">内网渗透 (5)</a>
+  
+    <a class="tag-item" href="/tags/PHP/" title="PHP">PHP (1)</a>
+  
+    <a class="tag-item" href="/tags/Python/" title="Python">Python (1)</a>
+  
+    <a class="tag-item" href="/tags/%E7%88%AC%E8%99%AB/" title="爬虫">爬虫 (1)</a>
+  
+    <a class="tag-item" href="/tags/SQL/" title="SQL">SQL (1)</a>
+  
+    <a class="tag-item" href="/tags/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/" title="漏洞复现">漏洞复现 (9)</a>
+  
+    <a class="tag-item" href="/tags/%E6%80%9D%E8%B7%AF%E6%80%BB%E7%BB%93/" title="思路总结">思路总结 (2)</a>
+  
+</div>
+    </section>
+    
+
+    
+
+    
+    <!-- 友情链接 -->
+    <section class="widget">
+        <h3 class="widget-hd"><strong>友情链接</strong></h3>
+        <!-- 文章分类 -->
+<ul class="widget-bd">
+    
+        <li>
+            <a href="https://jelon.top" target="_blank" title="Jelon个人前端小站">前端博客小站</a>
+        </li>
+    
+        <li>
+            <a href="https://www.baidu.com" target="_blank" title="百度搜索">百度</a>
+        </li>
+    
+</ul>
+    </section>
+    
+</aside>
+<!-- / 侧栏部分 -->
+    </div>
+
+    <!-- 博客底部 -->
+    <footer class="footer">
+    &copy;
+    
+        2016-2019
+    
+
+    <a href="/">Jelon Loves You</a>
+</footer>
+<div class="back-to-top" id="JELON__backToTop" title="返回顶部">返回顶部</div>
+
+    <!--博客js脚本 -->
+    <!-- 这里放网站js脚本 -->
+<script src="/js/main.js"></script>
+</body>
+</html>

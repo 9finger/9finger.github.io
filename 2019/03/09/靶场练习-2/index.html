@@ -1,0 +1,459 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=11,IE=10,IE=9,IE=8" >
+    <meta name="baidu-site-verification" content="dIcXMeY8Ya" />
+    
+    <title>靶场练习-2 | 九指哥哥哟</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" >
+    <meta name="keywords" content="Jelon, 前端, Web, 张德龙, 前端开发" >
+    <meta name="description" content="Jelon个人前端小站" >
+
+    
+    <link rel="alternative" href="/atom.xml" title="九指哥哥哟" type="application/atom+xml" >
+    
+    
+    <link rel="shortcut icon" href="/favicon.ico" >
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <!--[if lt IE 9]>
+    <script src="/js/html5.js"></script>
+    <![endif]-->
+    
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?fd459238242776d173cdc64918fb32f2";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+</head>
+
+<body class="home">
+    <!--[if lt IE 9]>
+    <div class="browsehappy">
+        当前网页 <strong>不支持</strong>
+        你正在使用的浏览器. 为了正常的访问, 请 <a href="http://browsehappy.com/" target="_blank" rel="noopener">升级你的浏览器</a>.
+    </div>
+    <![endif]-->
+
+    <!-- 博客头部 -->
+    <header class="header">
+    <section class="container header-main">
+        <div class="logo">
+            <a href="/">
+                <div class="cover">
+                    <span class="name">九指哥哥哟</span>
+                    <span class="description"></span>
+                </div>
+            </a>
+        </div>
+        <div class="dropnav icon-paragraph-justify" id="JELON__btnDropNav"></div>
+        <ul class="menu hidden" id="JELON__menu">
+            
+            <li rel="/2019/03/09/%E9%9D%B6%E5%9C%BA%E7%BB%83%E4%B9%A0-2/index.html" class="item ">
+                <a href="/" title="首页" class="icon-home">&nbsp;首页</a>
+            </li>
+            
+            <li rel="/2019/03/09/%E9%9D%B6%E5%9C%BA%E7%BB%83%E4%B9%A0-2/index.html" class="item ">
+                <a href="/about/" title="关于" class="icon-about">&nbsp;关于</a>
+            </li>
+            
+        </ul>
+        <div class="profile clearfix">
+            <div class="feeds fl">
+                
+                
+                <p class="links">
+                    
+                        <a href="https://github.com/9finger" target="_blank">Github</a>
+                        |
+                    
+                        <a href="https://pages.coding.me" target="_blank">Hosted by Coding Pages</a>
+                        
+                    
+                </p>
+                <p class="sns">
+                    
+                        <a href="http://weibo.com/jangdelong" class="sinaweibo" target="_blank"><b>■</b> 新浪微博</a>
+                    
+                        <a href="https://www.facebook.com/profile.php?id=100011855760219&amp;ref=bookmarks" class="qqweibo" target="_blank"><b>■</b> Facebook</a>
+                    
+                    <a href="javascript: void(0);" target="_blank" rel="noopener" class="wechat">
+                        <b>■</b>
+                        公众号
+                        <span class="popover">
+                            <img src="/img/wechat_mp.jpg" width="120" height="120" alt="我的微信订阅号">
+                            <i class="arrow"></i>
+                        </span>
+                    </a>
+                </p>
+                
+            </div>
+            <div class="avatar fr">
+                <img src="/img/jelon.jpg" alt="avatar" title="Jelon" >
+            </div>
+        </div>
+    </section>
+</header>
+
+
+    <!-- 博客正文 -->
+    <div class="container body clearfix">
+        <section class="content">
+            <div class="content-main widget">
+                <!-- 文章页 -->
+<!-- 文章 -->
+<article class="post article">
+    <header class="text-center">
+        <h3 class="post-title"><span>靶场练习-2</span></h3>
+    </header>
+    <p class="post-meta text-center">
+        Jelon 发表于
+        <time datetime="2019-03-08T16:00:00.000Z">2019-03-09</time>
+    </p>
+    <div class="post-content">
+        <p>在pikachu靶场练习一下，复习一下漏洞。</p>
+<a id="more"></a>
+
+<h2 id="Sql-Inject"><a href="#Sql-Inject" class="headerlink" title="Sql Inject"></a>Sql Inject</h2><p>在owasp发布的top10排行榜里，注入漏洞一直是危害排名第一的漏洞，其中注入漏洞里面首当其冲的就是数据库注入漏洞。<br>一个严重的SQL注入漏洞，可能会直接导致一家公司破产！<br>SQL注入漏洞主要形成的原因是在数据交互中，前端的数据传入到后台处理时，没有做严格的判断，导致其传入的“数据”拼接到SQL语句中后，被当作SQL语句的一部分执行。 从而导致数据库受损（被脱裤、被删除、甚至整个服务器权限沦陷）。<br>在构建代码时，一般会从如下几个方面的策略来防止SQL注入漏洞：<br>1.对传进SQL语句里面的变量进行过滤，不允许危险字符传入；<br>2.使用参数化（Parameterized Query 或 Parameterized Statement）；<br>3.还有就是,目前有很多ORM框架会自动使用参数化解决注入问题,但其也提供了”拼接”的方式,所以使用时需要慎重! </p>
+<h3 id="数字型注入（post）"><a href="#数字型注入（post）" class="headerlink" title="数字型注入（post）"></a>数字型注入（post）</h3><p>看一下界面使用效果。<br><img src="/images/%E9%9D%B6%E5%9C%BA%E7%BB%83%E4%B9%A0/3.gif" alt=""><br>看到选中某些数字的时候，进行查询，显示对应的信息。<br>初步判断是通过数字判断，对应取出数据库的内容显示出来。<br>可以修改传入的参数，达到我们想要的查询。<br>可以尝试 or 1=1，看能否达到一个数据遍历的效果。<br>理解一下or 1=1在数据库中实现的效果。<br><img src="/images/%E9%9D%B6%E5%9C%BA%E7%BB%83%E4%B9%A0/30.png" alt=""><br><img src="/images/%E9%9D%B6%E5%9C%BA%E7%BB%83%E4%B9%A0/31.png" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">select username,email from member where id=1;  ##这一句是查询表中 username，email字段通过id=1来进行查找</span><br><span class="line">select username,email from member where id=1 or 1=1;  ##当后面加入一句or 1=1的时候，该句的意思就是select username,email from member。    id=1 or 1=1变成一个or判断  1真且为真，1=1为真，整句就为真，就只执行前面的select username,email from member</span><br></pre></td></tr></table></figure>
+
+<p>然后尝试在web端进行传参的修改。</p>
+<p><img src="/images/%E9%9D%B6%E5%9C%BA%E7%BB%83%E4%B9%A0/4.gif" alt=""></p>
+<p>这样就达到了一个数据遍历的效果</p>
+<h3 id="字符型注入"><a href="#字符型注入" class="headerlink" title="字符型注入"></a>字符型注入</h3><p>看一下界面使用效果。<br><img src="/images/%E9%9D%B6%E5%9C%BA%E7%BB%83%E4%B9%A0/5.gif" alt=""><br>这里是输入对应的字符以后会显示出相应的内容。</p>
+<p>看一下数据库中根据字符串的查询语句。<br><img src="/images/%E9%9D%B6%E5%9C%BA%E7%BB%83%E4%B9%A0/32.png" alt=""><br>字符串的查询需要添加’’两个单引号。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select id,email FROM member where username=&apos;kobe&apos;;</span><br></pre></td></tr></table></figure>
+<p>如果想要构造一个数据遍历的查询语句，应该是这样的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select id,email FROM member where username=&apos;kobe&apos; or 1=1;</span><br></pre></td></tr></table></figure>
+<p><img src="/images/%E9%9D%B6%E5%9C%BA%E7%BB%83%E4%B9%A0/33.png" alt=""></p>
+<p>看一下php中对于字符的传参是如何进行的，<br><img src="/images/%E9%9D%B6%E5%9C%BA%E7%BB%83%E4%B9%A0/34.png" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$name=$_GET[&apos;name&apos;];</span><br><span class="line">    //这里的变量是字符型，需要考虑闭合</span><br><span class="line">    $query=&quot;select id,email from member where username=&apos;$name&apos;&quot;;</span><br></pre></td></tr></table></figure>
+<p>这里是将输入的name的内容直接带进查询语句查询，内容在’’内，所以我们需要构造一个单引号’的闭合，所以我们键入的内容可以是</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kobe&apos; or 1=1#</span><br></pre></td></tr></table></figure>
+<p>#用于对后面的单引号’注释。</p>
+<p>这样键入的内容是kobe’ or 1=1#，带入查询后的操作语句就是</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$query=&quot;select id,email from member where username=&apos;kobe&apos; or 1=1#&apos;&quot;;</span><br></pre></td></tr></table></figure>
+
+<p>看一下效果<br><img src="/images/%E9%9D%B6%E5%9C%BA%E7%BB%83%E4%B9%A0/6.gif" alt=""></p>
+<h3 id="搜索型注入"><a href="#搜索型注入" class="headerlink" title="搜索型注入"></a>搜索型注入</h3><p>看一下界面使用效果。<br><img src="/images/%E9%9D%B6%E5%9C%BA%E7%BB%83%E4%B9%A0/7.gif" alt=""></p>
+<p>这应该是数据库中的模糊查询。<br><img src="/images/%E9%9D%B6%E5%9C%BA%E7%BB%83%E4%B9%A0/35.png" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * FROM member where username like &apos;%k%&apos;;</span><br></pre></td></tr></table></figure>
+
+<p>那我们同样是构造闭合再带入数据库操作语句去进行执行就可以了。<br><img src="/images/%E9%9D%B6%E5%9C%BA%E7%BB%83%E4%B9%A0/36.png" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * FROM member where username like &apos;%k%&apos; or 1=1#%&apos;;</span><br></pre></td></tr></table></figure>
+
+<p>看一下在web端的操作效果<br><img src="/images/%E9%9D%B6%E5%9C%BA%E7%BB%83%E4%B9%A0/8.gif" alt=""></p>
+<h3 id="union联合查询"><a href="#union联合查询" class="headerlink" title="union联合查询"></a>union联合查询</h3><p>联合查询的字段数需要和住查询一致。<br><img src="/images/%E9%9D%B6%E5%9C%BA%E7%BB%83%E4%B9%A0/37.png" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select id,email FROM member where username=&apos;kobe&apos; union select username,pw from member where id=1</span><br></pre></td></tr></table></figure>
+
+<p>在字符型注入中拼接上联合查询，可以查询其他字典内容。</p>
+<p>将</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kobe&apos; union select username,pw from member where id=1#</span><br></pre></td></tr></table></figure>
+<p>在web端键入。<br><img src="/images/%E9%9D%B6%E5%9C%BA%E7%BB%83%E4%B9%A0/9.gif" alt=""><br>可以查出id=1的username和pw</p>
+<p>利用联合注入还可以做很多事，例如查询其他表的内容。<br>例如查询user表的账号密码。<br><img src="/images/%E9%9D%B6%E5%9C%BA%E7%BB%83%E4%B9%A0/39.png" alt=""><br>给张图看一下其他的查询<br><img src="/images/%E9%9D%B6%E5%9C%BA%E7%BB%83%E4%B9%A0/38.png" alt=""></p>
+<p>可以使用order by排序判断字段数<br><img src="/images/%E9%9D%B6%E5%9C%BA%E7%BB%83%E4%B9%A0/40.png" alt=""><br><img src="/images/%E9%9D%B6%E5%9C%BA%E7%BB%83%E4%B9%A0/41.png" alt=""><br><img src="/images/%E9%9D%B6%E5%9C%BA%E7%BB%83%E4%B9%A0/10.gif" alt=""></p>
+<h3 id="基于函数的报错注入"><a href="#基于函数的报错注入" class="headerlink" title="基于函数的报错注入"></a>基于函数的报错注入</h3><p>这里其实我不是很理解，可能是因为以前学数据库的时候没用过这些函数吧。<br>不过看了视频做了点笔记，后面在好好琢磨一下。<br>技巧思路：<br>    在mysql中使用一些指定函数来制造报错，从而从报错信息中获取设定的信息。select/inset/update/delete都可以使用报错来获取信息。<br>背景条件：<br>    后台没有屏蔽数据库报错信息，在语法发生错误时会输出在前端。</p>
+<p>附上一张报错注入的图：<br><img src="/images/%E9%9D%B6%E5%9C%BA%E7%BB%83%E4%B9%A0/42.png" alt=""></p>
+<h3 id="insert-update注入"><a href="#insert-update注入" class="headerlink" title="insert/update注入"></a>insert/update注入</h3><p>这里也是利用函数报错注入，还没弄得太懂，后面再做了。<br>包括后面有个的一个delete注入，是抓包以后再包内进行函数报错注入。</p>
+<h3 id="http头注入"><a href="#http头注入" class="headerlink" title="http头注入"></a>http头注入</h3><p>对HTTP heade传过来的参数为进行过滤直接拼接进语句。<br>同样是利用函数参数报错注入。看一下界面。<br><img src="/images/%E9%9D%B6%E5%9C%BA%E7%BB%83%E4%B9%A0/43.png" alt=""></p>
+<p>然后在HTTP heade传参部分构造一个函数注入报错。<br><img src="/images/%E9%9D%B6%E5%9C%BA%E7%BB%83%E4%B9%A0/44.png" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos; and updatexml(1,concat(0x7e,database()),0)#</span><br></pre></td></tr></table></figure>
+<p>将此代码拼接到cookie处。</p>
+<h3 id="基于boolian的盲注"><a href="#基于boolian的盲注" class="headerlink" title="基于boolian的盲注"></a>基于boolian的盲注</h3><p>基于boolian的盲注的主要表现症状：<br>0，没有报错信息<br>1，不管正确的输入，还是错误的输入，都只显示两种情况（0或1）<br>2，在正确的输入下，输入and 1=1 /and 1=2即可判断</p>
+<p>通过真假的回显对比ASCII码来获取数据内容。</p>
+<p>看下操作过程：<br><img src="/images/%E9%9D%B6%E5%9C%BA%E7%BB%83%E4%B9%A0/11.gif" alt=""></p>
+<p>​<br><img src="/images/%E9%9D%B6%E5%9C%BA%E7%BB%83%E4%B9%A0/45.png" alt=""><br>此语句可以查询数据库第一个字符。</p>
+<p>将字符转换成ascii码<br><img src="/images/%E9%9D%B6%E5%9C%BA%E7%BB%83%E4%B9%A0/46.png" alt=""></p>
+<p>接下来可以通过对比ascii码的大小做判断，<br><img src="/images/%E9%9D%B6%E5%9C%BA%E7%BB%83%E4%B9%A0/47.png" alt=""><br><img src="/images/%E9%9D%B6%E5%9C%BA%E7%BB%83%E4%B9%A0/48.png" alt=""><br>大于100为真，大于113为假。</p>
+<p>通过这个我们就可以在web端进行boolian注入。<br><img src="/images/%E9%9D%B6%E5%9C%BA%E7%BB%83%E4%B9%A0/12.gif" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos; and ascii(substr(database(),1,1))&gt;113#</span><br></pre></td></tr></table></figure>
+
+<p>当然，我们可以先通过其他语句判断数据库名字长度。</p>
+<p>​    </p>
+<h3 id="基于时间的盲注"><a href="#基于时间的盲注" class="headerlink" title="基于时间的盲注"></a>基于时间的盲注</h3><p>这种用于没有回显的情况下的注入，利用时间判断，如果数据等于猜测的值，则执行sleep（5）<br>看一下界面。<br><img src="/images/%E9%9D%B6%E5%9C%BA%E7%BB%83%E4%B9%A0/13.gif" alt=""><br>不管我们尝试什么语句都只有一种回显。</p>
+<p><img src="/images/%E9%9D%B6%E5%9C%BA%E7%BB%83%E4%B9%A0/14.gif" alt=""><br>但是我们发现它可以执行sleep（5）语句。</p>
+<p>我们利用这个语句来进行基于时间的盲注。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kobe&apos; and if((substr(database(),1,1))=&apos;p&apos;,sleep(5),null)#</span><br></pre></td></tr></table></figure>
+<p><img src="/images/%E9%9D%B6%E5%9C%BA%E7%BB%83%E4%B9%A0/15.gif" alt=""></p>
+<p>当第一个字符等于’a’时，不执行sleep（5），当第一个字符等于’p’时，执行sleep（5）。</p>
+<h3 id="sql注入-OS远程控制"><a href="#sql注入-OS远程控制" class="headerlink" title="sql注入-OS远程控制"></a>sql注入-OS远程控制</h3><p>通过sql注入写入恶意代码<br>前提条件：<br>    1，需要知道远程目录<br>    2，需要远程目录有写权限<br>    3，需要数据库开启了secure_file_priv</p>
+<h1 id="——未完待续——"><a href="#——未完待续——" class="headerlink" title="——未完待续——"></a>——未完待续——</h1>
+    </div>
+    <p class="post-meta">
+        <span class="post-cat">分类：
+            <a class="cat-link" href="/categories/%E6%B8%97%E9%80%8F/">渗透</a>
+        </span>
+        <span class="post-tags">
+            标签：
+            
+    
+        <a href="/tags/%E6%B8%97%E9%80%8F/" title="渗透">渗透</a>
+    
+
+        </span>
+    </p>
+</article>
+<!-- 分享按钮 -->
+
+  <div class="article-share clearfix text-center">
+    <div class="share-area">
+      <span class="share-txt">分享到：</span>
+      <a href="javascript: window.open(' target="_blank" rel="noopener"http://service.weibo.com/share/share.php?url=' + encodeURIComponent(location.href) + '&title=' + document.title + '&language=zh_cn');" class="share-icon weibo"></a>
+      <a href="javascript: alert(' target="_blank" rel="noopener"请复制链接到微信并发送');" class="share-icon wechat"></a>
+      <a href="javascript: window.open(' target="_blank" rel="noopener"http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=' + encodeURIComponent(location.href) + '&title=' + document.title);" class="share-icon qqzone"></a>
+      <a href="javascript: window.open(' target="_blank" rel="noopener"http://connect.qq.com/widget/shareqq/index.html?url=' + encodeURIComponent(location.href) + '&desc=Jelon个人博客&title=' + document.title + '&callback=' + encodeURIComponent(location.href));" class="share-icon qq"></a>
+      <a href="javascript: window.open(' target="_blank" rel="noopener"http://shuo.douban.com/!service/share?href=' + encodeURIComponent(location.href) + '&name=' + document.title + '&text=' + document.title);" class="share-icon douban"></a>
+    </div>
+  </div>
+
+
+<!-- 上一篇/下一篇 -->
+
+<div class="article-nav clearfix">
+    
+    <span class="prev fl">
+        上一篇<br >
+        <a href="/2019/03/10/%E9%9D%B6%E5%9C%BA%E7%BB%83%E4%B9%A0-3/">
+            
+                靶场练习-3
+            
+        </a>
+    </span>
+    
+
+    
+    <span class="next fr">
+        下一篇<br >
+        <a href="/2019/03/08/%E9%9D%B6%E5%9C%BA%E7%BB%83%E4%B9%A0-1/">
+            
+                靶场练习-1
+            
+        </a>
+    </span>
+    
+</div>
+
+<!-- 文章评论 -->
+
+  <script src="/js/comment.js"></script>
+  <div id="comments" class="comment">
+    <!--
+    <div class="sign-bar">
+      GitHub 已登录!
+      <span class="sign-link">登出</span>
+    </div>
+    <section class="box">
+      <div class="com-avatar"><img src="/img/jelon.jpg" alt="avatar"></div>
+      <div class="com-text">
+        <div class="main">
+          <textarea class="text-area-edited show" placeholder="欢迎评论！"></textarea>
+          <div class="text-area-preview"></div>
+        </div>
+        <div class="switch">
+          <div class="switch-item on">编辑</div>
+          <div class="switch-item">预览</div>
+        </div>
+        <div class="button">提交</div>
+      </div>
+    </section>
+    <section class="tips">注：评论支持 markdown 语法！</section>
+    <section class="list-wrap">
+      <ul class="list">
+        <li>
+          <div class="user-avatar">
+            <a href="/">
+              <img src="/img/jelon.jpg" alt="user-avatar">
+            </a>
+          </div>
+          <div class="user-comment">
+            <div class="user-comment-header">
+              <span class="post-name">张德龙</span>
+              <span class="post-time">2017年12月12日</span>
+              <span class="like liked">已赞</span>
+              <span class="like-num">2</span>
+            </div>
+            <div class="user-comment-body">333333</div>
+          </div>
+        </li>
+        <li>
+          <div class="user-avatar">
+            <a href="/">
+              <img src="/img/jelon.jpg" alt="user-avatar">
+            </a>
+          </div>
+          <div class="user-comment">
+            <div class="user-comment-header">
+              <span class="post-name">刘德华</span>
+              <span class="post-time">2017年12月12日</span>
+              <span class="like">点赞</span>
+              <span class="like-num">2</span>
+            </div>
+            <div class="user-comment-body">vvvvv</div>
+          </div>
+        </li>
+      </ul>
+      <div class="page-nav">
+        <a href="javascript: void(0);" target="_blank" rel="noopener" class="item">1</a>
+        <a href="javascript: void(0);" target="_blank" rel="noopener" class="item">2</a>
+        <a href="javascript: void(0);" target="_blank" rel="noopener" class="item current">3</a>
+      </div>
+    </section>
+    -->
+  </div>
+  <script>
+  JELON.Comment({
+    container: 'comments',
+    label: '靶场练习-2' || '2019/03/09/靶场练习-2/',
+    owner: 'your_github_id',
+    repo: 'your_blog_comments',
+    clientId: 'your_client_id',
+    clientSecret: 'your_client_secret'
+  });
+  </script>
+
+
+            </div>
+
+        </section>
+        <!-- 侧栏部分 -->
+<aside class="sidebar">
+    <section class="widget">
+        <h3 class="widget-hd"><strong>文章分类</strong></h3>
+        <!-- 文章分类 -->
+<ul class="widget-bd">
+    
+    <li>
+        <a href="/categories/%E6%B8%97%E9%80%8F%E6%97%A5%E5%BF%97/">渗透日志</a>
+        <span class="badge">(3)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/%E6%AF%94%E8%B5%9B%E6%97%A5%E8%AE%B0/">比赛日记</a>
+        <span class="badge">(2)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/Python/">Python</a>
+        <span class="badge">(3)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7/">奇技淫巧</a>
+        <span class="badge">(10)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/python/">python</a>
+        <span class="badge">(5)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/PHP/">PHP</a>
+        <span class="badge">(1)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/%E6%B8%97%E9%80%8F/">渗透</a>
+        <span class="badge">(9)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
+        <span class="badge">(1)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/%E6%8A%80%E6%9C%AF%E7%A7%AF%E7%B4%AF/">技术积累</a>
+        <span class="badge">(2)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/">漏洞复现</a>
+        <span class="badge">(8)</span>
+    </li>
+    
+</ul>
+    </section>
+
+    
+    <section class="widget">
+        <h3 class="widget-hd"><strong>热门标签</strong></h3>
+        <!-- 文章标签 -->
+<div class="widget-bd tag-wrap">
+  
+    <a class="tag-item" href="/tags/%E6%B8%97%E9%80%8F/" title="渗透">渗透 (16)</a>
+  
+    <a class="tag-item" href="/tags/%E6%AF%94%E8%B5%9B/" title="比赛">比赛 (2)</a>
+  
+    <a class="tag-item" href="/tags/python/" title="python">python (7)</a>
+  
+    <a class="tag-item" href="/tags/EXP%E7%BB%83%E6%89%8B/" title="EXP练手">EXP练手 (1)</a>
+  
+    <a class="tag-item" href="/tags/%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7/" title="奇技淫巧">奇技淫巧 (7)</a>
+  
+    <a class="tag-item" href="/tags/%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F/" title="内网渗透">内网渗透 (5)</a>
+  
+    <a class="tag-item" href="/tags/PHP/" title="PHP">PHP (1)</a>
+  
+    <a class="tag-item" href="/tags/Python/" title="Python">Python (1)</a>
+  
+    <a class="tag-item" href="/tags/%E7%88%AC%E8%99%AB/" title="爬虫">爬虫 (1)</a>
+  
+    <a class="tag-item" href="/tags/SQL/" title="SQL">SQL (1)</a>
+  
+    <a class="tag-item" href="/tags/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/" title="漏洞复现">漏洞复现 (9)</a>
+  
+    <a class="tag-item" href="/tags/%E6%80%9D%E8%B7%AF%E6%80%BB%E7%BB%93/" title="思路总结">思路总结 (2)</a>
+  
+</div>
+    </section>
+    
+
+    
+
+    
+    <!-- 友情链接 -->
+    <section class="widget">
+        <h3 class="widget-hd"><strong>友情链接</strong></h3>
+        <!-- 文章分类 -->
+<ul class="widget-bd">
+    
+        <li>
+            <a href="https://jelon.top" target="_blank" title="Jelon个人前端小站">前端博客小站</a>
+        </li>
+    
+        <li>
+            <a href="https://www.baidu.com" target="_blank" title="百度搜索">百度</a>
+        </li>
+    
+</ul>
+    </section>
+    
+</aside>
+<!-- / 侧栏部分 -->
+    </div>
+
+    <!-- 博客底部 -->
+    <footer class="footer">
+    &copy;
+    
+        2016-2019
+    
+
+    <a href="/">Jelon Loves You</a>
+</footer>
+<div class="back-to-top" id="JELON__backToTop" title="返回顶部">返回顶部</div>
+
+    <!--博客js脚本 -->
+    <!-- 这里放网站js脚本 -->
+<script src="/js/main.js"></script>
+</body>
+</html>
