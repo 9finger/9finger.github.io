@@ -38,7 +38,7 @@
     <!--[if lt IE 9]>
     <div class="browsehappy">
         当前网页 <strong>不支持</strong>
-        你正在使用的浏览器. 为了正常的访问, 请 <a href="http://browsehappy.com/" target="_blank" rel="noopener">升级你的浏览器</a>.
+        你正在使用的浏览器. 为了正常的访问, 请 <a href="http://browsehappy.com/">升级你的浏览器</a>.
     </div>
     <![endif]-->
 
@@ -84,7 +84,7 @@
                     
                         <a href="https://www.facebook.com/profile.php?id=100011855760219&amp;ref=bookmarks" class="qqweibo" target="_blank"><b>■</b> Facebook</a>
                     
-                    <a href="javascript: void(0);" target="_blank" rel="noopener" class="wechat">
+                    <a href="javascript: void(0);" class="wechat">
                         <b>■</b>
                         公众号
                         <span class="popover">
@@ -121,10 +121,10 @@
         <p>Pocsuite 是知道创宇安全研究团队打造的一款基于漏洞与 PoC 的远程漏洞验证框架。Pocsuite 是知道创宇安全研究团队发展的基石，是团队发展至今持续维护的一个重要项目，保障了我们的 Web 安全研究能力的领先。</p>
 <a id="more"></a>
 
-<h2 id="Pocsuite的安装"><a href="#Pocsuite的安装" class="headerlink" title="Pocsuite的安装"></a>Pocsuite的安装</h2><p>下载Pocsuite<br>下载地址：<br>链接：<a href="https://github.com/knownsec/pocsuite" target="_blank" rel="noopener">https://github.com/knownsec/pocsuite</a></p>
+<h2 id="Pocsuite的安装"><a href="#Pocsuite的安装" class="headerlink" title="Pocsuite的安装"></a>Pocsuite的安装</h2><p>下载Pocsuite<br>下载地址：<br>链接：<a href="https://github.com/knownsec/pocsuite">https://github.com/knownsec/pocsuite</a></p>
 <p><strong>操作系统 Ubuntu</strong></p>
 <p>下载后拖进去，直接进到目录就可以使用了，需要安装python2环境，当你写的poc使用到第三方包的时候需要自己安装</p>
-<h2 id="Pocsuite的使用"><a href="#Pocsuite的使用" class="headerlink" title="Pocsuite的使用"></a>Pocsuite的使用</h2><p>这里有使用文档。<br><a href="https://www.seebug.org/help/dev" target="_blank" rel="noopener">https://www.seebug.org/help/dev</a></p>
+<h2 id="Pocsuite的使用"><a href="#Pocsuite的使用" class="headerlink" title="Pocsuite的使用"></a>Pocsuite的使用</h2><p>这里有使用文档。<br><a href="https://www.seebug.org/help/dev">https://www.seebug.org/help/dev</a></p>
 <h2 id="Pocsuite-poc编写"><a href="#Pocsuite-poc编写" class="headerlink" title="Pocsuite poc编写"></a>Pocsuite poc编写</h2><p>文档里面写的很清楚，不过是因为我昨晚自己一下子没能理解，后来今天写出来了一个poc，就讲一下。</p>
 <h3 id="verify函数"><a href="#verify函数" class="headerlink" title="verify函数"></a>verify函数</h3><p>这个是验证poc的函数，其实写法很自由的，就是你理解漏洞原理以后用代码去验证，只是我昨晚一直不明白，我写了poc以后如何使得他返还success。<br>先给你看我写的验证函数吧，其实就是前面jboss漏洞验证的原理。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">_verify</span><span class="params">(self)</span>:</span></span><br><span class="line">       result = &#123;&#125;  <span class="comment"># result是返回结果</span></span><br><span class="line">       <span class="comment"># 验证代码</span></span><br><span class="line">       httpurl = self.url + <span class="string">'/invoker/readonly'</span></span><br><span class="line">       NETWORK_STATUS = <span class="literal">True</span></span><br><span class="line">       r = requests.get(httpurl, timeout=<span class="number">1</span>)  <span class="comment"># 加一个1s的时间限制，不然超时异常太久了</span></span><br><span class="line">       zt = r.status_code</span><br><span class="line">       <span class="keyword">if</span> zt == <span class="number">500</span>:</span><br><span class="line">           vulurl = (httpurl)  <span class="comment"># if判断，当存在漏洞的时候将当前url+/invoker/readonly赋值给vulurl作为后面的result判断</span></span><br><span class="line">       <span class="keyword">if</span> zt == <span class="number">500</span>:</span><br><span class="line">           result[<span class="string">'VerifyInfo'</span>] = &#123;&#125;</span><br><span class="line">           result[<span class="string">'VerifyInfo'</span>][<span class="string">'URL'</span>] = vulurl</span><br><span class="line"></span><br><span class="line">       <span class="keyword">return</span> self.parse_attack(result)</span><br></pre></td></tr></table></figure>
@@ -159,11 +159,11 @@
   <div class="article-share clearfix text-center">
     <div class="share-area">
       <span class="share-txt">分享到：</span>
-      <a href="javascript: window.open(' target="_blank" rel="noopener"http://service.weibo.com/share/share.php?url=' + encodeURIComponent(location.href) + '&title=' + document.title + '&language=zh_cn');" class="share-icon weibo"></a>
-      <a href="javascript: alert(' target="_blank" rel="noopener"请复制链接到微信并发送');" class="share-icon wechat"></a>
-      <a href="javascript: window.open(' target="_blank" rel="noopener"http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=' + encodeURIComponent(location.href) + '&title=' + document.title);" class="share-icon qqzone"></a>
-      <a href="javascript: window.open(' target="_blank" rel="noopener"http://connect.qq.com/widget/shareqq/index.html?url=' + encodeURIComponent(location.href) + '&desc=Jelon个人博客&title=' + document.title + '&callback=' + encodeURIComponent(location.href));" class="share-icon qq"></a>
-      <a href="javascript: window.open(' target="_blank" rel="noopener"http://shuo.douban.com/!service/share?href=' + encodeURIComponent(location.href) + '&name=' + document.title + '&text=' + document.title);" class="share-icon douban"></a>
+      <a href="javascript: window.open('http://service.weibo.com/share/share.php?url=' + encodeURIComponent(location.href) + '&title=' + document.title + '&language=zh_cn');" class="share-icon weibo"></a>
+      <a href="javascript: alert('请复制链接到微信并发送');" class="share-icon wechat"></a>
+      <a href="javascript: window.open('http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=' + encodeURIComponent(location.href) + '&title=' + document.title);" class="share-icon qqzone"></a>
+      <a href="javascript: window.open('http://connect.qq.com/widget/shareqq/index.html?url=' + encodeURIComponent(location.href) + '&desc=Jelon个人博客&title=' + document.title + '&callback=' + encodeURIComponent(location.href));" class="share-icon qq"></a>
+      <a href="javascript: window.open('http://shuo.douban.com/!service/share?href=' + encodeURIComponent(location.href) + '&name=' + document.title + '&text=' + document.title);" class="share-icon douban"></a>
     </div>
   </div>
 
@@ -254,9 +254,9 @@
         </li>
       </ul>
       <div class="page-nav">
-        <a href="javascript: void(0);" target="_blank" rel="noopener" class="item">1</a>
-        <a href="javascript: void(0);" target="_blank" rel="noopener" class="item">2</a>
-        <a href="javascript: void(0);" target="_blank" rel="noopener" class="item current">3</a>
+        <a href="javascript: void(0);" class="item">1</a>
+        <a href="javascript: void(0);" class="item">2</a>
+        <a href="javascript: void(0);" class="item current">3</a>
       </div>
     </section>
     -->
@@ -284,6 +284,11 @@
 <ul class="widget-bd">
     
     <li>
+        <a href="/categories/%E6%AF%94%E8%B5%9B%E6%97%A5%E8%AE%B0/">比赛日记</a>
+        <span class="badge">(2)</span>
+    </li>
+    
+    <li>
         <a href="/categories/%E6%B8%97%E9%80%8F%E6%97%A5%E5%BF%97/">渗透日志</a>
         <span class="badge">(3)</span>
     </li>
@@ -294,28 +299,23 @@
     </li>
     
     <li>
-        <a href="/categories/%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7/">奇技淫巧</a>
-        <span class="badge">(10)</span>
-    </li>
-    
-    <li>
-        <a href="/categories/%E6%AF%94%E8%B5%9B%E6%97%A5%E8%AE%B0/">比赛日记</a>
-        <span class="badge">(2)</span>
-    </li>
-    
-    <li>
-        <a href="/categories/%E6%B8%97%E9%80%8F/">渗透</a>
-        <span class="badge">(9)</span>
-    </li>
-    
-    <li>
         <a href="/categories/python/">python</a>
         <span class="badge">(5)</span>
     </li>
     
     <li>
+        <a href="/categories/%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7/">奇技淫巧</a>
+        <span class="badge">(10)</span>
+    </li>
+    
+    <li>
         <a href="/categories/PHP/">PHP</a>
         <span class="badge">(1)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/%E6%B8%97%E9%80%8F/">渗透</a>
+        <span class="badge">(9)</span>
     </li>
     
     <li>
@@ -342,6 +342,8 @@
         <!-- 文章标签 -->
 <div class="widget-bd tag-wrap">
   
+    <a class="tag-item" href="/tags/%E6%AF%94%E8%B5%9B/" title="比赛">比赛 (2)</a>
+  
     <a class="tag-item" href="/tags/%E6%B8%97%E9%80%8F/" title="渗透">渗透 (16)</a>
   
     <a class="tag-item" href="/tags/python/" title="python">python (7)</a>
@@ -352,11 +354,9 @@
   
     <a class="tag-item" href="/tags/%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F/" title="内网渗透">内网渗透 (5)</a>
   
-    <a class="tag-item" href="/tags/%E6%AF%94%E8%B5%9B/" title="比赛">比赛 (2)</a>
+    <a class="tag-item" href="/tags/PHP/" title="PHP">PHP (1)</a>
   
     <a class="tag-item" href="/tags/Python/" title="Python">Python (1)</a>
-  
-    <a class="tag-item" href="/tags/PHP/" title="PHP">PHP (1)</a>
   
     <a class="tag-item" href="/tags/%E7%88%AC%E8%99%AB/" title="爬虫">爬虫 (1)</a>
   

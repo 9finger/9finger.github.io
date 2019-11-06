@@ -38,7 +38,7 @@
     <!--[if lt IE 9]>
     <div class="browsehappy">
         当前网页 <strong>不支持</strong>
-        你正在使用的浏览器. 为了正常的访问, 请 <a href="http://browsehappy.com/" target="_blank" rel="noopener">升级你的浏览器</a>.
+        你正在使用的浏览器. 为了正常的访问, 请 <a href="http://browsehappy.com/">升级你的浏览器</a>.
     </div>
     <![endif]-->
 
@@ -84,7 +84,7 @@
                     
                         <a href="https://www.facebook.com/profile.php?id=100011855760219&amp;ref=bookmarks" class="qqweibo" target="_blank"><b>■</b> Facebook</a>
                     
-                    <a href="javascript: void(0);" target="_blank" rel="noopener" class="wechat">
+                    <a href="javascript: void(0);" class="wechat">
                         <b>■</b>
                         公众号
                         <span class="popover">
@@ -177,14 +177,14 @@
 <p><img src="/images/iis6.x%E5%90%8E%E9%97%A8/26.jpg" alt="你想输入的替代文字"></p>
 <p>点击确定、然后单击”web服务扩展”、按图所示设置允许。</p>
 <p><img src="/images/iis6.x%E5%90%8E%E9%97%A8/27.jpg" alt="你想输入的替代文字"></p>
-<p>然后通过浏览器访问网站: <a href="http://fendo/myadmin/index.asp" target="_blank" rel="noopener">http://fendo/myadmin/index.asp</a> 显示成功!!!</p>
+<p>然后通过浏览器访问网站: <a href="http://fendo/myadmin/index.asp">http://fendo/myadmin/index.asp</a> 显示成功!!!</p>
 <p><img src="/images/iis6.x%E5%90%8E%E9%97%A8/28.jpg" alt="你想输入的替代文字"></p>
 <p>成功！！！</p>
 <p><img src="/images/iis6.x%E5%90%8E%E9%97%A8/29.jpg" alt="你想输入的替代文字"></p>
 <h2 id="放入后门"><a href="#放入后门" class="headerlink" title="放入后门"></a>放入后门</h2><p>我将后门放入Windows下的system32目录，因为那里的dll文件比较多，管理员不容易发现。<br>打开internet信息服务（IIS）管理器找到默认网站右键点击属性，点击ISAPI筛选器添加iis_x86.dlldll文件。<br>文章结束附上下载链接。<br><img src="/images/iis6.x%E5%90%8E%E9%97%A8/1.png" alt="你想输入的替代文字"></p>
 <h2 id="攻击"><a href="#攻击" class="headerlink" title="攻击"></a>攻击</h2><p>攻击环境Windows7+nc.exe<br>攻击机用nc监听端口，执行命令nc.exe -lvvp 80<br>修改User agent内容，这里以谷歌浏览器为例，点击More tools然后选中Network conditions<br><img src="/images/iis6.x%E5%90%8E%E9%97%A8/2.png" alt="你想输入的替代文字"></p>
 <p>一刷新就回弹shell了，但是我的nc.exe好像出问题一弹shell就闪退。我就放上师兄的效果图好了。<br><img src="/images/iis6.x%E5%90%8E%E9%97%A8/3.png" alt="你想输入的替代文字"></p>
-<h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><p>大牛博客：<br>micropoor.blogspot.com<br>32位dll下载：<br><a href="https://drive.google.com/file/d/1-dKhidlBXg3YZ144fejY8FPaYl2KX3Ot/view" target="_blank" rel="noopener">https://drive.google.com/file/d/1-dKhidlBXg3YZ144fejY8FPaYl2KX3Ot/view</a><br>64位dll下载：<br><a href="https://drive.google.com/file/d/1M5hh2IQsnb_sJwIAkOHIJecarcp2FDhL/view" target="_blank" rel="noopener">https://drive.google.com/file/d/1M5hh2IQsnb_sJwIAkOHIJecarcp2FDhL/view</a><br>下之前挂个代理，不然访问不到。</p>
+<h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><p>大牛博客：<br>micropoor.blogspot.com<br>32位dll下载：<br><a href="https://drive.google.com/file/d/1-dKhidlBXg3YZ144fejY8FPaYl2KX3Ot/view">https://drive.google.com/file/d/1-dKhidlBXg3YZ144fejY8FPaYl2KX3Ot/view</a><br>64位dll下载：<br><a href="https://drive.google.com/file/d/1M5hh2IQsnb_sJwIAkOHIJecarcp2FDhL/view">https://drive.google.com/file/d/1M5hh2IQsnb_sJwIAkOHIJecarcp2FDhL/view</a><br>下之前挂个代理，不然访问不到。</p>
 <h2 id="分析一波"><a href="#分析一波" class="headerlink" title="分析一波"></a>分析一波</h2><p>这个后门就是修改文件头访问网站的时候触发这个后门反弹shell，总的来说是个好的招式，只是觉得不够隐蔽，因为在iis哪里调用这个dll，管理员翻一下就发现了。但是总的来说还是挺好用的吧。</p>
 
     </div>
@@ -209,11 +209,11 @@
   <div class="article-share clearfix text-center">
     <div class="share-area">
       <span class="share-txt">分享到：</span>
-      <a href="javascript: window.open(' target="_blank" rel="noopener"http://service.weibo.com/share/share.php?url=' + encodeURIComponent(location.href) + '&title=' + document.title + '&language=zh_cn');" class="share-icon weibo"></a>
-      <a href="javascript: alert(' target="_blank" rel="noopener"请复制链接到微信并发送');" class="share-icon wechat"></a>
-      <a href="javascript: window.open(' target="_blank" rel="noopener"http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=' + encodeURIComponent(location.href) + '&title=' + document.title);" class="share-icon qqzone"></a>
-      <a href="javascript: window.open(' target="_blank" rel="noopener"http://connect.qq.com/widget/shareqq/index.html?url=' + encodeURIComponent(location.href) + '&desc=Jelon个人博客&title=' + document.title + '&callback=' + encodeURIComponent(location.href));" class="share-icon qq"></a>
-      <a href="javascript: window.open(' target="_blank" rel="noopener"http://shuo.douban.com/!service/share?href=' + encodeURIComponent(location.href) + '&name=' + document.title + '&text=' + document.title);" class="share-icon douban"></a>
+      <a href="javascript: window.open('http://service.weibo.com/share/share.php?url=' + encodeURIComponent(location.href) + '&title=' + document.title + '&language=zh_cn');" class="share-icon weibo"></a>
+      <a href="javascript: alert('请复制链接到微信并发送');" class="share-icon wechat"></a>
+      <a href="javascript: window.open('http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=' + encodeURIComponent(location.href) + '&title=' + document.title);" class="share-icon qqzone"></a>
+      <a href="javascript: window.open('http://connect.qq.com/widget/shareqq/index.html?url=' + encodeURIComponent(location.href) + '&desc=Jelon个人博客&title=' + document.title + '&callback=' + encodeURIComponent(location.href));" class="share-icon qq"></a>
+      <a href="javascript: window.open('http://shuo.douban.com/!service/share?href=' + encodeURIComponent(location.href) + '&name=' + document.title + '&text=' + document.title);" class="share-icon douban"></a>
     </div>
   </div>
 
@@ -304,9 +304,9 @@
         </li>
       </ul>
       <div class="page-nav">
-        <a href="javascript: void(0);" target="_blank" rel="noopener" class="item">1</a>
-        <a href="javascript: void(0);" target="_blank" rel="noopener" class="item">2</a>
-        <a href="javascript: void(0);" target="_blank" rel="noopener" class="item current">3</a>
+        <a href="javascript: void(0);" class="item">1</a>
+        <a href="javascript: void(0);" class="item">2</a>
+        <a href="javascript: void(0);" class="item current">3</a>
       </div>
     </section>
     -->
@@ -334,6 +334,11 @@
 <ul class="widget-bd">
     
     <li>
+        <a href="/categories/%E6%AF%94%E8%B5%9B%E6%97%A5%E8%AE%B0/">比赛日记</a>
+        <span class="badge">(2)</span>
+    </li>
+    
+    <li>
         <a href="/categories/%E6%B8%97%E9%80%8F%E6%97%A5%E5%BF%97/">渗透日志</a>
         <span class="badge">(3)</span>
     </li>
@@ -344,28 +349,23 @@
     </li>
     
     <li>
-        <a href="/categories/%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7/">奇技淫巧</a>
-        <span class="badge">(10)</span>
-    </li>
-    
-    <li>
-        <a href="/categories/%E6%AF%94%E8%B5%9B%E6%97%A5%E8%AE%B0/">比赛日记</a>
-        <span class="badge">(2)</span>
-    </li>
-    
-    <li>
-        <a href="/categories/%E6%B8%97%E9%80%8F/">渗透</a>
-        <span class="badge">(9)</span>
-    </li>
-    
-    <li>
         <a href="/categories/python/">python</a>
         <span class="badge">(5)</span>
     </li>
     
     <li>
+        <a href="/categories/%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7/">奇技淫巧</a>
+        <span class="badge">(10)</span>
+    </li>
+    
+    <li>
         <a href="/categories/PHP/">PHP</a>
         <span class="badge">(1)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/%E6%B8%97%E9%80%8F/">渗透</a>
+        <span class="badge">(9)</span>
     </li>
     
     <li>
@@ -392,6 +392,8 @@
         <!-- 文章标签 -->
 <div class="widget-bd tag-wrap">
   
+    <a class="tag-item" href="/tags/%E6%AF%94%E8%B5%9B/" title="比赛">比赛 (2)</a>
+  
     <a class="tag-item" href="/tags/%E6%B8%97%E9%80%8F/" title="渗透">渗透 (16)</a>
   
     <a class="tag-item" href="/tags/python/" title="python">python (7)</a>
@@ -402,11 +404,9 @@
   
     <a class="tag-item" href="/tags/%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F/" title="内网渗透">内网渗透 (5)</a>
   
-    <a class="tag-item" href="/tags/%E6%AF%94%E8%B5%9B/" title="比赛">比赛 (2)</a>
+    <a class="tag-item" href="/tags/PHP/" title="PHP">PHP (1)</a>
   
     <a class="tag-item" href="/tags/Python/" title="Python">Python (1)</a>
-  
-    <a class="tag-item" href="/tags/PHP/" title="PHP">PHP (1)</a>
   
     <a class="tag-item" href="/tags/%E7%88%AC%E8%99%AB/" title="爬虫">爬虫 (1)</a>
   

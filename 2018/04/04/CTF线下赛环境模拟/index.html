@@ -38,7 +38,7 @@
     <!--[if lt IE 9]>
     <div class="browsehappy">
         当前网页 <strong>不支持</strong>
-        你正在使用的浏览器. 为了正常的访问, 请 <a href="http://browsehappy.com/" target="_blank" rel="noopener">升级你的浏览器</a>.
+        你正在使用的浏览器. 为了正常的访问, 请 <a href="http://browsehappy.com/">升级你的浏览器</a>.
     </div>
     <![endif]-->
 
@@ -84,7 +84,7 @@
                     
                         <a href="https://www.facebook.com/profile.php?id=100011855760219&amp;ref=bookmarks" class="qqweibo" target="_blank"><b>■</b> Facebook</a>
                     
-                    <a href="javascript: void(0);" target="_blank" rel="noopener" class="wechat">
+                    <a href="javascript: void(0);" class="wechat">
                         <b>■</b>
                         公众号
                         <span class="popover">
@@ -140,13 +140,13 @@
 <p>然后修改/var/www的目录权限<br>命令如下</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod <span class="number">777</span> /<span class="keyword">var</span>/www</span><br></pre></td></tr></table></figure>
 <p><img src="/images/CTF%E7%BA%BF%E4%B8%8B%E8%B5%9B%E7%8E%AF%E5%A2%83%E6%A8%A1%E6%8B%9F/12.png" alt=""></p>
-<p>权限修改好以后就可以对文件夹内的东西进行任意操作了。我把源码放入/var/www中，然后访问<a href="http://localhost/wp/index.php" target="_blank" rel="noopener">http://localhost/wp/index.php</a><br>出现如下：<br><img src="/images/CTF%E7%BA%BF%E4%B8%8B%E8%B5%9B%E7%8E%AF%E5%A2%83%E6%A8%A1%E6%8B%9F/13.png" alt=""></p>
+<p>权限修改好以后就可以对文件夹内的东西进行任意操作了。我把源码放入/var/www中，然后访问<a href="http://localhost/wp/index.php">http://localhost/wp/index.php</a><br>出现如下：<br><img src="/images/CTF%E7%BA%BF%E4%B8%8B%E8%B5%9B%E7%8E%AF%E5%A2%83%E6%A8%A1%E6%8B%9F/13.png" alt=""></p>
 <p>数据库没连接，当时我百度了一下。百度给出了这个方法。<br><img src="/images/CTF%E7%BA%BF%E4%B8%8B%E8%B5%9B%E7%8E%AF%E5%A2%83%E6%A8%A1%E6%8B%9F/14.png" alt=""></p>
 <p>意思就是创建一个wordpress的数据库，在创建一个数据库账号。在wordpress的配置文件修改，就可以了。<br>我就说说我后来的操作吧。<br>打开终端：</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sudo su                                 #切换到root权限</span><br><span class="line">mysql -u root -p                        #登录数据库 </span><br><span class="line">CREATE DATABASE wordpress;              #创建WordPress的数据库</span><br><span class="line">CREATE USER wordpressadmin@localhost IDENTIFIED BY 'wordpresspassword';     #创建数据库管理员 </span><br><span class="line">GRANT ALL PRIVILEGES ON wordpress.* TO wordpressadmin@localhost;            #将管理权限赋给管理员</span><br><span class="line">FLUSH PRIVILEGES;</span><br><span class="line">exit                                    #刷新权限信息来激活用户权限 </span><br><span class="line">sudo service mysql restart              #重启MySQL</span><br></pre></td></tr></table></figure>
 
 <p>数据库就建立好了。再修改wordpress的配置信息。<br><img src="/images/CTF%E7%BA%BF%E4%B8%8B%E8%B5%9B%E7%8E%AF%E5%A2%83%E6%A8%A1%E6%8B%9F/15.png" alt=""></p>
-<p>访问<a href="http://localhost/wp/wp-admin/install.php，写入内容就可以访问了。" target="_blank" rel="noopener">http://localhost/wp/wp-admin/install.php，写入内容就可以访问了。</a><br><img src="/images/CTF%E7%BA%BF%E4%B8%8B%E8%B5%9B%E7%8E%AF%E5%A2%83%E6%A8%A1%E6%8B%9F/16.png" alt=""></p>
+<p>访问<a href="http://localhost/wp/wp-admin/install.php，写入内容就可以访问了。">http://localhost/wp/wp-admin/install.php，写入内容就可以访问了。</a><br><img src="/images/CTF%E7%BA%BF%E4%B8%8B%E8%B5%9B%E7%8E%AF%E5%A2%83%E6%A8%A1%E6%8B%9F/16.png" alt=""></p>
 <h2 id="phpcms-v9的搭建"><a href="#phpcms-v9的搭建" class="headerlink" title="phpcms v9的搭建"></a>phpcms v9的搭建</h2><p>同理将源码放入/var/www的目录下。<br>1·打开网http://你的域名/install/index.php<br><img src="/images/CTF%E7%BA%BF%E4%B8%8B%E8%B5%9B%E7%8E%AF%E5%A2%83%E6%A8%A1%E6%8B%9F/1.jpg" alt=""></p>
 <p>2·点击“开始安装”进入下一步环境检测，功能影响，只要是都是绿色的打勾就可以进行下一步安装了。<br><img src="/images/CTF%E7%BA%BF%E4%B8%8B%E8%B5%9B%E7%8E%AF%E5%A2%83%E6%A8%A1%E6%8B%9F/2.jpg" alt=""></p>
 <p>3·全新安装包括phpsso(PHPSSO是用PHP开发的单点登录系统。在接入PHPSSO的多个应用系统中，用户只需要登录一次就可以访问所有相互信任的应用系统)。其他模块根据需要安装。<br><img src="/images/CTF%E7%BA%BF%E4%B8%8B%E8%B5%9B%E7%8E%AF%E5%A2%83%E6%A8%A1%E6%8B%9F/3.jpg" alt=""></p>
@@ -191,11 +191,11 @@
   <div class="article-share clearfix text-center">
     <div class="share-area">
       <span class="share-txt">分享到：</span>
-      <a href="javascript: window.open(' target="_blank" rel="noopener"http://service.weibo.com/share/share.php?url=' + encodeURIComponent(location.href) + '&title=' + document.title + '&language=zh_cn');" class="share-icon weibo"></a>
-      <a href="javascript: alert(' target="_blank" rel="noopener"请复制链接到微信并发送');" class="share-icon wechat"></a>
-      <a href="javascript: window.open(' target="_blank" rel="noopener"http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=' + encodeURIComponent(location.href) + '&title=' + document.title);" class="share-icon qqzone"></a>
-      <a href="javascript: window.open(' target="_blank" rel="noopener"http://connect.qq.com/widget/shareqq/index.html?url=' + encodeURIComponent(location.href) + '&desc=Jelon个人博客&title=' + document.title + '&callback=' + encodeURIComponent(location.href));" class="share-icon qq"></a>
-      <a href="javascript: window.open(' target="_blank" rel="noopener"http://shuo.douban.com/!service/share?href=' + encodeURIComponent(location.href) + '&name=' + document.title + '&text=' + document.title);" class="share-icon douban"></a>
+      <a href="javascript: window.open('http://service.weibo.com/share/share.php?url=' + encodeURIComponent(location.href) + '&title=' + document.title + '&language=zh_cn');" class="share-icon weibo"></a>
+      <a href="javascript: alert('请复制链接到微信并发送');" class="share-icon wechat"></a>
+      <a href="javascript: window.open('http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=' + encodeURIComponent(location.href) + '&title=' + document.title);" class="share-icon qqzone"></a>
+      <a href="javascript: window.open('http://connect.qq.com/widget/shareqq/index.html?url=' + encodeURIComponent(location.href) + '&desc=Jelon个人博客&title=' + document.title + '&callback=' + encodeURIComponent(location.href));" class="share-icon qq"></a>
+      <a href="javascript: window.open('http://shuo.douban.com/!service/share?href=' + encodeURIComponent(location.href) + '&name=' + document.title + '&text=' + document.title);" class="share-icon douban"></a>
     </div>
   </div>
 
@@ -286,9 +286,9 @@
         </li>
       </ul>
       <div class="page-nav">
-        <a href="javascript: void(0);" target="_blank" rel="noopener" class="item">1</a>
-        <a href="javascript: void(0);" target="_blank" rel="noopener" class="item">2</a>
-        <a href="javascript: void(0);" target="_blank" rel="noopener" class="item current">3</a>
+        <a href="javascript: void(0);" class="item">1</a>
+        <a href="javascript: void(0);" class="item">2</a>
+        <a href="javascript: void(0);" class="item current">3</a>
       </div>
     </section>
     -->
@@ -316,6 +316,11 @@
 <ul class="widget-bd">
     
     <li>
+        <a href="/categories/%E6%AF%94%E8%B5%9B%E6%97%A5%E8%AE%B0/">比赛日记</a>
+        <span class="badge">(2)</span>
+    </li>
+    
+    <li>
         <a href="/categories/%E6%B8%97%E9%80%8F%E6%97%A5%E5%BF%97/">渗透日志</a>
         <span class="badge">(3)</span>
     </li>
@@ -326,28 +331,23 @@
     </li>
     
     <li>
-        <a href="/categories/%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7/">奇技淫巧</a>
-        <span class="badge">(10)</span>
-    </li>
-    
-    <li>
-        <a href="/categories/%E6%AF%94%E8%B5%9B%E6%97%A5%E8%AE%B0/">比赛日记</a>
-        <span class="badge">(2)</span>
-    </li>
-    
-    <li>
-        <a href="/categories/%E6%B8%97%E9%80%8F/">渗透</a>
-        <span class="badge">(9)</span>
-    </li>
-    
-    <li>
         <a href="/categories/python/">python</a>
         <span class="badge">(5)</span>
     </li>
     
     <li>
+        <a href="/categories/%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7/">奇技淫巧</a>
+        <span class="badge">(10)</span>
+    </li>
+    
+    <li>
         <a href="/categories/PHP/">PHP</a>
         <span class="badge">(1)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/%E6%B8%97%E9%80%8F/">渗透</a>
+        <span class="badge">(9)</span>
     </li>
     
     <li>
@@ -374,6 +374,8 @@
         <!-- 文章标签 -->
 <div class="widget-bd tag-wrap">
   
+    <a class="tag-item" href="/tags/%E6%AF%94%E8%B5%9B/" title="比赛">比赛 (2)</a>
+  
     <a class="tag-item" href="/tags/%E6%B8%97%E9%80%8F/" title="渗透">渗透 (16)</a>
   
     <a class="tag-item" href="/tags/python/" title="python">python (7)</a>
@@ -384,11 +386,9 @@
   
     <a class="tag-item" href="/tags/%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F/" title="内网渗透">内网渗透 (5)</a>
   
-    <a class="tag-item" href="/tags/%E6%AF%94%E8%B5%9B/" title="比赛">比赛 (2)</a>
+    <a class="tag-item" href="/tags/PHP/" title="PHP">PHP (1)</a>
   
     <a class="tag-item" href="/tags/Python/" title="Python">Python (1)</a>
-  
-    <a class="tag-item" href="/tags/PHP/" title="PHP">PHP (1)</a>
   
     <a class="tag-item" href="/tags/%E7%88%AC%E8%99%AB/" title="爬虫">爬虫 (1)</a>
   

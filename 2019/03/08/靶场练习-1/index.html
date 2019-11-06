@@ -38,7 +38,7 @@
     <!--[if lt IE 9]>
     <div class="browsehappy">
         当前网页 <strong>不支持</strong>
-        你正在使用的浏览器. 为了正常的访问, 请 <a href="http://browsehappy.com/" target="_blank" rel="noopener">升级你的浏览器</a>.
+        你正在使用的浏览器. 为了正常的访问, 请 <a href="http://browsehappy.com/">升级你的浏览器</a>.
     </div>
     <![endif]-->
 
@@ -84,7 +84,7 @@
                     
                         <a href="https://www.facebook.com/profile.php?id=100011855760219&amp;ref=bookmarks" class="qqweibo" target="_blank"><b>■</b> Facebook</a>
                     
-                    <a href="javascript: void(0);" target="_blank" rel="noopener" class="wechat">
+                    <a href="javascript: void(0);" class="wechat">
                         <b>■</b>
                         公众号
                         <span class="popover">
@@ -146,7 +146,7 @@
 <p>测试写上一个xss弹窗代码。<br><img src="/images/%E9%9D%B6%E5%9C%BA%E7%BB%83%E4%B9%A0/20.png" alt=""><br>     做了输入限制，看一下界面代码。<br><img src="/images/%E9%9D%B6%E5%9C%BA%E7%BB%83%E4%B9%A0/21.png" alt=""><br>    前端做了输入的长度限制，在前端做得限制都是不安全的，客户可以进行修改。<br><img src="/images/%E9%9D%B6%E5%9C%BA%E7%BB%83%E4%B9%A0/22.png" alt=""><br>    弹窗成功！<br><img src="/images/%E9%9D%B6%E5%9C%BA%E7%BB%83%E4%B9%A0/23.png" alt=""><br>    是一个get的xss反射，我们可以通过输入盗取cookie的JavaScript代码，发送带有盗取cookie的链接给别人盗取别人的cookie。<br><img src="/images/%E9%9D%B6%E5%9C%BA%E7%BB%83%E4%B9%A0/24.png" alt=""><br>    盗取cookie可搭建xss平台，然后生成盗取代码将盗取到的cookie发送到平台上。</p>
 <h3 id="反射性xss-post"><a href="#反射性xss-post" class="headerlink" title="反射性xss(post)"></a>反射性xss(post)</h3><p>看一下界面。<br><img src="/images/%E9%9D%B6%E5%9C%BA%E7%BB%83%E4%B9%A0/25.png" alt=""><br>测试写上一个xss弹窗代码。<br><img src="/images/%E9%9D%B6%E5%9C%BA%E7%BB%83%E4%B9%A0/26.png" alt=""><br>是以post请求方式发送的。<br><img src="/images/%E9%9D%B6%E5%9C%BA%E7%BB%83%E4%B9%A0/27.png" alt=""></p>
 <p>这个漏洞的方法，别人教的我觉得有点鸡肋，是搭建一个web页面，页面的内容在访问这个页面的时候想这个漏洞页面发送一个post请求将cookie劫持到xss平台。</p>
-<h3 id="DOM型xss"><a href="#DOM型xss" class="headerlink" title="DOM型xss"></a>DOM型xss</h3><p>DOM是纯前端的操作，不涉及后台。在这个靶场下利用起来比较鸡肋。<br>只有在第二个环境下有个类似get型xss的利用。就不想做了。<br>然后自己看看网上的关于DOM型xss利用方式，看到了一个dvwa靶场的xss可以在DOM型xss哪里直接将cookie反弹到kali的nc下。<br>这里就留个链接，后面再练习。<br><a href="https://blog.csdn.net/ski_12/article/details/60468362" target="_blank" rel="noopener">https://blog.csdn.net/ski_12/article/details/60468362</a></p>
+<h3 id="DOM型xss"><a href="#DOM型xss" class="headerlink" title="DOM型xss"></a>DOM型xss</h3><p>DOM是纯前端的操作，不涉及后台。在这个靶场下利用起来比较鸡肋。<br>只有在第二个环境下有个类似get型xss的利用。就不想做了。<br>然后自己看看网上的关于DOM型xss利用方式，看到了一个dvwa靶场的xss可以在DOM型xss哪里直接将cookie反弹到kali的nc下。<br>这里就留个链接，后面再练习。<br><a href="https://blog.csdn.net/ski_12/article/details/60468362">https://blog.csdn.net/ski_12/article/details/60468362</a></p>
 <h3 id="xss盲打"><a href="#xss盲打" class="headerlink" title="xss盲打"></a>xss盲打</h3><p>这里是一个设想的环境，前端输入的xss，在后台直接执行，自己不知道会不会成功。不做了。</p>
 <h3 id="xss之过滤"><a href="#xss之过滤" class="headerlink" title="xss之过滤"></a>xss之过滤</h3><p>过滤主要看黑盒测试的水平了，判断源码对什么进行了过滤再进行绕过。这个靶场就只是做了一个对script的过滤，只要通过大小写绕过就可以了。<br>这个靶场只是让我们了解一下，更深的得自己去琢磨。</p>
 <h3 id="xss的键盘记录"><a href="#xss的键盘记录" class="headerlink" title="xss的键盘记录"></a>xss的键盘记录</h3><p>这里我没做，但是看了教程做了笔记。<br>通过异步同步将键盘输入提交到自己搭建的xss的平台，要允许同源策略请求。</p>
@@ -177,11 +177,11 @@
   <div class="article-share clearfix text-center">
     <div class="share-area">
       <span class="share-txt">分享到：</span>
-      <a href="javascript: window.open(' target="_blank" rel="noopener"http://service.weibo.com/share/share.php?url=' + encodeURIComponent(location.href) + '&title=' + document.title + '&language=zh_cn');" class="share-icon weibo"></a>
-      <a href="javascript: alert(' target="_blank" rel="noopener"请复制链接到微信并发送');" class="share-icon wechat"></a>
-      <a href="javascript: window.open(' target="_blank" rel="noopener"http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=' + encodeURIComponent(location.href) + '&title=' + document.title);" class="share-icon qqzone"></a>
-      <a href="javascript: window.open(' target="_blank" rel="noopener"http://connect.qq.com/widget/shareqq/index.html?url=' + encodeURIComponent(location.href) + '&desc=Jelon个人博客&title=' + document.title + '&callback=' + encodeURIComponent(location.href));" class="share-icon qq"></a>
-      <a href="javascript: window.open(' target="_blank" rel="noopener"http://shuo.douban.com/!service/share?href=' + encodeURIComponent(location.href) + '&name=' + document.title + '&text=' + document.title);" class="share-icon douban"></a>
+      <a href="javascript: window.open('http://service.weibo.com/share/share.php?url=' + encodeURIComponent(location.href) + '&title=' + document.title + '&language=zh_cn');" class="share-icon weibo"></a>
+      <a href="javascript: alert('请复制链接到微信并发送');" class="share-icon wechat"></a>
+      <a href="javascript: window.open('http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=' + encodeURIComponent(location.href) + '&title=' + document.title);" class="share-icon qqzone"></a>
+      <a href="javascript: window.open('http://connect.qq.com/widget/shareqq/index.html?url=' + encodeURIComponent(location.href) + '&desc=Jelon个人博客&title=' + document.title + '&callback=' + encodeURIComponent(location.href));" class="share-icon qq"></a>
+      <a href="javascript: window.open('http://shuo.douban.com/!service/share?href=' + encodeURIComponent(location.href) + '&name=' + document.title + '&text=' + document.title);" class="share-icon douban"></a>
     </div>
   </div>
 
@@ -272,9 +272,9 @@
         </li>
       </ul>
       <div class="page-nav">
-        <a href="javascript: void(0);" target="_blank" rel="noopener" class="item">1</a>
-        <a href="javascript: void(0);" target="_blank" rel="noopener" class="item">2</a>
-        <a href="javascript: void(0);" target="_blank" rel="noopener" class="item current">3</a>
+        <a href="javascript: void(0);" class="item">1</a>
+        <a href="javascript: void(0);" class="item">2</a>
+        <a href="javascript: void(0);" class="item current">3</a>
       </div>
     </section>
     -->
@@ -302,6 +302,11 @@
 <ul class="widget-bd">
     
     <li>
+        <a href="/categories/%E6%AF%94%E8%B5%9B%E6%97%A5%E8%AE%B0/">比赛日记</a>
+        <span class="badge">(2)</span>
+    </li>
+    
+    <li>
         <a href="/categories/%E6%B8%97%E9%80%8F%E6%97%A5%E5%BF%97/">渗透日志</a>
         <span class="badge">(3)</span>
     </li>
@@ -312,28 +317,23 @@
     </li>
     
     <li>
-        <a href="/categories/%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7/">奇技淫巧</a>
-        <span class="badge">(10)</span>
-    </li>
-    
-    <li>
-        <a href="/categories/%E6%AF%94%E8%B5%9B%E6%97%A5%E8%AE%B0/">比赛日记</a>
-        <span class="badge">(2)</span>
-    </li>
-    
-    <li>
-        <a href="/categories/%E6%B8%97%E9%80%8F/">渗透</a>
-        <span class="badge">(9)</span>
-    </li>
-    
-    <li>
         <a href="/categories/python/">python</a>
         <span class="badge">(5)</span>
     </li>
     
     <li>
+        <a href="/categories/%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7/">奇技淫巧</a>
+        <span class="badge">(10)</span>
+    </li>
+    
+    <li>
         <a href="/categories/PHP/">PHP</a>
         <span class="badge">(1)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/%E6%B8%97%E9%80%8F/">渗透</a>
+        <span class="badge">(9)</span>
     </li>
     
     <li>
@@ -360,6 +360,8 @@
         <!-- 文章标签 -->
 <div class="widget-bd tag-wrap">
   
+    <a class="tag-item" href="/tags/%E6%AF%94%E8%B5%9B/" title="比赛">比赛 (2)</a>
+  
     <a class="tag-item" href="/tags/%E6%B8%97%E9%80%8F/" title="渗透">渗透 (16)</a>
   
     <a class="tag-item" href="/tags/python/" title="python">python (7)</a>
@@ -370,11 +372,9 @@
   
     <a class="tag-item" href="/tags/%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F/" title="内网渗透">内网渗透 (5)</a>
   
-    <a class="tag-item" href="/tags/%E6%AF%94%E8%B5%9B/" title="比赛">比赛 (2)</a>
+    <a class="tag-item" href="/tags/PHP/" title="PHP">PHP (1)</a>
   
     <a class="tag-item" href="/tags/Python/" title="Python">Python (1)</a>
-  
-    <a class="tag-item" href="/tags/PHP/" title="PHP">PHP (1)</a>
   
     <a class="tag-item" href="/tags/%E7%88%AC%E8%99%AB/" title="爬虫">爬虫 (1)</a>
   
