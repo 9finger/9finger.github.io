@@ -20,7 +20,7 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;www.runoob.com&#x2F;wp-content&#x2F;uploads&#x2F;2014&#x2F;09&#x2F;B2FE1EC7-6477-439B-8F50-82D537673799.jpg">
 <meta property="og:image" content="https:&#x2F;&#x2F;www.runoob.com&#x2F;wp-content&#x2F;uploads&#x2F;2014&#x2F;09&#x2F;8962A4F1-B78C-4877-B328-903366EA1470.jpg">
 <meta property="og:image" content="https:&#x2F;&#x2F;www.runoob.com&#x2F;wp-content&#x2F;uploads&#x2F;2014&#x2F;09&#x2F;cpp_goto_statement.jpg">
-<meta property="og:updated_time" content="2019-11-06T07:10:13.538Z">
+<meta property="og:updated_time" content="2019-11-08T12:27:03.329Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;www.runoob.com&#x2F;wp-content&#x2F;uploads&#x2F;2014&#x2F;09&#x2F;v2-749cc641eb4d5dafd085e8c23f8826aa_hd.png">
   
@@ -366,6 +366,8 @@
           
         <p>学习C语言，自己做的笔记。<del>其实大多是抄菜鸟教程的，只是是自己理解要记的部分。</del></p>
 <a id="more"></a>
+
+
 
 <h1 id="C语言学习笔记"><a href="#C语言学习笔记" class="headerlink" title="C语言学习笔记"></a>C语言学习笔记</h1><h2 id="C-程序结构"><a href="#C-程序结构" class="headerlink" title="C 程序结构"></a>C 程序结构</h2><p>C 程序主要包括以下部分：</p>
 <ul>
@@ -1290,8 +1292,215 @@
 <p>当上面的代码被编译和执行时，它会产生下列结果：</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">a 的值： <span class="number">10</span></span><br><span class="line">a 的值： <span class="number">11</span></span><br><span class="line">a 的值： <span class="number">12</span></span><br><span class="line">a 的值： <span class="number">13</span></span><br><span class="line">a 的值： <span class="number">14</span></span><br><span class="line">a 的值： <span class="number">16</span></span><br><span class="line">a 的值： <span class="number">17</span></span><br><span class="line">a 的值： <span class="number">18</span></span><br><span class="line">a 的值： <span class="number">19</span></span><br></pre></td></tr></table></figure>
 
+<h2 id="C-函数"><a href="#C-函数" class="headerlink" title="C    函数"></a>C    函数</h2><p> 函数是一组一起执行一个任务的语句。每个 C 程序都至少有一个函数，即主函数 <strong>main()</strong> ，所有简单的程序都可以定义其他额外的函数。 </p>
+<h3 id="定义函数"><a href="#定义函数" class="headerlink" title="定义函数"></a>定义函数</h3><p>C 语言中的函数定义的一般形式如下：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">return_type <span class="title">function_name</span><span class="params">( parameter <span class="built_in">list</span> )</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">   body of the function</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<p>在 C 语言中，函数由一个函数头和一个函数主体组成。下面列出一个函数的所有组成部分：</p>
+<ul>
+<li><strong>返回类型：</strong>一个函数可以返回一个值。<strong>return_type</strong> 是函数返回的值的数据类型。有些函数执行所需的操作而不返回值，在这种情况下，return_type 是关键字 <strong>void</strong>。</li>
+<li><strong>函数名称：</strong>这是函数的实际名称。函数名和参数列表一起构成了函数签名。</li>
+<li><strong>参数：</strong>参数就像是占位符。当函数被调用时，您向参数传递一个值，这个值被称为实际参数。参数列表包括函数参数的类型、顺序、数量。参数是可选的，也就是说，函数可能不包含参数。</li>
+<li><strong>函数主体：</strong>函数主体包含一组定义函数执行任务的语句。</li>
+</ul>
+<p><strong>实例：</strong></p>
+<p>以下是 <strong>max()</strong> 函数的源代码。该函数有两个参数 num1 和 num2，会返回这两个数中较大的那个数：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 函数返回两个数中较大的那个数 */</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">max</span><span class="params">(<span class="keyword">int</span> num1, <span class="keyword">int</span> num2)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">   <span class="comment">/* 局部变量声明 */</span></span><br><span class="line">   <span class="keyword">int</span> result;</span><br><span class="line"> </span><br><span class="line">   <span class="keyword">if</span> (num1 &gt; num2)</span><br><span class="line">      result = num1;</span><br><span class="line">   <span class="keyword">else</span></span><br><span class="line">      result = num2;</span><br><span class="line"> </span><br><span class="line">   <span class="keyword">return</span> result; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<h3 id="函数声明"><a href="#函数声明" class="headerlink" title="函数声明"></a>函数声明</h3><p>函数<strong>声明</strong>会告诉编译器函数名称及如何调用函数。函数的实际主体可以单独定义。</p>
+<p>函数声明包括以下几个部分：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">return_type <span class="title">function_name</span><span class="params">( parameter <span class="built_in">list</span> )</span></span>;</span><br></pre></td></tr></table></figure>
+
+<p>针对上面定义的函数 max()，以下是函数声明：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">max</span><span class="params">(<span class="keyword">int</span> num1, <span class="keyword">int</span> num2)</span></span>;</span><br></pre></td></tr></table></figure>
+
+<p>在函数声明中，参数的名称并不重要，只有参数的类型是必需的，因此下面也是有效的声明：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">max</span><span class="params">(<span class="keyword">int</span>, <span class="keyword">int</span>)</span></span>;</span><br></pre></td></tr></table></figure>
+
+<p>当您在一个源文件中定义函数且在另一个文件中调用函数时，函数声明是必需的。在这种情况下，您应该在调用函数的文件顶部声明函数。</p>
+<h3 id="调用函数"><a href="#调用函数" class="headerlink" title="调用函数"></a>调用函数</h3><p><strong>实例：</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"> </span><br><span class="line"><span class="comment">/* 函数声明 */</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">max</span><span class="params">(<span class="keyword">int</span> num1, <span class="keyword">int</span> num2)</span></span>;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span> <span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">   <span class="comment">/* 局部变量定义 */</span></span><br><span class="line">   <span class="keyword">int</span> a = <span class="number">100</span>;</span><br><span class="line">   <span class="keyword">int</span> b = <span class="number">200</span>;</span><br><span class="line">   <span class="keyword">int</span> ret;</span><br><span class="line"> </span><br><span class="line">   <span class="comment">/* 调用函数来获取最大值 */</span></span><br><span class="line">   ret = <span class="built_in">max</span>(a, b);</span><br><span class="line"> </span><br><span class="line">   <span class="built_in">printf</span>( <span class="string">"Max value is : %d\n"</span>, ret );</span><br><span class="line"> </span><br><span class="line">   <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">/* 函数返回两个数中较大的那个数 */</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">max</span><span class="params">(<span class="keyword">int</span> num1, <span class="keyword">int</span> num2)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">   <span class="comment">/* 局部变量声明 */</span></span><br><span class="line">   <span class="keyword">int</span> result;</span><br><span class="line"> </span><br><span class="line">   <span class="keyword">if</span> (num1 &gt; num2)</span><br><span class="line">      result = num1;</span><br><span class="line">   <span class="keyword">else</span></span><br><span class="line">      result = num2;</span><br><span class="line"> </span><br><span class="line">   <span class="keyword">return</span> result; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>把 max() 函数和 main() 函数放一块，编译源代码。当运行最后的可执行文件时，会产生下列结果：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Max value is : <span class="number">200</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="函数参数"><a href="#函数参数" class="headerlink" title="函数参数"></a>函数参数</h3><p>如果函数要使用参数，则必须声明接受参数值的变量。这些变量称为函数的<strong>形式参数</strong>。</p>
+<p>形式参数就像函数内的其他局部变量，在进入函数时被创建，退出函数时被销毁。</p>
+<p>当调用函数时，有两种向函数传递参数的方式：</p>
+<table>
+<thead>
+<tr>
+<th align="left">调用类型</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><a href="https://www.runoob.com/cprogramming/c-function-call-by-value.html">传值调用</a></td>
+<td align="left">该方法把参数的实际值复制给函数的形式参数。在这种情况下，修改函数内的形式参数不会影响实际参数。</td>
+</tr>
+<tr>
+<td align="left"><a href="https://www.runoob.com/cprogramming/c-function-call-by-pointer.html">引用调用</a></td>
+<td align="left">通过指针传递方式，形参为指向实参地址的指针，当对形参的指向操作时，就相当于对实参本身进行的操作。</td>
+</tr>
+</tbody></table>
+<p>默认情况下，C 使用<strong>传值调用</strong>来传递参数。一般来说，这意味着函数内的代码不能改变用于调用函数的实际参数。</p>
+<h2 id="C-作用域规则"><a href="#C-作用域规则" class="headerlink" title="C    作用域规则"></a>C    作用域规则</h2><p>任何一种编程中，作用域是程序中定义的变量所存在的区域，超过该区域变量就不能被访问。C 语言中有三个地方可以声明变量：</p>
+<ol>
+<li>在函数或块内部的<strong>局部</strong>变量</li>
+<li>在所有函数外部的<strong>全局</strong>变量</li>
+<li>在<strong>形式</strong>参数的函数参数定义中</li>
+</ol>
+<h4 id="局部变量"><a href="#局部变量" class="headerlink" title="局部变量"></a>局部变量</h4><p> 在某个函数或块的内部声明的变量称为局部变量。它们只能被该函数或该代码块内部的语句使用。局部变量在函数外部是不可知的。 </p>
+<h4 id="全局变量"><a href="#全局变量" class="headerlink" title="全局变量"></a>全局变量</h4><p> 全局变量是定义在函数外部，通常是在程序的顶部。全局变量在整个程序生命周期内都是有效的，在任意的函数内部能访问全局变量。 </p>
+<h4 id="形式参数"><a href="#形式参数" class="headerlink" title="形式参数"></a>形式参数</h4><p> 函数的参数，形式参数，被当作该函数内的局部变量，如果与全局变量同名它们会优先使用。 </p>
+<p><strong>全局变量与局部变量在内存中的区别</strong>：</p>
+<ul>
+<li>全局变量保存在内存的全局存储区中，占用静态的存储单元；</li>
+<li>局部变量保存在栈中，只有在所在函数被调用时才动态地为变量分配存储单元。</li>
+</ul>
+<h4 id="初始化局部变量和全局变量"><a href="#初始化局部变量和全局变量" class="headerlink" title="初始化局部变量和全局变量"></a>初始化局部变量和全局变量</h4><p>当局部变量被定义时，系统不会对其初始化，您必须自行对其初始化。定义全局变量时，系统会自动对其初始化，如下所示：</p>
+<table>
+<thead>
+<tr>
+<th align="left">数据类型</th>
+<th align="left">初始化默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">int</td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">char</td>
+<td align="left">‘\0’</td>
+</tr>
+<tr>
+<td align="left">float</td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">double</td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">pointer</td>
+<td align="left">NULL</td>
+</tr>
+</tbody></table>
+<h2 id="C-数组"><a href="#C-数组" class="headerlink" title="C    数组"></a>C    数组</h2><p> C 语言支持<strong>数组</strong>数据结构，它可以存储一个固定大小的相同类型元素的顺序集合。数组是用来存储一系列数据，但它往往被认为是一系列相同类型的变量。 </p>
+<h3 id="声明数组"><a href="#声明数组" class="headerlink" title="声明数组"></a>声明数组</h3><p>在 C 中要声明一个数组，需要指定元素的类型和元素的数量，如下所示：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">type arrayName [ arraySize ];</span><br></pre></td></tr></table></figure>
+
+<p> 这叫做一维数组。<strong>arraySize</strong> 必须是一个大于零的整数常量，<strong>type</strong> 可以是任意有效的 C 数据类型。例如，要声明一个类型为 double 的包含 10 个元素的数组 <strong>balance</strong>，声明语句如下： </p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">double</span> balance[<span class="number">10</span>];</span><br></pre></td></tr></table></figure>
+
+<h3 id="初始化数组"><a href="#初始化数组" class="headerlink" title="初始化数组"></a>初始化数组</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">double</span> balance[<span class="number">5</span>] = &#123;<span class="number">1000.0</span>, <span class="number">2.0</span>, <span class="number">3.4</span>, <span class="number">7.0</span>, <span class="number">50.0</span>&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="访问数组元素"><a href="#访问数组元素" class="headerlink" title="访问数组元素"></a>访问数组元素</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">balance[<span class="number">4</span>] = <span class="number">50.0</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="C-中数组详解"><a href="#C-中数组详解" class="headerlink" title="C 中数组详解"></a>C 中数组详解</h3><p>在 C 中，数组是非常重要的，我们需要了解更多有关数组的细节。下面列出了 C 程序员必须清楚的一些与数组相关的重要概念：</p>
+<table>
+<thead>
+<tr>
+<th align="left">概念</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><a href="https://www.runoob.com/cprogramming/c-multi-dimensional-arrays.html">多维数组</a></td>
+<td align="left">C 支持多维数组。多维数组最简单的形式是二维数组。</td>
+</tr>
+<tr>
+<td align="left"><a href="https://www.runoob.com/cprogramming/c-passing-arrays-to-functions.html">传递数组给函数</a></td>
+<td align="left">您可以通过指定不带索引的数组名称来给函数传递一个指向数组的指针。</td>
+</tr>
+<tr>
+<td align="left"><a href="https://www.runoob.com/cprogramming/c-return-arrays-from-function.html">从函数返回数组</a></td>
+<td align="left">C 允许从函数返回数组。</td>
+</tr>
+<tr>
+<td align="left"><a href="https://www.runoob.com/cprogramming/c-pointer-to-an-array.html">指向数组的指针</a></td>
+<td align="left">您可以通过指定不带索引的数组名称来生成一个指向数组中第一个元素的指针。</td>
+</tr>
+</tbody></table>
+<h2 id="C-枚举"><a href="#C-枚举" class="headerlink" title="C    枚举"></a>C    枚举</h2><p>枚举是 C 语言中的一种基本数据类型，它可以让数据更简洁，更易读。</p>
+<p>枚举语法定义格式为：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">enum</span>　枚举名　&#123;枚举元素<span class="number">1</span>,枚举元素<span class="number">2</span>,……&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>接下来我们举个例子，比如：一星期有 7 天，如果不用枚举，我们需要使用 #define 来为每个整数定义一个别名：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MON  1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> TUE  2</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> WED  3</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> THU  4</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FRI  5</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SAT  6</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SUN  7</span></span><br></pre></td></tr></table></figure>
+
+<p>这个看起来代码量就比较多，接下来我们看看使用枚举的方式：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">enum</span> DAY</span><br><span class="line">&#123;</span><br><span class="line">      MON=<span class="number">1</span>, TUE, WED, THU, FRI, SAT, SUN</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><strong>实例：</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">enum</span> DAY</span><br><span class="line">&#123;</span><br><span class="line">      MON=<span class="number">1</span>, TUE, WED, THU, FRI, SAT, SUN</span><br><span class="line">&#125;;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">enum</span> DAY day;</span><br><span class="line">    day = WED;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d"</span>,day);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>以上实例输出结果为：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">3</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="C-指针"><a href="#C-指针" class="headerlink" title="C    指针"></a>C    指针</h2><p> 每一个变量都有一个内存位置，每一个内存位置都定义了可使用连字号（&amp;）运算符访问的地址，它表示了在内存中的一个地址。请看下面的实例，它将输出定义的变量地址： </p>
+<p><strong>实例：</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span> <span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">   <span class="keyword">int</span>  var1;</span><br><span class="line">   <span class="keyword">char</span> var2[<span class="number">10</span>];</span><br><span class="line"> </span><br><span class="line">   <span class="built_in">printf</span>(<span class="string">"var1 变量的地址： %p\n"</span>, &amp;var1  );</span><br><span class="line">   <span class="built_in">printf</span>(<span class="string">"var2 变量的地址： %p\n"</span>, &amp;var2  );</span><br><span class="line"> </span><br><span class="line">   <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>当上面的代码被编译和执行时，它会产生下列结果：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var1 变量的地址： <span class="number">0x7fff5cc109d4</span></span><br><span class="line">var2 变量的地址： <span class="number">0x7fff5cc109de</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="什么是指针？"><a href="#什么是指针？" class="headerlink" title="什么是指针？"></a>什么是指针？</h3><p><strong>指针</strong>是一个变量，其值为另一个变量的地址，即，内存位置的直接地址。就像其他变量或常量一样，您必须在使用指针存储其他变量地址之前，对其进行声明。指针变量声明的一般形式为：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">type *var-name;</span><br></pre></td></tr></table></figure>
+
+<p>在这里，<strong>type</strong> 是指针的基类型，它必须是一个有效的 C 数据类型，<strong>var-name</strong> 是指针变量的名称。用来声明指针的星号 * 与乘法中使用的星号是相同的。但是，在这个语句中，星号是用来指定一个变量是指针。以下是有效的指针声明：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>    *ip;    <span class="comment">/* 一个整型的指针 */</span></span><br><span class="line"><span class="keyword">double</span> *dp;    <span class="comment">/* 一个 double 型的指针 */</span></span><br><span class="line"><span class="keyword">float</span>  *fp;    <span class="comment">/* 一个浮点型的指针 */</span></span><br><span class="line"><span class="keyword">char</span>   *ch;     <span class="comment">/* 一个字符型的指针 */</span></span><br></pre></td></tr></table></figure>
+
+<p>所有实际数据类型，不管是整型、浮点型、字符型，还是其他的数据类型，对应指针的值的类型都是一样的，都是一个代表内存地址的长的十六进制数。</p>
+<p>不同数据类型的指针之间唯一的不同是，指针所指向的变量或常量的数据类型不同。</p>
+<h3 id="如何使用指针？"><a href="#如何使用指针？" class="headerlink" title="如何使用指针？"></a>如何使用指针？</h3><p> 使用指针时会频繁进行以下几个操作：定义一个指针变量、把变量地址赋值给指针、访问指针变量中可用地址的值。这些是通过使用一元运算符 ***** 来返回位于操作数所指定地址的变量的值。下面的实例涉及到了这些操作： </p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span> <span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">   <span class="keyword">int</span>  var = <span class="number">20</span>;   <span class="comment">/* 实际变量的声明 */</span></span><br><span class="line">   <span class="keyword">int</span>  *ip;        <span class="comment">/* 指针变量的声明 */</span></span><br><span class="line"> </span><br><span class="line">   ip = &amp;var;  <span class="comment">/* 在指针变量中存储 var 的地址 */</span></span><br><span class="line"> </span><br><span class="line">   <span class="built_in">printf</span>(<span class="string">"Address of var variable: %p\n"</span>, &amp;var  );</span><br><span class="line"> </span><br><span class="line">   <span class="comment">/* 在指针变量中存储的地址 */</span></span><br><span class="line">   <span class="built_in">printf</span>(<span class="string">"Address stored in ip variable: %p\n"</span>, ip );</span><br><span class="line"> </span><br><span class="line">   <span class="comment">/* 使用指针访问值 */</span></span><br><span class="line">   <span class="built_in">printf</span>(<span class="string">"Value of *ip variable: %d\n"</span>, *ip );</span><br><span class="line"> </span><br><span class="line">   <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>当上面的代码被编译和执行时，它会产生下列结果：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Address of var variable: bffd8b3c</span><br><span class="line">Address stored in ip variable: bffd8b3c</span><br><span class="line">Value of *ip variable: <span class="number">20</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="C-中的-NULL-指针"><a href="#C-中的-NULL-指针" class="headerlink" title="C 中的 NULL 指针"></a>C 中的 NULL 指针</h3><p>在变量声明的时候，如果没有确切的地址可以赋值，为指针变量赋一个 NULL 值是一个良好的编程习惯。赋为 NULL 值的指针被称为<strong>空</strong>指针。</p>
+<p>NULL 指针是一个定义在标准库中的值为零的常量。请看下面的程序：</p>
+<p><strong>实例</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span> <span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">   <span class="keyword">int</span>  *ptr = <span class="literal">NULL</span>;</span><br><span class="line"> </span><br><span class="line">   <span class="built_in">printf</span>(<span class="string">"ptr 的地址是 %p\n"</span>, ptr  );</span><br><span class="line"> </span><br><span class="line">   <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>当上面的代码被编译和执行时，它会产生下列结果：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ptr 的地址是 <span class="number">0x0</span></span><br></pre></td></tr></table></figure>
+
+<p>在大多数的操作系统上，程序不允许访问地址为 0 的内存，因为该内存是操作系统保留的。然而，内存地址 0 有特别重要的意义，它表明该指针不指向一个可访问的内存位置。但按照惯例，如果指针包含空值（零值），则假定它不指向任何东西。</p>
+<p>如需检查一个空指针，您可以使用 if 语句，如下所示：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(ptr)     <span class="comment">/* 如果 p 非空，则完成 */</span></span><br><span class="line"><span class="keyword">if</span>(!ptr)    <span class="comment">/* 如果 p 为空，则完成 */</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="C-指针详解"><a href="#C-指针详解" class="headerlink" title="C 指针详解"></a>C 指针详解</h3><p>在 C 中，有很多指针相关的概念，这些概念都很简单，但是都很重要。下面列出了 C 程序员必须清楚的一些与指针相关的重要概念：</p>
+<table>
+<thead>
+<tr>
+<th align="left">概念</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><a href="https://www.runoob.com/cprogramming/c-pointer-arithmetic.html">指针的算术运算</a></td>
+<td align="left">可以对指针进行四种算术运算：++、–、+、-</td>
+</tr>
+<tr>
+<td align="left"><a href="https://www.runoob.com/cprogramming/c-array-of-pointers.html">指针数组</a></td>
+<td align="left">可以定义用来存储指针的数组。</td>
+</tr>
+<tr>
+<td align="left"><a href="https://www.runoob.com/cprogramming/c-pointer-to-pointer.html">指向指针的指针</a></td>
+<td align="left">C 允许指向指针的指针。</td>
+</tr>
+<tr>
+<td align="left"><a href="https://www.runoob.com/cprogramming/c-passing-pointers-to-functions.html">传递指针给函数</a></td>
+<td align="left">通过引用或地址传递参数，使传递的参数在调用函数中被改变。</td>
+</tr>
+<tr>
+<td align="left"><a href="https://www.runoob.com/cprogramming/c-return-pointer-from-functions.html">从函数返回指针</a></td>
+<td align="left">C 允许函数返回指针到局部变量、静态变量和动态内存分配。</td>
+</tr>
+</tbody></table>
 
       
       
@@ -1350,7 +1559,7 @@
         <p><span>本文标题:</span><a href="/2019/11/06/C%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">C语言学习笔记</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 9finger 的个人博客">9finger</a></p>
         <p><span>发布时间:</span>2019年11月06日 - 12时00分</p>
-        <p><span>最后更新:</span>2019年11月06日 - 15时10分</p>
+        <p><span>最后更新:</span>2019年11月08日 - 20时27分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2019/11/06/C%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="C语言学习笔记">/2019/11/06/C%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</a>
             <span class="copy-path" data-clipboard-text="原文: /2019/11/06/C%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/　　作者: 9finger" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -1379,7 +1588,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#C语言学习笔记"><span class="toc-number">1.</span> <span class="toc-text">C语言学习笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#C-程序结构"><span class="toc-number">1.1.</span> <span class="toc-text">C 程序结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#C-基本语法"><span class="toc-number">1.2.</span> <span class="toc-text">C 基本语法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#C-数据类型"><span class="toc-number">1.3.</span> <span class="toc-text">C 数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#整数类型"><span class="toc-number">1.3.1.</span> <span class="toc-text">整数类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#浮点类型"><span class="toc-number">1.3.2.</span> <span class="toc-text">浮点类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#void-类型"><span class="toc-number">1.3.3.</span> <span class="toc-text">void 类型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#C-变量"><span class="toc-number">1.4.</span> <span class="toc-text">C 变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#C-常量"><span class="toc-number">1.5.</span> <span class="toc-text">C 常量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#整数常量"><span class="toc-number">1.5.1.</span> <span class="toc-text">整数常量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#浮点常量"><span class="toc-number">1.5.2.</span> <span class="toc-text">浮点常量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#字符常量"><span class="toc-number">1.5.3.</span> <span class="toc-text">字符常量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#字符串常量"><span class="toc-number">1.5.4.</span> <span class="toc-text">字符串常量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#定义常量"><span class="toc-number">1.5.5.</span> <span class="toc-text">定义常量</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#define-预处理器"><span class="toc-number">1.5.5.1.</span> <span class="toc-text">#define 预处理器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#const-关键字"><span class="toc-number">1.5.5.2.</span> <span class="toc-text">const 关键字</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#C-存储类"><span class="toc-number">1.6.</span> <span class="toc-text">C 存储类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#auto-存储类"><span class="toc-number">1.6.1.</span> <span class="toc-text">auto 存储类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#register-存储类"><span class="toc-number">1.6.2.</span> <span class="toc-text">register 存储类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#static-存储类"><span class="toc-number">1.6.3.</span> <span class="toc-text">static 存储类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#extern-存储类"><span class="toc-number">1.6.4.</span> <span class="toc-text">extern 存储类</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#C-运算符"><span class="toc-number">1.7.</span> <span class="toc-text">C    运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#算术运算符"><span class="toc-number">1.7.1.</span> <span class="toc-text">算术运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#关系运算符"><span class="toc-number">1.7.2.</span> <span class="toc-text">关系运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#逻辑运算符"><span class="toc-number">1.7.3.</span> <span class="toc-text">逻辑运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#赋值运算符"><span class="toc-number">1.7.4.</span> <span class="toc-text">赋值运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#杂项运算符-↦-sizeof-amp-三元"><span class="toc-number">1.7.5.</span> <span class="toc-text">杂项运算符 ↦ sizeof &amp; 三元</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#C-中的运算符优先级"><span class="toc-number">1.7.6.</span> <span class="toc-text">C 中的运算符优先级</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#C-判断"><span class="toc-number">1.8.</span> <span class="toc-text">C    判断</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#判断语句"><span class="toc-number">1.8.1.</span> <span class="toc-text">判断语句</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#C-switch语句"><span class="toc-number">1.8.1.1.</span> <span class="toc-text">C switch语句</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#运算符-三元运算符"><span class="toc-number">1.8.2.</span> <span class="toc-text">? : 运算符(三元运算符)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#C-循环"><span class="toc-number">1.9.</span> <span class="toc-text">C    循环</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#循环类型"><span class="toc-number">1.9.1.</span> <span class="toc-text">循环类型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#for-循环"><span class="toc-number">1.9.1.1.</span> <span class="toc-text">for    循环</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#do…while-循环"><span class="toc-number">1.9.1.2.</span> <span class="toc-text">do…while 循环</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#循环控制语句"><span class="toc-number">1.9.2.</span> <span class="toc-text">循环控制语句</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#continue-语句"><span class="toc-number">1.9.2.1.</span> <span class="toc-text">continue 语句</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#goto-语句"><span class="toc-number">1.9.2.2.</span> <span class="toc-text">goto    语句</span></a></li></ol></li></ol></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#C语言学习笔记"><span class="toc-number">1.</span> <span class="toc-text">C语言学习笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#C-程序结构"><span class="toc-number">1.1.</span> <span class="toc-text">C 程序结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#C-基本语法"><span class="toc-number">1.2.</span> <span class="toc-text">C 基本语法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#C-数据类型"><span class="toc-number">1.3.</span> <span class="toc-text">C 数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#整数类型"><span class="toc-number">1.3.1.</span> <span class="toc-text">整数类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#浮点类型"><span class="toc-number">1.3.2.</span> <span class="toc-text">浮点类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#void-类型"><span class="toc-number">1.3.3.</span> <span class="toc-text">void 类型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#C-变量"><span class="toc-number">1.4.</span> <span class="toc-text">C 变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#C-常量"><span class="toc-number">1.5.</span> <span class="toc-text">C 常量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#整数常量"><span class="toc-number">1.5.1.</span> <span class="toc-text">整数常量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#浮点常量"><span class="toc-number">1.5.2.</span> <span class="toc-text">浮点常量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#字符常量"><span class="toc-number">1.5.3.</span> <span class="toc-text">字符常量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#字符串常量"><span class="toc-number">1.5.4.</span> <span class="toc-text">字符串常量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#定义常量"><span class="toc-number">1.5.5.</span> <span class="toc-text">定义常量</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#define-预处理器"><span class="toc-number">1.5.5.1.</span> <span class="toc-text">#define 预处理器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#const-关键字"><span class="toc-number">1.5.5.2.</span> <span class="toc-text">const 关键字</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#C-存储类"><span class="toc-number">1.6.</span> <span class="toc-text">C 存储类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#auto-存储类"><span class="toc-number">1.6.1.</span> <span class="toc-text">auto 存储类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#register-存储类"><span class="toc-number">1.6.2.</span> <span class="toc-text">register 存储类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#static-存储类"><span class="toc-number">1.6.3.</span> <span class="toc-text">static 存储类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#extern-存储类"><span class="toc-number">1.6.4.</span> <span class="toc-text">extern 存储类</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#C-运算符"><span class="toc-number">1.7.</span> <span class="toc-text">C    运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#算术运算符"><span class="toc-number">1.7.1.</span> <span class="toc-text">算术运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#关系运算符"><span class="toc-number">1.7.2.</span> <span class="toc-text">关系运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#逻辑运算符"><span class="toc-number">1.7.3.</span> <span class="toc-text">逻辑运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#赋值运算符"><span class="toc-number">1.7.4.</span> <span class="toc-text">赋值运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#杂项运算符-↦-sizeof-amp-三元"><span class="toc-number">1.7.5.</span> <span class="toc-text">杂项运算符 ↦ sizeof &amp; 三元</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#C-中的运算符优先级"><span class="toc-number">1.7.6.</span> <span class="toc-text">C 中的运算符优先级</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#C-判断"><span class="toc-number">1.8.</span> <span class="toc-text">C    判断</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#判断语句"><span class="toc-number">1.8.1.</span> <span class="toc-text">判断语句</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#C-switch语句"><span class="toc-number">1.8.1.1.</span> <span class="toc-text">C switch语句</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#运算符-三元运算符"><span class="toc-number">1.8.2.</span> <span class="toc-text">? : 运算符(三元运算符)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#C-循环"><span class="toc-number">1.9.</span> <span class="toc-text">C    循环</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#循环类型"><span class="toc-number">1.9.1.</span> <span class="toc-text">循环类型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#for-循环"><span class="toc-number">1.9.1.1.</span> <span class="toc-text">for    循环</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#do…while-循环"><span class="toc-number">1.9.1.2.</span> <span class="toc-text">do…while 循环</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#循环控制语句"><span class="toc-number">1.9.2.</span> <span class="toc-text">循环控制语句</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#continue-语句"><span class="toc-number">1.9.2.1.</span> <span class="toc-text">continue 语句</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#goto-语句"><span class="toc-number">1.9.2.2.</span> <span class="toc-text">goto    语句</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#C-函数"><span class="toc-number">1.10.</span> <span class="toc-text">C    函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#定义函数"><span class="toc-number">1.10.1.</span> <span class="toc-text">定义函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#函数声明"><span class="toc-number">1.10.2.</span> <span class="toc-text">函数声明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#调用函数"><span class="toc-number">1.10.3.</span> <span class="toc-text">调用函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#函数参数"><span class="toc-number">1.10.4.</span> <span class="toc-text">函数参数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#C-作用域规则"><span class="toc-number">1.11.</span> <span class="toc-text">C    作用域规则</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#局部变量"><span class="toc-number">1.11.0.1.</span> <span class="toc-text">局部变量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#全局变量"><span class="toc-number">1.11.0.2.</span> <span class="toc-text">全局变量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#形式参数"><span class="toc-number">1.11.0.3.</span> <span class="toc-text">形式参数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#初始化局部变量和全局变量"><span class="toc-number">1.11.0.4.</span> <span class="toc-text">初始化局部变量和全局变量</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#C-数组"><span class="toc-number">1.12.</span> <span class="toc-text">C    数组</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#声明数组"><span class="toc-number">1.12.1.</span> <span class="toc-text">声明数组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#初始化数组"><span class="toc-number">1.12.2.</span> <span class="toc-text">初始化数组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#访问数组元素"><span class="toc-number">1.12.3.</span> <span class="toc-text">访问数组元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#C-中数组详解"><span class="toc-number">1.12.4.</span> <span class="toc-text">C 中数组详解</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#C-枚举"><span class="toc-number">1.13.</span> <span class="toc-text">C    枚举</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#C-指针"><span class="toc-number">1.14.</span> <span class="toc-text">C    指针</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是指针？"><span class="toc-number">1.14.1.</span> <span class="toc-text">什么是指针？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如何使用指针？"><span class="toc-number">1.14.2.</span> <span class="toc-text">如何使用指针？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#C-中的-NULL-指针"><span class="toc-number">1.14.3.</span> <span class="toc-text">C 中的 NULL 指针</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#C-指针详解"><span class="toc-number">1.14.4.</span> <span class="toc-text">C 指针详解</span></a></li></ol></li></ol></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
